@@ -69,9 +69,10 @@ function captureGhost(pageEl, backsideEl) {
   const scrollX = window.scrollX;
   const scrollY = window.scrollY;
 
-  const ghost = document.createElement('div');
-  ghost.className = 'page-ghost';
-  ghost.style.cssText = `
+  // Outer: perspective-only container — never transforms itself
+  const outer = document.createElement('div');
+  outer.className = 'page-ghost';
+  outer.style.cssText = `
     position:absolute;
     top:${rect.top + scrollY}px;
     left:${rect.left + scrollX}px;
@@ -79,7 +80,18 @@ function captureGhost(pageEl, backsideEl) {
     height:${rect.height}px;
     z-index:999;
     pointer-events:none;
+    perspective:2000px;
+    -webkit-perspective:2000px;
+  `;
+
+  // Inner: the actual rotating face — preserve-3d lives here
+  const inner = document.createElement('div');
+  inner.className = 'page-ghost-inner';
+  inner.style.cssText = `
+    position:absolute;
+    inset:0;
     transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
     will-change:transform,opacity;
   `;
 
@@ -90,7 +102,7 @@ function captureGhost(pageEl, backsideEl) {
   frontClone.style.margin = '0';
   sanitizeClone(frontClone);
   front.appendChild(frontClone);
-  ghost.appendChild(front);
+  inner.appendChild(front);
 
   // back face
   if (backsideEl) {
@@ -99,28 +111,30 @@ function captureGhost(pageEl, backsideEl) {
     const backClone = backsideEl.cloneNode(true);
     sanitizeClone(backClone);
     back.appendChild(backClone);
-    ghost.appendChild(back);
+    inner.appendChild(back);
   }
 
-  document.body.appendChild(ghost);
-  activeGhost = ghost;
-  return { ghost, rect };
+  outer.appendChild(inner);
+  document.body.appendChild(outer);
+  activeGhost = outer;
+  return { ghost: outer, inner, rect };
 }
 
 /* ============================================================
    PAGE TURN ANIMATION
    ============================================================ */
 
-function pageTurn(ghost, forward, token, onDone) {
-  if (!ghost) { onDone?.(); return; }
+function pageTurn(captured, forward, token, onDone) {
+  if (!captured) { onDone?.(); return; }
 
+  const { ghost, inner } = captured;
   const duration = 1200;
   const start = performance.now();
   const dir = forward ? -1 : 1;
   const startAngle = 6;
 
-  ghost.style.transformOrigin = forward ? 'left center' : 'right center';
-  ghost.style.perspective = '2000px';
+  // perspective is on outer (ghost); inner is what rotates
+  inner.style.transformOrigin = forward ? 'left center' : 'right center';
 
   function ease(t) { return t * (2 - t); }
 
@@ -134,14 +148,14 @@ function pageTurn(ghost, forward, token, onDone) {
     const lift = Math.sin(rad);
     const bend = lift * 0.6 * (forward ? 1 : -1);
 
-    ghost.style.transform = `rotateY(${dir * angle}deg) rotateX(${bend}deg)`;
+    inner.style.transform = `rotateY(${dir * angle}deg) rotateX(${bend}deg)`;
 
     const shX = Math.round(dir * -1 * lift * 12);
     const shY = Math.round(3 + lift * 6);
     const shBlur = Math.round(6 + lift * 24);
-    ghost.style.boxShadow = `${shX}px ${shY}px ${shBlur}px rgba(30,15,50,${(0.03 + lift * 0.14).toFixed(3)})`;
+    inner.style.boxShadow = `${shX}px ${shY}px ${shBlur}px rgba(30,15,50,${(0.03 + lift * 0.14).toFixed(3)})`;
 
-    ghost.style.opacity = angle > 140 ? String(Math.max(0, 1 - (angle - 140) / 40)) : '1';
+    inner.style.opacity = angle > 140 ? String(Math.max(0, 1 - (angle - 140) / 40)) : '1';
 
     if (raw < 1) {
       requestAnimationFrame(frame);
@@ -191,7 +205,7 @@ function goTo(idx) {
   updateTabs(idx);
   current = idx;
 
-  pageTurn(captured?.ghost, forward, token, () => {
+  pageTurn(captured, forward, token, () => {
     if (token === animationToken) busy = false;
   });
 }
