@@ -79,7 +79,6 @@
   overflow:hidden;
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
-}
   box-shadow:
     0 4px 24px rgba(0,0,0,.1),
     0 1px 3px rgba(0,0,0,.06);
@@ -411,7 +410,6 @@
 .cover-back-list .tag-dl{background:rgba(180,150,255,.2)}
 
 /* notebook is always visible — cover sits on top via z-index */
-}
 
 :root{
   /* Y2K pastel surfaces */
@@ -647,7 +645,6 @@ a:hover{color:var(--red-dark)}
   padding-bottom:50px;
   overflow:hidden;
   position:relative;
-}
 }
 
 .pg::-webkit-scrollbar{width:3px}
