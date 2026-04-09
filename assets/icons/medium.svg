@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF">
+  <!-- comic-style M logo — chunky rounded blobs -->
+  <ellipse cx="7" cy="12" rx="3.8" ry="4.5"/>
+  <ellipse cx="14" cy="12" rx="2.2" ry="4"/>
+  <ellipse cx="19.5" cy="12" rx="1.3" ry="3.5"/>
+</svg>
