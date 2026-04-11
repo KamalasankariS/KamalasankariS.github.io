@@ -472,6 +472,17 @@ a:hover { color: var(--red-dark); }
   overflow: visible;
 }
 
+.book-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.turn-page {
+  overflow: hidden;
+}
+
 .flipbook {
   position: absolute;
   top: 0; left: 0;
