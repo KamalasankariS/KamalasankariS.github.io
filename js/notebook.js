@@ -10,13 +10,16 @@ if (cover && flipbook) {
 }
 
 function goTo(spreadIdx) {
-  $(flipbook).turn('page', spreadIdx * 2 + 1);
+  $(flipbook).turn('page', spreadIdx * 2 + 2);
 }
 
 function updateTabs(page) {
-  const spread = Math.floor((page - 1) / 2);
-  tabs.forEach(t => t.classList.remove('active'));
-  if (spread < 4 && tabs[spread]) tabs[spread].classList.add('active');
+  if (page < 2) return;
+  const spread = Math.floor((page - 2) / 2);
+  if (spread < 4) {
+    tabs.forEach(t => t.classList.remove('active'));
+    if (tabs[spread]) tabs[spread].classList.add('active');
+  }
 }
 
 $(document).ready(function () {
@@ -28,6 +31,8 @@ $(document).ready(function () {
     autoCenter: true,
     gradients: true,
     acceleration: true,
+    duration: 1000,
+    page: 2,
     when: {
       turned: function (e, page) {
         updateTabs(page);
@@ -65,5 +70,5 @@ $(document).ready(function () {
     }
   }, { passive: true });
 
-  updateTabs(1);
+  updateTabs(2);
 });
