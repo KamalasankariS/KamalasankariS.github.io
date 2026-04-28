@@ -84,9 +84,9 @@ npx serve .
 
 ## Contact
 
-- **Email** — iamkamalamskls@gmail.com
-- **LinkedIn** — [linkedin.com/in/kamalasankari-s](https://www.linkedin.com/in/kamalasankari)  
-- **GitHub** — [github.com/kamalasankaris](https://github.com/kamalasankaris)  
+- **Email** — [iamkamalamskls@gmail.com](iamkamalamskls@gmail.com)
+- **LinkedIn** — [linkedin.com/in/kamalasankaris](https://www.linkedin.com/in/kamalasankari)  
+- **GitHub** — [https://github.com/kamalasankaris](https://github.com/kamalasankaris)  
 - **Google Scholar** — [scholar.google.com](https://scholar.google.com/citations?user=QQtmt1wAAAAJ&hl=en)
 
 ---
