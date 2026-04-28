@@ -1,0 +1,1546 @@
+/* ==========================================================
+   CLASSIC MAC OS 8/9 — KAMALA SANKARI PORTFOLIO
+   Authentic Platinum Appearance — Mac OS 8.5 / 9.x era
+   ========================================================== */
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ──────────────────────────────────────────────────────────
+   BODY — Mac OS 8 lavender desktop
+   (matches the reference "Infinite Mac" screenshot)
+────────────────────────────────────────────────────────── */
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background-color: #F07AB8;
+  background-image: radial-gradient(circle, #1A0818 1.4px, transparent 1.4px);
+  background-size: 6px 6px;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  cursor: default;
+  -webkit-font-smoothing: none;
+
+  letter-spacing: 0.2px;
+}
+.body{
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.04), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0,0,0,0.03), transparent 40%);
+
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
+
+
+::selection { background: #0000CC; color: #FFFFFF; }
+
+#cursor, #starfield, .sparkle-trail, .glitter { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────
+   MENU BAR — Classic Mac OS 8/9
+────────────────────────────────────────────────────────── */
+#mac-menubar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 22px;
+  background: #DDDDDD;
+  border-bottom: 1px solid #888888;
+  display: flex;
+  align-items: center;
+  z-index: 10500;
+  user-select: none;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  color: #000000;
+  -webkit-font-smoothing: none;
+}
+
+.mmb-apple {
+  font-size: 15px; padding: 0 8px; cursor: pointer; line-height: 1; flex-shrink: 0;
+}
+.mmb-apple:hover { background: #000080; color: #FFFFFF; }
+
+.mmb-appname {
+  font-weight: bold; padding-right: 12px; white-space: nowrap; flex-shrink: 0; font-size: 12px;
+}
+
+.mmb-item {
+  padding: 1px 8px; cursor: pointer; white-space: nowrap; flex-shrink: 0; font-size: 12px;
+}
+.mmb-item:hover { background: #000080; color: #FFFFFF; }
+
+.mmb-right {
+  margin-left: auto; display: flex; align-items: center; gap: 10px; padding: 0 8px; flex-shrink: 0;
+}
+
+.mmb-clock { font-size: 12px; white-space: nowrap; }
+
+.mmb-finder {
+  font-size: 11px; display: flex; align-items: center; gap: 4px; white-space: nowrap;
+}
+
+/* ──────────────────────────────────────────────────────────
+   BOOT SCREEN — Happy Mac
+────────────────────────────────────────────────────────── */
+/* ── BOOT SCREEN — Mac OS 9 authentic startup splash ── */
+#boot {
+  position: fixed; inset: 0;
+  background: #C0C0C8;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transition: opacity 1.2s ease;
+}
+#boot.out { opacity: 0; pointer-events: none; }
+
+/* Gray-bordered white panel — the Mac OS 9 splash rectangle */
+.boot-panel {
+  background: #FFFFFF;
+  border: 32px solid #CCCAC2;
+  box-shadow:
+    inset 1px 1px 0 #E4E2DC,
+    inset -1px -1px 0 #B8B6AE,
+    0 0 0 1px #C0BEBA;
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0 28px;
+}
+
+/* Center area: logo + text */
+.boot-splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.boot-os9-logo {
+  width: 172px; height: 185px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 6px 18px rgba(20,40,160,0.18));
+}
+
+.boot-os9-title {
+  font-size: 62px;
+  font-weight: normal;
+  font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', Georgia, serif;
+  color: #111111;
+  letter-spacing: 0px;
+  line-height: 1;
+  margin-bottom: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.boot-os9-rule {
+  width: 280px;
+  height: 1px;
+  background: #BBBBBB;
+  margin: 6px 0 8px;
+}
+
+.boot-os9-ver {
+  font-size: 11px;
+  color: #333333;
+  font-family: 'Geneva', 'Charcoal', 'Chicago', 'Helvetica Neue', Helvetica, sans-serif;
+  margin-bottom: 3px;
+  -webkit-font-smoothing: none;
+  letter-spacing: 0.2px;
+}
+
+.boot-os9-copy {
+  font-size: 9px;
+  color: #555555;
+  font-family: 'Geneva', 'Charcoal', 'Chicago', 'Helvetica Neue', Helvetica, sans-serif;
+  margin-bottom: 2px;
+  -webkit-font-smoothing: none;
+  letter-spacing: 0.1px;
+}
+
+/* Mac OS 9 authentic loading bar area — sits in the gray zone below the panel */
+.boot-progress-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 18px 0 0;
+}
+
+.boot-starting-txt {
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Geneva', 'Charcoal', 'Chicago', Helvetica, sans-serif;
+  color: #111111;
+  -webkit-font-smoothing: none;
+  letter-spacing: 0.3px;
+  font-style: italic;
+}
+
+/* Mac OS 9 authentic segmented progress bar */
+.boot-bar-outer {
+  width: 240px;
+  height: 16px;
+  background: #E8E8E8;
+  /* Classic Mac inset border: dark top/left, light bottom/right */
+  border-style: solid;
+  border-width: 1px;
+  border-color: #888888 #CCCCCC #CCCCCC #888888;
+  box-shadow:
+    inset 1px 1px 0 #666666,
+    inset -1px -1px 0 #FFFFFF;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.boot-bar-fill {
+  height: 100%;
+  width: 0;
+  /* Segmented blocks — 10px chunks with 2px gaps */
+  background-image: repeating-linear-gradient(
+    90deg,
+    #5B6ED8 0px,
+    #4A5BC4 9px,
+    transparent 9px,
+    transparent 11px
+  );
+  background-color: transparent;
+  animation: bootBarFill 3s steps(20, end) forwards;
+}
+
+@keyframes bootBarFill { to { width: 100%; } }
+
+/* ──────────────────────────────────────────────────────────
+   WINDOWS — Mac OS 8/9 Platinum
+────────────────────────────────────────────────────────── */
+.win {
+  position: fixed;
+  background: #D4D0C8;
+  border: 1px solid #000000;
+  border-radius: 0;
+  box-shadow:
+    inset  1px  1px 0 #FFFFFF,
+    inset -1px -1px 0 #888888,
+    3px 3px 6px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 200;
+  display: flex; flex-direction: column;
+  min-width: 200px; min-height: 100px;
+}
+.win.top { z-index: 310; }
+.win.hidden { display: none; }
+
+/* ──────────────────────────────────────────────────────────
+   TITLE BAR — Authentic Mac OS 8 pinstripe
+────────────────────────────────────────────────────────── */
+.wchrome {
+  height: 20px;
+  background: repeating-linear-gradient(
+    180deg,
+    #FFFFFF 0px, #FFFFFF 1px,
+    #AAAAAA 1px, #AAAAAA 2px
+  );
+  border-bottom: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: grab;
+  flex-shrink: 0;
+  position: relative;
+}
+.wchrome:active { cursor: grabbing; }
+
+.mac-close-area {
+  display: flex; align-items: center; padding: 0 5px;
+  flex-shrink: 0; height: 100%; z-index: 2;
+}
+
+.mac-zoom-area {
+  display: flex; align-items: center; gap: 3px; padding: 0 5px;
+  flex-shrink: 0; margin-left: auto; height: 100%; z-index: 2;
+}
+
+/* WINDOW CONTROL BOXES */
+.tl {
+  width: 13px; height: 13px;
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative;
+  font-size: 10px; color: transparent;
+}
+.tl:hover { background: #C0BEB8; }
+.tl:active { border-color: #808080 #FFFFFF #FFFFFF #808080; background: #B8B4B0; }
+
+.tl.cl:hover { color: #000000; }
+
+.tl.mn { width: 13px; height: 8px; }
+
+.tl.mx::before {
+  content: ''; position: absolute; inset: 2px;
+  border: 1px solid #808080; pointer-events: none;
+}
+
+/* WINDOW TITLE */
+.wtitle {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: #D4D0C8; padding: 0 8px;
+  font-size: 11px; font-weight: bold;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #000000; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+  max-width: 60%; pointer-events: none;
+  line-height: 20px; z-index: 1;
+  -webkit-font-smoothing: none;
+}
+
+/* ──────────────────────────────────────────────────────────
+   TOOLBAR — Mac Finder info strip
+────────────────────────────────────────────────────────── */
+.wtoolbar {
+  height: 20px;
+  background: #D4D0C8;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+  display: flex; align-items: center; padding: 0 8px; gap: 8px;
+  flex-shrink: 0; font-size: 10px;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+}
+
+.mac-nav-seg { display: flex; flex-shrink: 0; }
+
+.mac-nav-btn {
+  width: 20px; height: 15px; padding: 0;
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer; font-size: 8px; color: #000;
+  display: flex; align-items: center; justify-content: center;
+  font-family: monospace; line-height: 1;
+}
+.mac-nav-btn:active { border-color: #808080 #FFFFFF #FFFFFF #808080; }
+
+.mac-path-bar {
+  flex: 1; font-size: 11px; color: #000;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  font-family: 'Geneva', Arial, sans-serif;
+}
+.mac-path-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.winfo-sep { width: 1px; height: 12px; background: #808080; flex-shrink: 0; }
+
+.winfo-count {
+  font-size: 11px; color: #444; white-space: nowrap; flex-shrink: 0;
+  font-family: 'Geneva', Arial, sans-serif;
+}
+
+.tbar-btn, .tbar-sep, .addr-lbl, .addr-input, .addr-go, .ie-throbber { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────
+   PLAYER BODY
+────────────────────────────────────────────────────────── */
+.player-body { display: flex; flex: 1; overflow: hidden; }
+
+/* ──────────────────────────────────────────────────────────
+   SIDEBAR
+────────────────────────────────────────────────────────── */
+.psidebar {
+  width: 140px;
+  background: #D4D0C8;
+  border-right: 2px solid #000000;
+  box-shadow: inset -1px 0 0 #808080;
+  display: flex; flex-direction: column;
+  overflow: hidden; flex-shrink: 0;
+}
+
+.album-wrap {
+  background: #C0BCB4;
+  padding: 7px 8px 6px;
+  border-bottom: 1px solid #808080;
+  box-shadow: inset 0 -1px 0 #000;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  flex-shrink: 0;
+}
+
+.album-ring {
+  width: 44px; height: 44px; border-radius: 0;
+  border-style: solid; border-width: 1px;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  overflow: hidden; flex-shrink: 0;
+}
+.album-ring img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.sb-name { font-size: 11px; font-weight: bold; color: #000; text-align: center; font-family: 'Geneva', Arial, sans-serif; }
+.sb-role { font-size: 10px; color: #555; text-align: center; font-family: 'Geneva', Arial, sans-serif; }
+
+.mac-sidebar-hdr {
+  font-size: 11px; font-weight: bold; color: #222;
+  background: #B8B4AC;
+  border-top: 1px solid #808080; border-bottom: 1px solid #808080;
+  padding: 3px 8px 2px; flex-shrink: 0;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: none;
+}
+
+.playlist { overflow-y: auto; flex: 1; }
+
+/* ── ICON VIEW — large centered icons, label below (Classic Mac Finder) ── */
+.pl-item {
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 10px 4px 8px; gap: 5px;
+  font-size: 11px; color: #000000;
+  cursor: pointer; border-bottom: 1px solid #C0BCB4;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center;
+  user-select: none;
+  -webkit-font-smoothing: none;
+}
+.pl-item:hover:not(.on) { background: #B8C8E8; }
+.pl-item.on { background: #0000AA; color: #FFFFFF; }
+.pl-item.on span { background: #0000AA; color: #FFFFFF; padding: 0 2px; }
+
+.pl-icon { display: block; flex-shrink: 0; }
+
+.sb-social { padding: 5px 6px 8px; flex-shrink: 0; margin-top: auto; }
+.sb-social-row { display: flex; flex-wrap: wrap; gap: 3px; }
+
+.sb-soc-ico {
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  text-decoration: none; cursor: pointer; flex-shrink: 0;
+}
+.sb-soc-ico:hover { background: #B8B4B0; }
+.sb-soc-ico img { width: 14px; height: 14px; }
+
+/* ──────────────────────────────────────────────────────────
+   CONTENT AREA
+────────────────────────────────────────────────────────── */
+.pcontent { flex: 1; background: #FFFFFF; overflow-y: auto; overflow-x: hidden; position: relative; }
+
+/* ──────────────────────────────────────────────────────────
+   SCROLLBARS — Classic Mac (arrows top & bottom, stipple track)
+────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 16px; }
+
+::-webkit-scrollbar-track {
+  background: repeating-linear-gradient(
+    135deg, #AAAAAA 0, #AAAAAA 1px, #DDDDDD 1px, #DDDDDD 4px
+  );
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  border-radius: 0; min-height: 20px;
+}
+::-webkit-scrollbar-thumb:hover { background: #C0BCB8; }
+
+::-webkit-scrollbar-button {
+  display: block; height: 16px; width: 16px;
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+}
+::-webkit-scrollbar-button:hover { background: #C0BCB8; }
+::-webkit-scrollbar-button:active { border-color: #808080 #FFFFFF #FFFFFF #808080; }
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  background-color: #D4D0C8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpolygon points='8,4 13,12 3,12' fill='%23000000'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+::-webkit-scrollbar-button:vertical:end:increment {
+  background-color: #D4D0C8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpolygon points='8,12 3,4 13,4' fill='%23000000'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement { display: none; }
+
+/* ──────────────────────────────────────────────────────────
+   SECTIONS
+────────────────────────────────────────────────────────── */
+.sec { display: none; padding: 14px 16px; }
+.sec.on { display: block; }
+
+.sh {
+  font-size: 12px; font-weight: bold; color: #000000;
+  border-bottom: 2px solid #000000;
+  margin-bottom: 12px; padding-bottom: 6px;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: none;
+}
+
+/* HOME — two-column layout: photo left, content right */
+.home-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 24px;
+  row-gap: 6px;
+}
+.home-layout { height: calc(100vh - 140px); overflow: hidden; }
+
+/* Bottom row: both cards side-by-side, perfectly aligned */
+.home-cards-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+.home-cards-row .home-proj-card {
+  flex: 1;
+  min-width: 0;
+}
+.home-cards-row .home-proj-list {
+  max-height: 190px;
+}
+
+.home-photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 8px;
+  margin-left: 10px;
+
+  position: relative;
+  z-index: 5;
+
+  /* ADD THESE (do not remove anything above) */
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.home-experience {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  margin-top: -170px;
+  margin-left: 350px;
+  margin-bottom: 200px;
+  width: 350px;
+  
+  
+}
+
+.home-projects {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: -170px;
+  margin-bottom: 200px;
+  width: 590px;
+
+
+}
+
+.home-content {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.home-contact {
+  grid-column: 2;
+  grid-row: 2;
+  width: 475px;
+  position: relative;
+  margin-top: -175px;
+  margin-left: 375px;
+  margin-bottom: 200px;
+}
+
+.home-publications {
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: -170px;
+  margin-bottom: 200px;
+  width: 590px;
+  margin-left: 260px;
+}
+
+
+/* ─────────────────────────────────────────────
+   PHOTO FRAME — 2000s SCANNED PRINT (REAL)
+──────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   PHOTO FRAME — ENLARGED + ERA CORRECT
+──────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   PHOTO FRAME — LARGE (HERO OBJECT)
+──────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   PHOTO FRAME — HERO 2000s PRINT (FINAL)
+──────────────────────────────────────────── */
+.home-photo-frame {
+  width: 300px;
+  height: 360px;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+
+  border-top: 8px solid #F4F4F4;
+  border-left: 7px solid #F4F4F4;
+  border-right: 6px solid #EAEAEA;
+  border-bottom: 14px solid #DCDCDC;
+
+  box-shadow:
+    3px 3px 0 #444,
+    7px 7px 0 #000;
+
+  transform: rotate(-1deg) skewY(-0.5deg) translateX(-4px);
+}
+
+.home-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  image-rendering: auto;
+
+  filter:
+    contrast(1.08)
+    saturate(0.78)
+    brightness(0.95)
+    hue-rotate(-3deg)
+    blur(0.2px);
+}
+
+
+/* pixel + compression simulation */
+/* CRT + compression layer */
+.home-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.04)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.03) 0px,
+      rgba(0,0,0,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* taped corner — THIS is what sells the era */
+.home-photo-frame::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 18px;
+
+  width: 42px;
+  height: 14px;
+
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.15);
+
+  transform: rotate(-6deg);
+
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+
+}
+
+.home-photo-frame img::after { display: none; } /* prevent conflicts */
+
+.home-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255,0,0,0.04), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(0,0,255,0.04), transparent 60%);
+
+  pointer-events: none;
+}
+
+/* more believable tape */
+.home-photo-frame::marker { display: none; }
+
+.home-photo-frame::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 22px;
+
+  width: 48px;
+  height: 16px;
+
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.2);
+
+  transform: rotate(-7deg);
+
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.25),
+    inset 0 0 2px rgba(255,255,255,0.4);
+}
+
+.home-photo-caption {
+  font-size: 10px;
+  font-family: 'Geneva', Helvetica, Arial, sans-serif;
+  color: #555;
+  text-align: center;
+
+  /* slightly off-center like scanned text */
+  transform: translateX(1px);
+
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: none;
+}
+/* Right-side content — Y2K Mac vintage profile */
+.home-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* "> section label" — Geneva, small, Mac Finder style */
+.hc-ts {
+  font-size: 10px;
+  color: #444444;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 8px 0 3px;
+  -webkit-font-smoothing: none;
+}
+
+/* Info panel — same visual language as the .tag chips:
+   Mac platinum gray, 3D raised border, Geneva */
+.hc-box {
+  background: #D4D0C8;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+
+  box-shadow:
+    inset 1px 1px 0 #FFFFFF,
+    inset -1px -1px 0 #808080,
+    3px 3px 0 #000000; 
+
+  padding: 7px 10px;
+  font-size: 11px;
+  line-height: 1.7;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #000000;
+}
+
+.hc-box:nth-child(2) {
+  transform: translateX(2px);
+}
+
+.hc-box:nth-child(3) {
+  transform: translateX(-1px);
+}
+
+.hc-bold {
+  font-weight: bold;
+}
+
+/* ── HOME PROJECTS MINI-CARD ── */
+.home-proj-card {
+  border: 1px solid #000000;
+  box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #808080, 2px 2px 0 #000000;
+}
+
+/* Title bar — pinstriped like a Mac window */
+.home-proj-hdr {
+  background: repeating-linear-gradient(
+    180deg,
+    #FFFFFF 0px, #FFFFFF 1px,
+    #AAAAAA 1px, #AAAAAA 2px
+  );
+  border-bottom: 1px solid #000000;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #000000;
+  -webkit-font-smoothing: none;
+  user-select: none;
+}
+
+/* Scrollable list inside */
+.home-proj-list {
+  background: #FFFFFF;
+  max-height: 190px;
+  overflow-y: auto;
+}
+
+.home-proj-list::-webkit-scrollbar-track {
+  background: repeating-linear-gradient(
+    135deg,
+    #AAAAAA 0,
+    #AAAAAA 1px,
+    #DDDDDD 1px,
+    #DDDDDD 4px
+  );
+}
+
+/* ─────────────────────────────────────────────
+   MID ROW — EXPERIENCE + CONTACT
+──────────────────────────────────────────── */
+
+.home-mini-card {
+  flex: 1;
+  min-width: 0;
+
+  border: 1px solid #000;
+  box-shadow:
+    inset 1px 1px 0 #FFFFFF,
+    inset -1px -1px 0 #808080,
+    2px 2px 0 #000;
+}
+
+/* slightly tighter than projects */
+.home-mini-list {
+  background: #FFFFFF;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* rows */
+.hm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px 8px;
+  border-bottom: 1px solid #C8C4BC;
+
+  font-size: 10px;
+}
+
+.hm-row:last-child {
+  border-bottom: none;
+}
+
+/* subtle inconsistency */
+.hm-row:nth-child(odd) {
+  transform: translateX(1px);
+}
+
+.hm-row:nth-child(even) {
+  transform: translateX(-1px);
+}
+
+/* text */
+.hm-title {
+  font-weight: bold;
+  color: #000;
+}
+
+.hm-meta {
+  font-size: 9px;
+  color: #555;
+}
+
+/* hover = classic mac */
+.hm-row:hover {
+  background: #0000AA;
+  color: #FFFFFF;
+}
+
+.hm-row:hover .hm-meta {
+  color: #FFFFFF;
+}
+
+/* Each project row */
+.hpr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #C8C4BC;
+  box-shadow: inset 0 -1px 0 #EEECE6;
+
+  position: relative; /* ADD THIS */
+}
+
+.hpr-row:active {
+  transform: translate(1px, 1px);
+}
+
+.hpr-row:last-child { border-bottom: none; }
+.hpr-row:hover {
+  background: #0000AA;
+  color: #FFFFFF;
+}
+
+.hpr-row:hover .hpr-name,
+.hpr-row:hover .hpr-desc {
+  color: #FFFFFF;
+}
+
+.hpr-left { flex: 1; min-width: 0; }
+
+.hpr-num {
+  font-size: 9px;
+  color: #888888;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  margin-bottom: 1px;
+  opacity: 0.7;
+}
+
+.hpr-name {
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  margin-bottom: 3px;
+  letter-spacing:0.25px;
+}
+
+.hpr-tags {
+  display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 3px;
+}
+
+.hpr-venue {
+  display: inline-block;
+  background: #0000AA;
+  color: #FFFFFF;
+
+  font-size: 9px;
+  padding: 1px 5px;
+
+  border: 1px solid #000066;
+
+  box-shadow:
+    inset 1px 1px 0 #4A4AFF,
+    inset -1px -1px 0 #000066;
+}
+
+.hpr-result {
+  font-size: 9px;
+  color: #0000AA;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-left: 5px;
+  -webkit-font-smoothing: none;
+}
+
+.hpr-desc {
+  font-size: 9px;
+  color: #666666;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  margin-top: 2px;
+}
+
+/* Learn More button — classic Mac button */
+.hpr-btn {
+  flex-shrink: 0;
+  background: #D4D0C8;
+  color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow:
+    inset 1px 1px 0 #FFFFFF,
+    inset -1px -1px 0 #808080,
+    1px 1px 0 #000;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-font-smoothing: none;
+}
+.hpr-btn:hover { background: #C4C0B8; }
+.hpr-btn:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
+
+/* Keep these for other pages */
+.tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 8px; }
+.tag {
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  padding: 1px 6px; font-size: 10px; color: #000;
+  font-family: 'Geneva', Arial, sans-serif;
+}
+.quote-box { background: #FFFFC0; border: 1px solid #BBBB00; padding: 8px 12px; margin-top: 12px; }
+.quote-box p { font-size: 11px; color: #000; font-style: normal; line-height: 1.6; font-family: 'Geneva', Arial, sans-serif; }
+.quote-box cite { font-size: 10px; color: #666; display: block; margin-top: 5px; font-family: 'Geneva', Arial, sans-serif; font-style: normal; }
+.home-nav-hint { margin-top: 14px; font-size: 11px; color: #666; line-height: 2.2; font-family: 'Geneva', Arial, sans-serif; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.acard { background: #FFFFFF; border: 1px solid #888888; padding: 8px; box-shadow: 1px 1px 0 #888888; }
+.acard.full { grid-column: 1 / -1; }
+.card-hdr { font-size: 11px; font-weight: bold; color: #000; text-transform: uppercase; border-bottom: 1px solid #CCCCCC; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: 0.5px; -webkit-font-smoothing: none; }
+.edu-item, .exp-item { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #EEEEEE; }
+.edu-item:last-child, .exp-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.item-deg { font-size: 11px; font-weight: bold; color: #000; font-family: 'Geneva', Arial, sans-serif; }
+.item-school { font-size: 11px; color: #0000AA; font-family: 'Geneva', Arial, sans-serif; }
+.item-meta { font-size: 10px; color: #666; margin-top: 1px; font-family: 'Geneva', Arial, sans-serif; }
+.item-desc { font-size: 10px; color: #333; margin-top: 3px; line-height: 1.5; font-family: 'Geneva', Arial, sans-serif; }
+.award { display: flex; align-items: flex-start; gap: 6px; background: #FFFFC0; border: 1px solid #BBBB00; padding: 4px; margin-bottom: 4px; }
+.award:last-child { margin-bottom: 0; }
+.award-ico { font-size: 15px; flex-shrink: 0; }
+.award-txt { font-size: 11px; color: #000; line-height: 1.4; font-family: 'Geneva', Arial, sans-serif; }
+
+/* PROJECTS */
+.proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.pcard { background: #FFFFFF; border: 1px solid #888888; padding: 8px; box-shadow: 1px 1px 0 #888888; position: relative; }
+.pcard::before { display: none; }
+.p-num { font-size: 10px; color: #888; margin-bottom: 2px; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: none; }
+.p-name { font-size: 12px; font-weight: bold; color: #000; margin-bottom: 4px; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.p-desc { font-size: 10px; color: #333; margin-bottom: 6px; line-height: 1.5; font-family: 'Geneva', Arial, sans-serif; }
+.p-tags { display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 5px; }
+.ptag { background: #EEEEEE; border: 1px solid #888888; padding: 0 3px; font-size: 10px; color: #444; font-family: 'Geneva', Arial, sans-serif; }
+.p-stat { background: #0000AA; color: #FFFFFF; padding: 1px 6px; font-size: 10px; display: inline-block; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.p-result { font-size: 10px; color: #0000AA; margin-top: 3px; font-family: 'Geneva', Arial, sans-serif; }
+
+/* PUBLICATIONS */
+.pub-list { display: flex; flex-direction: column; gap: 5px; }
+.pub { background: #FFFFFF; border: 1px solid #888888; display: flex; gap: 8px; padding: 8px; box-shadow: 1px 1px 0 #888888; }
+.pub:hover { background: #FFFFC0; }
+.pub-n { font-size: 10px; font-weight: bold; color: #0000AA; min-width: 20px; text-align: center; font-family: 'Geneva', Arial, sans-serif; }
+.pub-body { flex: 1; }
+.pub-ttl { font-size: 11px; font-weight: bold; color: #000; margin-bottom: 2px; line-height: 1.4; font-family: 'Geneva', Arial, sans-serif; }
+.pub-venue { font-size: 10px; color: #0000AA; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: none; }
+.pub-meta { font-size: 10px; color: #666; font-family: 'Geneva', Arial, sans-serif; }
+.pub-badge { background: #EEEEEE; border: 1px solid #888888; padding: 0 4px; font-size: 10px; display: inline-block; margin-top: 2px; font-family: 'Geneva', Arial, sans-serif; }
+
+/* CONTACT */
+.contact-intro { font-size: 12px; text-align: center; margin-bottom: 14px; line-height: 1.7; font-family: 'Geneva', Arial, sans-serif; }
+.soc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: 380px; margin: 0 auto; }
+.soccard {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: #D4D0C8;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 1px 1px 0 #555;
+  padding: 10px 6px; text-decoration: none; color: #000;
+}
+.soccard:hover { background: #C0BCB8; }
+.soccard:active { border-color: #808080 #FFFFFF #FFFFFF #808080; box-shadow: none; }
+.soccard img { width: 24px; height: 24px; }
+.soccard span { font-size: 10px; color: #000; font-family: 'Geneva', Arial, sans-serif; }
+.contact-resume { margin-top: 14px; text-align: center; }
+.resume-btn {
+  background: #D4D0C8; color: #000;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 1px 1px 0 #555555;
+  padding: 5px 18px; font-size: 12px; text-decoration: none; display: inline-block; cursor: pointer;
+  font-family: 'Geneva', Arial, sans-serif;
+}
+.resume-btn:hover { background: #C0BCB8; }
+.resume-btn:active { border-color: #808080 #FFFFFF #FFFFFF #808080; box-shadow: none; }
+/* ── RESUME & CV SECTION ── */
+.resume-cards-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.rdoc-wrap {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #000000;
+  box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #808080, 2px 2px 0 #000000;
+}
+
+.rdoc-titlebar {
+  background: repeating-linear-gradient(
+    180deg,
+    #FFFFFF 0px, #FFFFFF 1px,
+    #AAAAAA 1px, #AAAAAA 2px
+  );
+  border-bottom: 1px solid #000;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  user-select: none;
+}
+
+.rdoc-preview {
+  background: #D4D0C8;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+/* The paper itself */
+.rdoc-paper {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 340px;
+  min-height: 280px;
+  border: 1px solid #AAAAAA;
+  box-shadow: 2px 2px 0 #888888, 3px 3px 0 #555555;
+  padding: 16px 14px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dog-ear corner fold */
+.rdoc-dogear {
+  position: absolute;
+  top: 0; right: 0;
+  width: 22px; height: 22px;
+  background: linear-gradient(225deg, #D4D0C8 50%, #FFFFFF 50%);
+  border-left: 1px solid #AAAAAA;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+.rdoc-name {
+  font-size: 9px;
+  font-weight: bold;
+  font-family: 'Geneva', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+  padding-right: 24px;
+}
+
+.rdoc-contact-line {
+  font-size: 8px;
+  color: #555555;
+  font-family: 'Geneva', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  margin-bottom: 6px;
+}
+
+.rdoc-divider {
+  height: 1px;
+  background: #000000;
+  margin-bottom: 6px;
+}
+
+.rdoc-section {
+  font-size: 8px;
+  font-weight: bold;
+  font-family: 'Geneva', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+  letter-spacing: 0.5px;
+  margin: 6px 0 3px;
+  color: #000080;
+}
+
+.rdoc-count {
+  display: inline-block;
+  background: #0000AA;
+  color: #FFFFFF;
+  font-size: 7px;
+  padding: 0 4px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Simulated text lines */
+.rdoc-line {
+  height: 5px;
+  background: #CCCCCC;
+  margin-bottom: 4px;
+  border-radius: 0;
+}
+.rdoc-line.long  { width: 90%; }
+.rdoc-line.med   { width: 65%; }
+.rdoc-line.short { width: 40%; }
+
+.rdoc-actions {
+  background: #D4D0C8;
+  border-top: 1px solid #888888;
+  padding: 6px 8px;
+  display: flex;
+  gap: 6px;
+}
+.rdoc-actions .hpr-btn {
+  text-decoration: none;
+  display: inline-block;
+  background: #7BAFD4;
+  border-color: #A8D0E8 #3A6E9A #3A6E9A #A8D0E8;
+  color: #000000;
+}
+
+/* Marquee — sits at very bottom of all content */
+.marquee-wrap { border: 1px solid #888888; background: #FFFFC0; overflow: hidden; margin-top:-12px; padding: 4px 0; }
+.mq-txt { font-size: 11px; white-space: nowrap; display: inline-block; color: #0000AA; font-family: 'Geneva', Arial, sans-serif; animation: mqScroll 20s linear infinite; }
+@keyframes mqScroll { from { transform: translateX(100vw); } to { transform: translateX(-100%); } }
+
+/* ──────────────────────────────────────────────────────────
+   STATUS BAR
+────────────────────────────────────────────────────────── */
+.pcontrols {
+  height: 18px; flex-shrink: 0;
+  background: #D4D0C8;
+  border-top: 1px solid #000000;
+  box-shadow: inset 0 1px 0 #FFFFFF;
+  display: flex; align-items: center;
+  font-size: 11px; color: #000;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+}
+.status-left { flex: 1; padding: 0 8px; font-size: 11px; text-align: center; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.status-zones { display: flex; flex-shrink: 0; border-left: 1px solid #808080; }
+.status-zone { padding: 0 8px; height: 18px; display: flex; align-items: center; font-size: 11px; font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif; white-space: nowrap; }
+
+.ctrl-btns, .vol-row, #play-btn, .prog-track, .ctrl-row, .cbtn { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────
+   MAIN WINDOW POSITION
+────────────────────────────────────────────────────────── */
+#player {
+  width: calc(100vw - 108px);
+  height: 92vh;
+  top: calc(50% + 11px);
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+#player.minimized {
+  width: 300px !important; height: auto !important;
+  top: auto !important; bottom: 20px !important;
+  left: 20px !important; transform: none !important; z-index: 9500 !important;
+}
+#player.minimized .player-body,
+#player.minimized .wtoolbar,
+#player.minimized .pcontrols { display: none !important; }
+
+#player.fullscreen {
+  width: 100vw !important; height: calc(100vh - 21px) !important;
+  top: 21px !important; left: 0 !important; transform: none !important;
+}
+
+/* ──────────────────────────────────────────────────────────
+   DIALOG
+────────────────────────────────────────────────────────── */
+#dialog {
+  position: fixed; width: 320px;
+  top: 38%; left: 50%; transform: translateX(-50%); z-index: 9000;
+}
+.dlg-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #D4D0C8; }
+.dlg-inner { display: flex; align-items: flex-start; gap: 14px; }
+.dlg-ico { flex-shrink: 0; }
+.dlg-msg { font-size: 12px; color: #000; line-height: 1.6; font-family: 'Geneva', Arial, sans-serif; }
+.dlg-btns { display: flex; justify-content: flex-end; gap: 6px; }
+#dialog-ok {
+  background: #D4D0C8; color: #000;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 1px 1px 0 #555;
+  padding: 4px 20px; font-size: 12px; cursor: pointer; font-family: 'Geneva', Arial, sans-serif;
+}
+#dialog-ok:active { border-color: #808080 #FFFFFF #FFFFFF #808080; box-shadow: none; }
+.dlg-cancel {
+  background: #D4D0C8; color: #000;
+  border-style: solid; border-width: 1px;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 1px 1px 0 #555;
+  padding: 4px 14px; font-size: 12px; cursor: pointer; font-family: 'Geneva', Arial, sans-serif;
+}
+.dlg-cancel:active { border-color: #808080 #FFFFFF #FFFFFF #808080; box-shadow: none; }
+
+#ticker { display: none; }
+
+/* ──────────────────────────────────────────────────────────
+   DESKTOP ICONS — Classic Mac: right side of screen
+   (Macs always put volume/disk/app icons on the right side
+    of the desktop, stacked vertically from the top)
+────────────────────────────────────────────────────────── */
+#taskbar {
+  position: fixed;
+  top: 24px;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+  background: none;
+}
+
+.dock-shelf {
+  pointer-events: all;
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 0;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ── Classic Mac desktop icon: large icon + white label ── */
+.tb-ico {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  background: none; border: none;
+  cursor: pointer; padding: 2px; width: 80px;
+}
+.tb-ico svg { display: block; width: 40px; height: auto; }
+.tb-ico:hover svg { filter: brightness(0.75); }
+.tb-ico.on svg { filter: invert(1) brightness(2) sepia(1) hue-rotate(200deg) saturate(5); }
+
+/* Label: white text with black shadow — classic Mac desktop icon label */
+.tb-ico-lbl {
+  font-size: 11px;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000,
+               1px -1px 0 #000000, -1px 1px 0 #000000;
+  display: block; white-space: nowrap;
+  line-height: 1.3;
+  -webkit-font-smoothing: none;
+}
+
+/* Selected icon label: black text on blue (Mac highlight) */
+.tb-ico.on .tb-ico-lbl {
+  background: #0000AA;
+  color: #FFFFFF;
+  text-shadow: none;
+  padding: 0 2px;
+}
+
+.tb-ico-icon { display: none; }
+
+/* Hide the Windows-style taskbar button — not a Mac pattern */
+.dock-divider { display: none; }
+.tb-btn { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────
+   ACTIVE / INACTIVE WINDOW — Mac pinstripes only on active window
+────────────────────────────────────────────────────────── */
+.win.inactive .wchrome {
+  background: #D4D0C8;
+}
+.win.inactive .wtitle {
+  color: #888888;
+}
+
+/* ──────────────────────────────────────────────────────────
+   APPLE MENU DROPDOWN
+────────────────────────────────────────────────────────── */
+#apple-menu.hidden { display: none; }
+#apple-menu {
+  position: fixed;
+  top: 22px; left: 0;
+  width: 260px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+  z-index: 20000;
+  font-family: 'Geneva', 'Charcoal', 'Chicago', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+  padding: 2px 0;
+}
+.amenu-item {
+  display: flex;
+  align-items: center;
+  padding: 1px 8px 1px 4px;
+  cursor: pointer;
+  color: #000000;
+  white-space: nowrap;
+  min-height: 20px;
+  line-height: 20px;
+  position: relative;
+}
+.amenu-item:hover {
+  background: #0A0AAA;
+  color: #FFFFFF;
+}
+.amenu-ico {
+  width: 22px;
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+.amenu-arrow {
+  margin-left: auto;
+  font-size: 9px;
+  padding-left: 12px;
+}
+.amenu-bold {
+  font-weight: bold;
+  background: #0A0AAA;
+  color: #FFFFFF;
+}
+.amenu-sep {
+  height: 1px;
+  background: #AAAAAA;
+  margin: 2px 4px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   MAC DIALOG — modal, rounded rect, no title bar
+────────────────────────────────────────────────────────── */
+#dialog-overlay, #about-overlay {
+  position: fixed; inset: 0;
+  background: transparent;
+  z-index: 15000;
+  display: flex; align-items: center; justify-content: center;
+}
+#dialog-overlay.hidden, #about-overlay.hidden { display: none; }
+
+#dialog, #about-mac {
+  background: #D4D0C8;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+  padding: 18px 20px 14px;
+  min-width: 280px; max-width: 380px;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+}
+
+.dlg-inner {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;
+}
+.dlg-ico { flex-shrink: 0; }
+.dlg-msg { font-size: 12px; color: #000; line-height: 1.6; padding-top: 4px; }
+
+.dlg-btns {
+  display: flex; justify-content: flex-end; gap: 8px;
+}
+
+/* Mac buttons */
+.mac-btn {
+  background: #D4D0C8; color: #000;
+  border: 1px solid #808080;
+  box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #808080, 1px 1px 0 #555;
+  padding: 4px 18px; font-size: 12px; cursor: pointer;
+  font-family: 'Geneva', Helvetica, Arial, sans-serif;
+  border-radius: 0;
+  -webkit-font-smoothing: none;
+}
+.mac-btn:active { box-shadow: inset -1px -1px 0 #FFFFFF, inset 1px 1px 0 #808080; }
+
+/* Default button: extra 3px black outline (Mac convention) */
+.mac-btn-default {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
+}
+
+/* About This Macintosh dialog */
+.about-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+}
+.about-os { font-size: 14px; font-weight: bold; }
+.about-copy { font-size: 10px; color: #555; }
+.about-sep { height: 1px; background: #808080; margin: 6px 0; }
+.about-row {
+  display: flex; justify-content: space-between;
+  font-size: 11px; padding: 2px 0;
+}
+.about-app-row {
+  display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 11px;
+}
+.about-app-bar-wrap {
+  flex: 1; height: 14px;
+  background: #FFFFFF; border: 1px solid #808080;
+}
+.about-app-bar {
+  height: 100%; width: 60%;
+  background: repeating-linear-gradient(
+    90deg, #0000AA 0px, #0000AA 8px, #888888 8px, #888888 10px
+  );
+}
+
+/* ──────────────────────────────────────────────────────────
+   KAMALA HD + TRASH desktop icons
+────────────────────────────────────────────────────────── */
+.tb-hd, .tb-trash {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  background: none; border: 1px solid transparent;
+  cursor: pointer; padding: 2px; width: 80px;
+  pointer-events: all;
+}
+.tb-hd:hover, .tb-trash:hover { border-color: rgba(255,255,255,0.4); }
+.tb-hd.selected, .tb-trash.selected { background: rgba(0,0,170,0.3); border-color: #FFFFFF; }
+.tb-hd svg, .tb-trash svg { display: block; }
+.tb-hd .tb-ico-lbl, .tb-trash .tb-ico-lbl {
+  font-size: 11px; color: #FFFFFF;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  font-family: 'Charcoal', 'Chicago', 'Geneva', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: none;
+}
+
+/* Position HD at top, Trash at bottom */
+#taskbar {
+  justify-content: space-between;
+}
+
+/* ──────────────────────────────────────────────────────────
+   HIDE OLD / COMPAT
+────────────────────────────────────────────────────────── */
+.tb-logo, .tb-heart, .tb-sep { display: none !important; }
+.start-btn, .ql-divider, .ql-bar, .systray { display: none !important; }
+.orbit-ring, .eq, .now-badge, .sb-divider, .pl-hdr { display: none !important; }
+.photo-frame-wrap { width: auto !important; height: auto !important; position: static !important; }
+@keyframes albumSpin { to { transform: none; } }
+.win-icon { display: none !important; }
+.wmenubar { display: none !important; }
+.tlights { display: none !important; }
+
+/* ──────────────────────────────────────────────────────────
+   RESPONSIVE
+────────────────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  #player { width: calc(100vw - 16px); height: 88vh; top: calc(50% + 12px); left: 8px; transform: translateY(-50%); }
+  #taskbar { width: 70px; }
+  .player-body { flex-direction: column; }
+  .psidebar { width: 100%; height: auto; border-right: none; border-bottom: 2px solid #000; }
+  .album-wrap { flex-direction: row; padding: 8px 10px; }
+  .playlist { flex-direction: row; display: flex; flex-wrap: wrap; }
+  .proj-grid, .about-grid { grid-template-columns: 1fr; }
+  .soc-grid { grid-template-columns: repeat(3, 1fr); }
+}

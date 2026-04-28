@@ -3,927 +3,1013 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Kamala — AI, LLM Reasoning, and Agentic Systems" />
-  <title>Kamala | AI & Reasoning Research</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Love+Ya+Like+A+Sister&family=Coming+Soon&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/notebook.css">
+  <meta name="description" content="Kamala Sankari — AI Researcher · LLM Reasoning · Agentic Systems" />
+  <title>Kamala Sankari — Portfolio</title>
+  <link rel="stylesheet" href="css/y2k.css">
 </head>
 <body>
 
-<div class="cover" id="cover">
-  <div class="cover-book">
-    <div class="cover-spine"></div>
-    <div class="cover-front" id="cover-front">
-      <div class="cover-face-front">
-        <div class="cover-halftone"></div>
-        <svg class="cover-splat cover-splat--1" viewBox="0 0 200 200" fill="#0A0A0A">
-          <circle cx="100" cy="100" r="85" />
-          <circle cx="30" cy="60" r="20" />
-          <circle cx="170" cy="150" r="25" />
-          <circle cx="55" cy="165" r="15" />
-          <circle cx="160" cy="50" r="18" />
-        </svg>
-        <svg class="cover-splat cover-splat--2" viewBox="0 0 120 120" fill="#D6336C">
-          <circle cx="60" cy="60" r="50" />
-          <circle cx="15" cy="40" r="12" />
-          <circle cx="100" cy="90" r="14" />
-        </svg>
-        <div class="cover-barcode">
-          <div class="barcode-lines">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-          </div>
-          <p>VOL. 01 &mdash; 2025</p>
-        </div>
-        <div class="cover-content">
-          <p class="cover-issue">Issue No. 01</p>
-          <h1 class="cover-name">KAMALA</h1>
-          <div class="cover-tagline">
-            <span class="tag-red">AI</span>
-            <span class="tag-dot">&bull;</span>
-            <span>LLM Reasoning</span>
-            <span class="tag-dot">&bull;</span>
-            <span class="tag-red">Agentic Systems</span>
-          </div>
-          <div class="cover-headlines">
-            <p class="hl-big">Building Machines<br>That <span class="hl-italic">Think</span></p>
-            <p class="hl-small">Graph-Augmented Reasoning &mdash; Vulnerability Detection &mdash; Autonomous Repair</p>
-          </div>
-        </div>
-        <div class="cover-photo">
-          <img src="assets/profile.png" alt="Kamala" />
-        </div>
-        <div class="cover-red-bar"></div>
-        <div class="cover-prompt">
-          <span class="cover-prompt-text">loading</span>
-          <span class="cover-dots">...</span>
-        </div>
-      </div>
-      <div class="cover-back">
-        <p class="cover-back-welcome">Welcome to my portfolio</p>
-        <p class="cover-back-sub">&mdash; a record of what I've built,<br>explored, and questioned<br>along the way.</p>
-        <div class="cover-back-tags cover-back-list">
-          <span class="tag-ai">AI</span>
-          <span class="tag-cv">Computer Vision</span>
-          <span class="tag-ml">Machine Learning</span>
-          <span class="tag-reason">AI Reasoning</span>
-          <span class="tag-dl">Deep Learning</span>
-        </div>
-      </div>
+<!-- ═══════════════════════════════════
+     MENU BAR — Classic Mac OS 8/9
+═══════════════════════════════════ -->
+<div id="mac-menubar">
+  <span class="mmb-apple" id="mmb-apple-btn">&#63743;</span>
+  <strong class="mmb-appname">Finder</strong>
+  <span class="mmb-item" id="mmb-file">File</span>
+  <span class="mmb-item">Edit</span>
+  <span class="mmb-item">View</span>
+  <span class="mmb-item">Special</span>
+  <span class="mmb-item">Help</span>
+
+  <!-- Apple menu dropdown — Mac OS 9 authentic -->
+  <div id="apple-menu" class="hidden">
+    <div class="amenu-item amenu-bold" id="amenu-about"><span class="amenu-ico">🖥</span>About This Computer</div>
+    <div class="amenu-sep"></div>
+    <div class="amenu-item" onclick="showSection('about')"><span class="amenu-ico">👩‍💻</span>About Kamala</div>
+    <div class="amenu-item"><span class="amenu-ico">📋</span>Apple System Profiler</div>
+    <div class="amenu-item"><span class="amenu-ico">🎵</span>AppleCD Audio Player</div>
+    <div class="amenu-item"><span class="amenu-ico">⚙️</span>Automated Tasks<span class="amenu-arrow">▶</span></div>
+    <div class="amenu-item"><span class="amenu-ico">🔢</span>Calculator</div>
+    <div class="amenu-item"><span class="amenu-ico">📡</span>Chooser</div>
+    <div class="amenu-item"><span class="amenu-ico">🎛</span>Control Panels<span class="amenu-arrow">▶</span></div>
+    <div class="amenu-item"><span class="amenu-ico">⭐</span>Favorites</div>
+    <div class="amenu-item"><span class="amenu-ico">📊</span>Graphing Calculator</div>
+    <div class="amenu-item"><span class="amenu-ico">🌐</span>Internet Access<span class="amenu-arrow">▶</span></div>
+    <div class="amenu-item"><span class="amenu-ico">⌨️</span>Key Caps</div>
+    <div class="amenu-item"><span class="amenu-ico">🗂</span>Network Browser</div>
+    <div class="amenu-item"><span class="amenu-ico">📒</span>Note Pad</div>
+    <div class="amenu-item" onclick="showSection('projects')"><span class="amenu-ico">📁</span>Recent Projects<span class="amenu-arrow">▶</span></div>
+    <div class="amenu-item" onclick="showSection('publications')"><span class="amenu-ico">📄</span>Recent Documents<span class="amenu-arrow">▶</span></div>
+    <div class="amenu-item"><span class="amenu-ico">🖧</span>Recent Servers<span class="amenu-arrow">▶</span></div>
+    <div class="amenu-item"><span class="amenu-ico">📶</span>Remote Access Status</div>
+    <div class="amenu-item"><span class="amenu-ico">📚</span>Scrapbook</div>
+    <div class="amenu-item"><span class="amenu-ico">🔍</span>Sherlock</div>
+    <div class="amenu-item"><span class="amenu-ico">🔊</span>SimpleSound</div>
+    <div class="amenu-item"><span class="amenu-ico">📝</span>Stickies</div>
+    <div class="amenu-sep"></div>
+    <div class="amenu-item" id="amenu-sleep"><span class="amenu-ico">💤</span>Sleep</div>
+    <div class="amenu-item" id="amenu-shut"><span class="amenu-ico">🔴</span>Shut Down…</div>
+  </div>
+  <div class="mmb-right">
+    <span class="mmb-clock" id="tb-clock">12:34 PM</span>
+    <span class="mmb-finder">
+      <svg viewBox="0 0 18 14" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="16" height="12" rx="1" fill="#D4D0C8" stroke="#000" stroke-width="0.8"/>
+        <rect x="3" y="3" width="12" height="7" fill="#6666AA"/>
+        <rect x="5" y="11" width="8" height="2" fill="#A8A4A0"/>
+      </svg>
+      Kamala HD
+    </span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     BOOT SCREEN — Happy Mac
+═══════════════════════════════════ -->
+<div id="boot">
+  <!-- Mac OS 9 authentic startup splash -->
+  <div class="boot-panel">
+  <div class="boot-splash">
+
+    <!-- Mac OS 9 Finder face SVG -->
+    <svg class="boot-os9-logo" viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Clip to the rounded face shape so both halves respect the corners -->
+        <clipPath id="face-clip">
+          <rect x="18" y="26" width="164" height="160" rx="3"/>
+        </clipPath>
+      </defs>
+
+      <!-- LEFT half — lighter periwinkle blue -->
+      <rect x="18" y="26" width="164" height="160" rx="3" fill="#8090CC"/>
+      <!-- RIGHT half — darker indigo blue, clipped to face shape -->
+      <rect x="100" y="26" width="82" height="160" fill="#3D52A8" clip-path="url(#face-clip)"/>
+
+      <!-- Left eye -->
+      <rect x="56" y="66" width="14" height="38" rx="7" fill="#0C1235"/>
+
+      <!-- Right eye -->
+      <rect x="118" y="66" width="14" height="38" rx="7" fill="#0C1235"/>
+
+      <!-- Finder swoosh / lightning bolt:
+           enters above top-center, curves RIGHT as it descends,
+           elbows hard LEFT at mid-face, exits below bottom-center -->
+      <path d="M 90 6
+               C 93 38, 114 65, 134 106
+               L 50 122
+               C 62 150, 72 172, 82 208"
+            stroke="#0C1235" stroke-width="11"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+
+      <!-- Smile: wide curved arc in lower third of face -->
+      <path d="M 52 164 Q 100 194 148 164"
+            stroke="#0C1235" stroke-width="9"
+            fill="none"
+            stroke-linecap="round"/>
+    </svg>
+
+    <div class="boot-os9-title">Mac OS 9</div>
+    <div class="boot-os9-rule"></div>
+    <div class="boot-os9-ver">Version 9.2.2</div>
+    <div class="boot-os9-copy">Built-in Memory: 64 MB &nbsp;&nbsp; Virtual Memory: 65 MB</div>
+    <div class="boot-os9-copy">&#169; Apple Computer, Inc. 1983–2001</div>
+  </div>
+  </div><!-- /boot-panel -->
+
+  <!-- Mac OS 9 authentic loading bar -->
+  <div class="boot-progress-area">
+    <div class="boot-starting-txt">Starting Up...</div>
+    <div class="boot-bar-outer">
+      <div class="boot-bar-fill" id="boot-bar-fill"></div>
     </div>
   </div>
 </div>
 
-<div class="notebook">
-  <div class="book">
+<!-- hidden JS compat -->
+<div id="starfield" style="display:none"></div>
+<div id="cursor" style="display:none"></div>
 
-    <div class="book-label">Research Notes</div>
+<!-- ═══════════════════════════════════
+     MAIN WINDOW — Classic Mac Finder
+═══════════════════════════════════ -->
+<div class="win" id="player">
 
-    <nav class="side-tabs">
-      <button class="side-tab active" data-spread="0">Home</button>
-      <button class="side-tab" data-spread="1">About</button>
-      <button class="side-tab" data-spread="2">Projects</button>
-      <button class="side-tab" data-spread="3">Pubs &amp; CV</button>
-    </nav>
+  <!-- Title bar -->
+  <div class="wchrome">
+    <div class="mac-close-area">
+      <div class="tl cl"></div>
+    </div>
+    <span class="wtitle">Kamala Sankari — Portfolio</span>
+    <div class="mac-zoom-area">
+      <div class="tl mn"></div>
+      <div class="tl mx"></div>
+    </div>
+  </div>
 
-    <div class="socials-fixed">
-      <a href="https://bit.ly/kamalalinkedin" target="_blank" title="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
-      <a href="https://bit.ly/kamalagithub" target="_blank" title="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
-      <a href="https://scholar.google.com/citations?user=QQtmt1wAAAAJ&hl=en" target="_blank" title="Scholar"><img src="assets/icons/scholar.svg" alt="Google Scholar"></a>
-      <a href="https://www.researchgate.net/profile/Kamalasankari-Subramaniakuppusamy" target="_blank" title="ResearchGate"><img src="assets/icons/researchgate.svg" alt="ResearchGate"></a>
-      <a href="https://medium.com/@iamkamalamskls" target="_blank" title="Medium"><img src="assets/icons/medium.svg" alt="Medium"></a>
-      <a href="mailto:iamkamalamskls@gmail.com" title="Email"><img src="assets/icons/email.svg" alt="Email"></a>
+  <!-- Info bar — Classic Mac Finder: item count | path -->
+  <div class="wtoolbar">
+    <!-- Nav arrows: hidden visually but JS-wired for keyboard nav -->
+    <button id="prev-btn" style="display:none"></button>
+    <button id="next-btn" style="display:none"></button>
+    <span class="winfo-count" id="status-lbl">5 items</span>
+    <span class="winfo-sep"></span>
+    <span class="mac-path-bar"><span id="track-name"><span>&#128193; home</span></span></span>
+  </div>
+
+  <!-- Body: sidebar + content -->
+  <div class="player-body">
+
+    <!-- ── SIDEBAR ── -->
+    <div class="psidebar">
+
+      <div class="mac-sidebar-hdr">FAVORITES</div>
+      <div class="playlist">
+
+        <!-- HOME — large folder icon -->
+        <div class="pl-item on" data-sec="home">
+          <svg class="pl-icon" viewBox="0 0 40 34" width="40" height="34" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="1,11 15,11 18,6 39,6 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
+            <polygon points="1,11 15,11 18,6 24,6 21,11" fill="#5580C0" stroke="#000" stroke-width="0.5"/>
+            <rect x="2" y="12" width="36" height="2" fill="#A0C0F0" opacity="0.8"/>
+            <rect x="2" y="14" width="36" height="18" fill="#7AAAE0" opacity="0.3"/>
+          </svg>
+          <span>home</span>
+        </div>
+
+        <!-- ABOUT — large document icon -->
+        <div class="pl-item" data-sec="about">
+          <svg class="pl-icon" viewBox="0 0 30 38" width="30" height="38" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="1,1 20,1 29,10 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+            <polygon points="20,1 20,10 29,10" fill="#CCCCCC" stroke="#000" stroke-width="1"/>
+            <line x1="5" y1="15" x2="25" y2="15" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="19" x2="25" y2="19" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="23" x2="25" y2="23" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="27" x2="18" y2="27" stroke="#999" stroke-width="1"/>
+          </svg>
+          <span>about_me</span>
+        </div>
+
+        <!-- PROJECTS — large folder icon -->
+        <div class="pl-item" data-sec="projects">
+          <svg class="pl-icon" viewBox="0 0 40 34" width="40" height="34" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="1,11 15,11 18,6 39,6 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
+            <polygon points="1,11 15,11 18,6 24,6 21,11" fill="#5580C0" stroke="#000" stroke-width="0.5"/>
+            <rect x="2" y="12" width="36" height="2" fill="#A0C0F0" opacity="0.8"/>
+            <rect x="2" y="14" width="36" height="18" fill="#7AAAE0" opacity="0.3"/>
+          </svg>
+          <span>projects</span>
+        </div>
+
+        <!-- PUBLICATIONS — large document icon with stack effect -->
+        <div class="pl-item" data-sec="publications">
+          <svg class="pl-icon" viewBox="0 0 34 40" width="34" height="40" xmlns="http://www.w3.org/2000/svg">
+            <!-- back page -->
+            <polygon points="5,4 25,4 33,12 33,40 5,40" fill="#E8E8E8" stroke="#888" stroke-width="0.8"/>
+            <!-- front page -->
+            <polygon points="1,1 21,1 29,9 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+            <polygon points="21,1 21,9 29,9" fill="#CCCCCC" stroke="#000" stroke-width="1"/>
+            <line x1="5" y1="14" x2="25" y2="14" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="18" x2="25" y2="18" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="22" x2="25" y2="22" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="26" x2="16" y2="26" stroke="#999" stroke-width="1"/>
+          </svg>
+          <span>papers.bib</span>
+        </div>
+
+        <!-- RESUME & CV — document stack icon -->
+        <div class="pl-item" data-sec="resume">
+          <svg class="pl-icon" viewBox="0 0 36 42" width="36" height="42" xmlns="http://www.w3.org/2000/svg">
+            <!-- back doc -->
+            <polygon points="5,5 27,5 35,13 35,41 5,41" fill="#E0E8FF" stroke="#888" stroke-width="0.8"/>
+            <!-- front doc -->
+            <polygon points="1,1 23,1 31,9 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+            <polygon points="23,1 23,9 31,9" fill="#C8D8F0" stroke="#000" stroke-width="1"/>
+            <line x1="5" y1="15" x2="27" y2="15" stroke="#6B98D6" stroke-width="1.5"/>
+            <line x1="5" y1="20" x2="27" y2="20" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="24" x2="27" y2="24" stroke="#999" stroke-width="1"/>
+            <line x1="5" y1="28" x2="18" y2="28" stroke="#999" stroke-width="1"/>
+          </svg>
+          <span>resume.pdf</span>
+        </div>
+
+        <!-- CONTACT — large envelope icon -->
+        <div class="pl-item" data-sec="contact">
+          <svg class="pl-icon" viewBox="0 0 40 30" width="40" height="30" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="38" height="28" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+            <!-- envelope flap -->
+            <polygon points="1,1 20,17 39,1" fill="#E8E8E8" stroke="#000" stroke-width="1"/>
+            <!-- bottom crease lines -->
+            <line x1="1" y1="29" x2="14" y2="16" stroke="#BBBBBB" stroke-width="1"/>
+            <line x1="39" y1="29" x2="26" y2="16" stroke="#BBBBBB" stroke-width="1"/>
+          </svg>
+          <span>connect.url</span>
+        </div>
+
+      </div><!-- /playlist -->
+
+      <div class="mac-sidebar-hdr">LINKS</div>
+      <div class="sb-social">
+        <div class="sb-social-row">
+          <a class="sb-soc-ico" href="https://www.linkedin.com/in/kamalasankari-s" target="_blank" rel="noopener" title="LinkedIn">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a class="sb-soc-ico" href="https://github.com/kamalasankaris" target="_blank" rel="noopener" title="GitHub">
+            <img src="assets/icons/github.svg" alt="GitHub" />
+          </a>
+          <a class="sb-soc-ico" href="https://scholar.google.com" target="_blank" rel="noopener" title="Google Scholar">
+            <img src="assets/icons/scholar.svg" alt="Scholar" />
+          </a>
+          <a class="sb-soc-ico" href="https://www.researchgate.net" target="_blank" rel="noopener" title="ResearchGate">
+            <img src="assets/icons/researchgate.svg" alt="ResearchGate" />
+          </a>
+          <a class="sb-soc-ico" href="https://medium.com" target="_blank" rel="noopener" title="Medium">
+            <img src="assets/icons/medium.svg" alt="Medium" />
+          </a>
+          <a class="sb-soc-ico" href="mailto:kamalasankari@gwu.edu" title="Email">
+            <img src="assets/icons/email.svg" alt="Email" />
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /psidebar -->
+
+    <!-- ── CONTENT ── -->
+    <div class="pcontent">
+
+      <!-- HOME -->
+      <div class="sec on" id="sec-home">
+        <div class="sh">Home</div>
+
+        <!-- ROW 1: photo + info boxes -->
+        <div class="home-layout">
+          <div class="home-photo-wrap">
+            <div class="home-photo-frame">
+              <img src="assets/kamala-photo.jpg" alt="Kamala" />
+            </div>
+            <div class="home-photo-caption">kamala.jpg</div>
+          </div>
+
+          <div class="home-content">
+            <div class="hc-ts">&gt; kamalasankari_s</div>
+            <div class="hc-box">
+              <span class="hc-bold">Kamalasankari Subramaniakuppusamy</span><br>
+              AI Researcher &nbsp;·&nbsp; GWU MSCS 2026<br>
+              LLM Reasoning &nbsp;·&nbsp; Agentic Systems &nbsp;·&nbsp; XAI
+            </div>
+
+            <div class="hc-ts">&gt; research areas</div>
+            <div class="hc-box">
+              <span class="hc-bold">focus:</span> &nbsp;AI &nbsp;·&nbsp; LLM Reasoning &nbsp;·&nbsp; Computer Vision<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XAI &nbsp;·&nbsp; Deep Learning &nbsp;·&nbsp; Agentic Systems
+            </div>
+
+            <div class="hc-ts">&gt; 6 publications &nbsp;·&nbsp; 2 universities &nbsp;·&nbsp; infinite curiosity</div>
+          </div>
+              <!--EXPERIENCE AND CONTACT-->
+
+  <!-- EXPERIENCE -->
+  <div class="home-experience home-mini-card">
+    <div class="home-proj-hdr">experience.log — 3 items</div>
+    <div class="home-mini-list">
+
+      <div class="hm-row">
+        <div class="hm-left">
+          <div class="hm-title">AI Software Engineer Intern</div>
+          <div class="hm-meta">Lillup · 2025</div>
+        </div>
+      </div>
+
+      <div class="hm-row">
+        <div class="hm-left">
+          <div class="hm-title">Graduate Assistant — ML</div>
+          <div class="hm-meta">GWU · 2025</div>
+        </div>
+      </div>
+
+      <div class="hm-row">
+        <div class="hm-left">
+          <div class="hm-title">Technical Support Assistant</div>
+          <div class="hm-meta">GWU · 2025</div>
+        </div>
+      </div>
+
+    </div>
     </div>
 
-    <div class="spiral-strip"></div>
-    <div class="spiral-binding">
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
-      <div class="coil"><span class="wire"></span><span class="coil-hole"></span></div>
+  <!-- CONTACT -->
+  <div class="home-contact home-mini-card">
+    <div class="home-proj-hdr">contact.card — 4 items</div>
+    <div class="home-mini-list">
+
+      <div class="hm-row">
+        <div class="hm-title">email</div>
+        <div class="hm-meta">kamala@...</div>
+      </div>
+
+      <div class="hm-row">
+        <div class="hm-title">linkedin</div>
+        <div class="hm-meta">/kamalasankari</div>
+      </div>
+
+      <div class="hm-row">
+        <div class="hm-title">github</div>
+        <div class="hm-meta">/KamalasankariS</div>
+      </div>
+
+      <div class="hm-row">
+        <div class="hm-title">location</div>
+        <div class="hm-meta">Washington DC</div>
+      </div>
+
     </div>
+  </div>
 
-    <div class="flipbook">
+        <!-- ROW 2: projects + publications cards, perfectly aligned -->
+        
 
-      <!-- blank first page — keeps all spreads left-right aligned -->
-      <div class="pg pg-left"></div>
+          <!-- ── PROJECTS MINI-CARD ── -->
+          <div class="home-projects home-proj-card">
+            <div class="home-proj-hdr">
+              <svg viewBox="0 0 20 16" width="14" height="11" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="0,5 7,5 8.5,3 20,3 20,15 0,15" fill="#6B98D6" stroke="#000" stroke-width="0.8"/></svg>
+              projects.dir &nbsp;&mdash;&nbsp; 6 items
+            </div>
+            <div class="home-proj-list">
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">01 / FASS</div>
+                  <div class="hpr-name">XAI Stability Benchmark</div>
+                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Grad-CAM</span><span class="ptag">SHAP</span><span class="ptag">LIME</span></div>
+                  <span class="hpr-venue">CVPR 2026</span>
+                </div>
+                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">02 / VulnGraph</div>
+                  <div class="hpr-name">Code Vulnerability Detection</div>
+                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">GNN</span><span class="ptag">Transformers</span></div>
+                  <span class="hpr-venue">Complex Networks 2025</span> <span class="hpr-result">Acc: 93.57%</span>
+                </div>
+                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">03 / SecureFixAgent</div>
+                  <div class="hpr-name">Automated Vulnerability Repair</div>
+                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Bandit Algos</span></div>
+                  <span class="hpr-venue">ICMLA 2025</span> <span class="hpr-result">+13.5% patch success</span>
+                </div>
+                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">04 / MalCodeAI</div>
+                  <div class="hpr-name">Semantic Malware Detection</div>
+                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Static Analysis</span></div>
+                  <span class="hpr-venue">IEEE IRI 2025</span>
+                </div>
+                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">05 / HyperComplEx</div>
+                  <div class="hpr-name">Multi-Space Knowledge Graphs</div>
+                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Riemannian Opt.</span></div>
+                  <span class="hpr-venue">IEEE 2025</span>
+                </div>
+                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">06 / YOLO Roof</div>
+                  <div class="hpr-name">Aerial Roof Material Detection</div>
+                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">YOLOv8</span><span class="ptag">OpenCV</span></div>
+                  <span class="hpr-venue">IEEE ICCDS 2024</span> <span class="hpr-result">&#127942; Best Paper</span>
+                </div>
+                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
+              </div>
+            </div><!-- /home-proj-list -->
+          </div><!-- /projects card -->
 
-      <!-- HOME — pages 2 & 3 -->
-      <div class="pg pg-left">
-        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center">
-          <div class="title-marker fade" style="margin-bottom:12px">Welcome to my portfolio</div>
-          <p class="hand fade fd1" style="max-width:320px;line-height:1.8;opacity:.7">
-            &mdash; a record of what I've built, explored, and questioned along the way.
-          </p>
-          <div style="margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px" class="fade fd2">
-            <span class="hl-red" style="padding:3px 10px;border-radius:4px;font-family:var(--font-hand);font-size:.85rem">AI</span>
-            <span class="hl-blue" style="padding:3px 10px;border-radius:4px;font-family:var(--font-hand);font-size:.85rem">Computer Vision</span>
-            <span class="hl-yellow" style="padding:3px 10px;border-radius:4px;font-family:var(--font-hand);font-size:.85rem">Machine Learning</span>
-            <span class="hl-pink" style="padding:3px 10px;border-radius:4px;font-family:var(--font-hand);font-size:.85rem">AI Reasoning</span>
-          </div>
-        </div>
-        <div class="pg-footer"><span>pg. 1</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div style="display:flex;justify-content:center;margin-bottom:10px" class="fade">
-          <div class="photo-frame" style="width:150px">
-            <img src="assets/profile.png" alt="Portrait of Kamala" />
-            <span class="frame-label">detected: the monkey lady</span>
-          </div>
-        </div>
-        <div class="title-marker fade fd1" style="font-size:1.6rem">
-          I build intelligent systems<br>that think and reason
-        </div>
-        <p class="margin-note fade fd2">"but do they really think?" &mdash; pg. 47</p>
-        <div class="sticky-note fade fd3">
-          <p>"When you feel lost, when no one before you knows the way forward &mdash; that's not failure. Dead ends in research are actually the signboards telling you that you're in the right direction to a breakthrough!"</p>
-        </div>
-        <div class="section-label fade fd4" style="margin-top:4px;margin-bottom:2px">Focus</div>
-        <p class="hand-sm fade fd4">
-          I focus on <span class="hl-red">AI</span>, <span class="hl-blue">Computer Vision</span>,
-          <span class="hl-yellow">Machine Learning</span>, <span class="hl-pink">AI Reasoning</span>,
-          and <span class="ul-red">Deep Learning</span> &mdash; building systems that see, think, and reason.
-        </p>
-        <div class="pg-footer">
-          <span>pg. 2</span>
-          <span>&copy; 2025 Kamala</span>
-        </div>
-      </div>
+          <!-- ── PUBLICATIONS MINI-CARD ── -->
+          <div class="home-publications home-proj-card">
+            <div class="home-proj-hdr">
+              <svg viewBox="0 0 20 16" width="14" height="11" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="0,5 7,5 8.5,3 20,3 20,15 0,15" fill="#AA88CC" stroke="#000" stroke-width="0.8"/></svg>
+              publications.dir &nbsp;&mdash;&nbsp; 6 items
+            </div>
+            <div class="home-proj-list">
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">01</div>
+                  <div class="hpr-name">FASS: Faithfulness &amp; Attribution Stability Score for Post-Hoc XAI Methods</div>
+                  <span class="hpr-venue">CVPR 2026</span>
+                  <div class="hpr-desc">Computer Vision &amp; Pattern Recognition &nbsp;·&nbsp; 2026</div>
+                </div>
+                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">02</div>
+                  <div class="hpr-name">HyperComplEx: Multi-Space Knowledge Graph Embeddings via Hyperbolic, Complex &amp; Euclidean Geometry</div>
+                  <span class="hpr-venue">IEEE 2025</span>
+                  <div class="hpr-desc">Institute of Electrical and Electronics Engineers &nbsp;·&nbsp; 2025</div>
+                </div>
+                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">03</div>
+                  <div class="hpr-name">VulnGraph: AST/CFG + LLM Fusion for Multi-Language Vulnerability Detection</div>
+                  <span class="hpr-venue">Complex Networks 2025</span>
+                  <div class="hpr-desc">International Conference on Complex Networks &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; Acc. 93.57%</div>
+                </div>
+                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">04</div>
+                  <div class="hpr-name">SecureFixAgent: Autonomous Vulnerability Repair via LLM + Bandit Optimization</div>
+                  <span class="hpr-venue">ICMLA 2025</span>
+                  <div class="hpr-desc">International Conference on Machine Learning and Applications &nbsp;·&nbsp; 2025</div>
+                </div>
+                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">05</div>
+                  <div class="hpr-name">MalCodeAI: Two-Phase LLM Pipeline for Semantic Malware Detection</div>
+                  <span class="hpr-venue">IEEE IRI 2025</span>
+                  <div class="hpr-desc">IEEE International Conference on Information Reuse and Integration &nbsp;·&nbsp; 2025</div>
+                </div>
+                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
+              </div>
+              <div class="hpr-row">
+                <div class="hpr-left">
+                  <div class="hpr-num">06</div>
+                  <div class="hpr-name">YOLO-Based Roof Material Classification from Aerial Imagery</div>
+                  <span class="hpr-venue">IEEE ICCDS 2024</span>
+                  <span class="hpr-result">&#127942; Best Paper Award</span>
+                  <div class="hpr-desc">International Conference on Computing &amp; Data Science &nbsp;·&nbsp; 2024</div>
+                </div>
+                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
+              </div>
+            </div><!-- /home-proj-list -->
+          </div><!-- /publications card -->
+        </div> <!-- CLOSE home-layout -->
+        
 
-      <!-- ABOUT — pages 3 & 4 -->
-      <div class="pg pg-left">
-        <svg class="deco" style="top:18px;left:44px" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5 24 12 14.5 14.5 12 24 9.5 14.5 0 12 9.5 9.5Z" fill="#D6336C" opacity=".3"/></svg>
-        <div class="section-label fade">About Me</div>
-        <p class="hand fade fd1" style="margin-bottom:14px">
-          I'm a grad student and independent researcher at
-          <span class="hl-red">The George Washington University</span> with a focus on
-          <span class="ul-red">Machine Intelligence and Cognition</span>. Outside of coursework,
-          I have also worked as an <span class="hl-blue">AI Software Engineer Intern</span> at Lillup
-          and as a <span class="hl-yellow">Student Academic Assistant</span> for Advanced Machine Learning.
-          My work bridges <span class="ul-red">structured graph understanding</span>,
-          neural reasoning, and <span class="hl-red">Agentic AI</span> for transparent and
-          self-correcting systems.
-        </p>
-        <div class="sub-label">Education</div>
-        <div class="card fade fd2">
-          <span class="hover-note">strong foundation</span>
-          <h3><span class="ul-red">Master of Science in Computer Science</span></h3>
-          <p class="inst">The George Washington University, Washington, DC</p>
-          <p class="meta">Expected May 2026 &bull; GPA: 3.5 / 4.0</p>
-        </div>
-        <div class="card fade fd3">
-          <span class="hover-note">9.3 CGPA &mdash; impressive</span>
-          <h3><span class="ul-red">Bachelor of Engineering</span> in Electronics &amp; Communication</h3>
-          <p class="inst">St. Joseph's College of Engineering, Chennai, India</p>
-          <p class="meta">May 2024 &bull; CGPA: 9.3 / 10</p>
-        </div>
-        <div class="sub-label">Certifications &amp; Honors</div>
-        <ul class="awards fade fd4">
-          <li><span class="hl-red">GW SEAS Dean's Award Scholarship</span> (2024)</li>
-          <li><span class="hl-yellow">Best Paper Award</span> &ndash; IEEE ICCDS 2024</li>
-        </ul>
-        <div class="pg-footer"><span>pg. 3</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Experience</div>
-        <div class="card fade fd1">
-          <span class="hover-note">teaching sharpens understanding</span>
-          <h3><span class="ul-red">Student Academic Assistant</span></h3>
-          <p class="inst">The George Washington University</p>
-          <p class="meta">Sep 2025 &ndash; Present</p>
-          <ul>
-            <li>Assist instruction for <span class="hl-red">Advanced Machine Learning</span> (CSCI 4907 / 6365).</li>
-            <li>Support faculty and students on <span class="hl-blue">deep learning</span>, optimization, and graph-based learning topics.</li>
-          </ul>
-        </div>
-        <div class="card fade fd2">
-          <span class="hover-note">real-world pipeline work</span>
-          <h3><span class="ul-red">Software Engineer Intern</span></h3>
-          <p class="inst">Lillup, Remote (USA)</p>
-          <p class="meta">Apr 2025 &ndash; Aug 2025</p>
-          <ul>
-            <li>Developed <span class="hl-yellow">AI-driven Voice Tutoring</span> and Research Assistant systems for Talent Passport.</li>
-            <li>Built modular <span class="hl-blue">data pipelines</span> for JSON, XML, and Parquet ingestion.</li>
-          </ul>
-        </div>
-        <p class="margin-note margin-note-red fade fd3" style="margin-top:20px">
-          "no matter how much we plan, the model decides what's best" &mdash; research log
-        </p>
-        <div style="margin:20px 0;display:flex;gap:6px;opacity:.35">
-          <div style="width:50px;height:4px;background:var(--red);border-radius:2px"></div>
-          <div style="width:35px;height:4px;background:rgba(250,204,21,.6);border-radius:2px"></div>
-          <div style="width:45px;height:4px;background:rgba(96,165,250,.5);border-radius:2px"></div>
-          <div style="width:30px;height:4px;background:rgba(236,72,153,.5);border-radius:2px"></div>
-        </div>
-        <svg class="deco" style="bottom:50px;right:30px" width="14" height="14" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5 24 12 14.5 14.5 12 24 9.5 14.5 0 12 9.5 9.5Z" fill="#D6336C" opacity=".2"/></svg>
-        <div class="pg-footer"><span>pg. 4</span></div>
-      </div>
+      </div><!-- /home -->
 
-      <!-- PROJECTS — pages 5 & 6 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">Projects</div>
-        <p class="margin-note fade fd1">"active experiments &mdash; handle with care"</p>
-        <div class="pub-grid" style="margin-top:6px">
-          <div class="pub-sticky pub-sticky--yellow fade fd1" style="transform:rotate(-1.2deg)">
-            <div class="pub-venue">XAI Stability</div>
-            <div class="pub-title">FASS</div>
-            <p>Benchmark suite for evaluating post-hoc attribution stability under perturbations.</p>
-            <div class="pub-btns">
-              <a href="https://github.com/KamalasankariSubramaniakuppusamy/xai-stability-benchmark" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(10)">Details</button>
+      <!-- ABOUT -->
+      <div class="sec" id="sec-about">
+        <div class="sh">About Me</div>
+        <div class="about-grid">
+
+          <div class="acard">
+            <div class="card-hdr">EDUCATION</div>
+            <div class="edu-item">
+              <div class="item-deg">M.S. Computer Science</div>
+              <div class="item-school">George Washington University</div>
+              <div class="item-meta">Washington DC · May 2026 · GPA 3.5/4.0</div>
+            </div>
+            <div class="edu-item">
+              <div class="item-deg">B.E. Electronics &amp; Communication Eng.</div>
+              <div class="item-school">St. Joseph's College of Engineering</div>
+              <div class="item-meta">Chennai, India · May 2024 · CGPA 9.3/10</div>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--blue fade fd2" style="transform:rotate(1deg)">
-            <div class="pub-venue">Vulnerability Detection</div>
-            <div class="pub-title">VulnGraph</div>
-            <p>AST/CFG + LLM fusion via gating architecture. 93.57% accuracy.</p>
-            <div class="pub-btns">
-              <a href="https://github.com/JugalGajjar/VulnGraph" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(11)">Details</button>
+
+          <div class="acard">
+            <div class="card-hdr">AWARDS &amp; HONORS</div>
+            <div class="award">
+              <span class="award-ico">&#127942;</span>
+              <div class="award-txt">GW SEAS Dean's Award Scholarship<br>
+                <span style="color:#666;font-size:10px;">George Washington University · 2024</span>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-ico">&#129351;</span>
+              <div class="award-txt">Best Paper Award<br>
+                <span style="color:#666;font-size:10px;">IEEE ICCDS 2024 — YOLO Roof Detection</span>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-ico">&#128196;</span>
+              <div class="award-txt">6 Peer-Reviewed Publications<br>
+                <span style="color:#666;font-size:10px;">CVPR, IEEE, Complex Networks, ICMLA</span>
+              </div>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--green fade fd3" style="transform:rotate(-0.8deg)">
-            <div class="pub-venue">Automated Repair</div>
-            <div class="pub-title">SecureFixAgent</div>
-            <p>LLM + bandit optimization for autonomous vulnerability repair. +13.5% patch success.</p>
-            <div class="pub-btns">
-              <a href="https://github.com/KamalasankariSubramaniakuppusamy/SecureFixAgent" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(12)">Details</button>
+
+          <div class="acard full">
+            <div class="card-hdr">EXPERIENCE</div>
+            <div class="exp-item">
+              <div class="item-deg">Student Academic Assistant</div>
+              <div class="item-school">George Washington University</div>
+              <div class="item-meta">Washington DC · Sep 2025 – Present</div>
+              <div class="item-desc">Advanced ML &amp; AI instruction for graduate students. Office hours, grading, and curriculum support for machine learning and computer vision coursework.</div>
+            </div>
+            <div class="exp-item">
+              <div class="item-deg">Software Engineer Intern</div>
+              <div class="item-school">Lillup</div>
+              <div class="item-meta">Remote · Apr 2025 – Aug 2025</div>
+              <div class="item-desc">Built AI voice tutoring systems and data processing pipelines. Designed and deployed LLM-based conversational AI for adaptive learning platforms.</div>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--pink fade fd4" style="transform:rotate(1.2deg)">
-            <div class="pub-venue">Code Security</div>
-            <div class="pub-title">MalCodeAI</div>
-            <p>Two-phase LLM pipeline for semantic code reasoning and exploit simulation.</p>
-            <div class="pub-btns">
-              <a href="https://github.com/KamalasankariSubramaniakuppusamy/MalCodeAI-AI-Powered-Malicious-Code-Detection" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(13)">Details</button>
+
+        </div>
+      </div><!-- /about -->
+
+      <!-- PROJECTS -->
+      <div class="sec" id="sec-projects">
+        <div class="sh">Projects</div>
+        <div class="proj-grid">
+
+          <div class="pcard">
+            <div class="p-num">01 / FASS</div>
+            <div class="p-name">XAI Stability Benchmark</div>
+            <div class="p-desc">Faithfulness &amp; Attribution Stability Score — a comprehensive benchmark for evaluating post-hoc attribution method stability across perturbations (noise, rotation) on CIFAR-10, COCO, and ImageNet.</div>
+            <div class="p-tags">
+              <span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Grad-CAM</span><span class="ptag">SHAP</span><span class="ptag">LIME</span><span class="ptag">IG</span>
+            </div>
+            <span class="p-stat">CVPR 2026</span>
+          </div>
+
+          <div class="pcard">
+            <div class="p-num">02 / VulnGraph</div>
+            <div class="p-name">Code Vulnerability Detection</div>
+            <div class="p-desc">AST + CFG structural analysis fused with LLM semantic embeddings via a learned gating mechanism for multi-language vulnerability detection in C/C++ and Python.</div>
+            <div class="p-tags">
+              <span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">GNN</span><span class="ptag">Transformers</span>
+            </div>
+            <span class="p-stat">Complex Networks 2025</span>
+            <div class="p-result">Accuracy: 93.57%</div>
+          </div>
+
+          <div class="pcard">
+            <div class="p-num">03 / SecureFixAgent</div>
+            <div class="p-name">Automated Vulnerability Repair</div>
+            <div class="p-desc">LLM-driven autonomous patch generation using multi-armed bandit optimization to intelligently select repair strategies. Reduces false positives while improving patch success.</div>
+            <div class="p-tags">
+              <span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Bandit Algos</span>
+            </div>
+            <span class="p-stat">ICMLA 2025</span>
+            <div class="p-result">+13.5% patch success · −10.8% false pos.</div>
+          </div>
+
+          <div class="pcard">
+            <div class="p-num">04 / MalCodeAI</div>
+            <div class="p-name">Semantic Malware Detection</div>
+            <div class="p-desc">Two-phase LLM pipeline combining static code analysis with semantic understanding for high-precision malware and malicious code classification across multiple programming languages.</div>
+            <div class="p-tags">
+              <span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Static Analysis</span>
+            </div>
+            <span class="p-stat">IEEE IRI 2025</span>
+          </div>
+
+          <div class="pcard">
+            <div class="p-num">05 / HyperComplEx</div>
+            <div class="p-name">Multi-Space Knowledge Graphs</div>
+            <div class="p-desc">Simultaneous embedding of knowledge graph entities in Hyperbolic, Complex, and Euclidean spaces with Riemannian optimization for superior link prediction and entity alignment.</div>
+            <div class="p-tags">
+              <span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Riemannian Opt.</span>
+            </div>
+            <span class="p-stat">IEEE 2025</span>
+          </div>
+
+          <div class="pcard">
+            <div class="p-num">06 / YOLO Roof</div>
+            <div class="p-name">Aerial Roof Material Detection</div>
+            <div class="p-desc">YOLOv8-based aerial imagery classification of roof materials (metal, asphalt, tile, concrete) for insurance and urban planning applications.
+              <strong style="color:#0000AA;"> Best Paper Award — IEEE ICCDS 2024</strong>
+            </div>
+            <div class="p-tags">
+              <span class="ptag">Python</span><span class="ptag">YOLOv8</span><span class="ptag">OpenCV</span>
+            </div>
+            <span class="p-stat">IEEE ICCDS 2024</span>
+          </div>
+
+        </div>
+      </div><!-- /projects -->
+
+      <!-- PUBLICATIONS -->
+      <div class="sec" id="sec-publications">
+        <div class="sh">Publications</div>
+        <div class="pub-list">
+
+          <div class="pub">
+            <div class="pub-n">01</div>
+            <div class="pub-body">
+              <div class="pub-ttl">FASS: Faithfulness &amp; Attribution Stability Score for Post-Hoc XAI Methods</div>
+              <div class="pub-venue">CVPR 2026</div>
+              <div class="pub-meta">Computer Vision &amp; Pattern Recognition · 2026</div>
+              <span class="pub-badge">Conference Paper</span>
             </div>
           </div>
-        </div>
-        <div class="pg-footer"><span>pg. 5</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="pub-grid" style="margin-top:0">
-          <div class="pub-sticky pub-sticky--yellow fade fd1" style="transform:rotate(0.8deg)">
-            <div class="pub-venue">Knowledge Graphs</div>
-            <div class="pub-title">HyperComplEx</div>
-            <p>Multi-space KG embeddings in hyperbolic, complex, and Euclidean geometries.</p>
-            <div class="pub-btns">
-              <a href="https://github.com/JugalGajjar/HyperComplEx-Multi-Space-KG-Embeddings" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(14)">Details</button>
+
+          <div class="pub">
+            <div class="pub-n">02</div>
+            <div class="pub-body">
+              <div class="pub-ttl">HyperComplEx: Multi-Space Knowledge Graph Embeddings via Hyperbolic, Complex &amp; Euclidean Geometry</div>
+              <div class="pub-venue">IEEE 2025</div>
+              <div class="pub-meta">Institute of Electrical and Electronics Engineers · 2025</div>
+              <span class="pub-badge">Conference Paper</span>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--pink fade fd2" style="transform:rotate(-1deg)">
-            <div class="pub-venue">Computer Vision</div>
-            <div class="pub-title">YOLO Roof Detection</div>
-            <p>Roof material classification from aerial imagery using YOLOv8. Best Paper Award.</p>
-            <div class="pub-btns">
-              <a href="https://ieeexplore.ieee.org/abstract/document/10560402" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(15)">Details</button>
+
+          <div class="pub">
+            <div class="pub-n">03</div>
+            <div class="pub-body">
+              <div class="pub-ttl">VulnGraph: AST/CFG + LLM Fusion for Multi-Language Vulnerability Detection</div>
+              <div class="pub-venue">Complex Networks 2025</div>
+              <div class="pub-meta">International Conference on Complex Networks · 2025 · Acc. 93.57%</div>
+              <span class="pub-badge">Conference Paper</span>
             </div>
           </div>
-        </div>
-        <p class="margin-note margin-note-red fade fd3" style="margin-top:16px">"this shouldn't work." &mdash; but it does.</p>
-        <p class="margin-note fade fd4" style="margin-top:8px">"why does this break?" &mdash; bandit optimization.</p>
-        <div class="pg-footer">
-          <span>pg. 6</span>
-          <span style="font-size:.8rem;color:var(--red)">6 active projects</span>
-        </div>
-      </div>
 
-      <!-- PUBLICATIONS & CV — pages 7 & 8 -->
-      <div class="pg pg-left">
-        <svg class="deco" style="top:20px;left:44px" width="14" height="14" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5 24 12 14.5 14.5 12 24 9.5 14.5 0 12 9.5 9.5Z" fill="#D6336C" opacity=".3"/></svg>
-        <div class="section-label fade">Publications</div>
-        <div class="pub-grid">
-          <div class="pub-sticky pub-sticky--yellow fade fd1" style="transform:rotate(-1.2deg)">
-            <div class="pub-venue">CVPR, 2026</div>
-            <div class="pub-title">FASS</div>
-            <p>Proposes FASS, a suite that benchmarks post-hoc attribution stability under geometric, photometric, and compression shifts.</p>
-            <div class="pub-btns">
-              <a href="https://arxiv.org/abs/2604.02532" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <a href="https://github.com/KamalasankariSubramaniakuppusamy/xai-stability-benchmark" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(4)">Details</button>
+          <div class="pub">
+            <div class="pub-n">04</div>
+            <div class="pub-body">
+              <div class="pub-ttl">SecureFixAgent: Autonomous Vulnerability Repair via LLM + Bandit Optimization</div>
+              <div class="pub-venue">ICMLA 2025</div>
+              <div class="pub-meta">International Conference on Machine Learning and Applications · 2025</div>
+              <span class="pub-badge">Conference Paper</span>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--pink fade fd2" style="transform:rotate(1deg)">
-            <div class="pub-venue">IEEE, 2025</div>
-            <div class="pub-title">HyperComplEx</div>
-            <p>Multi-space KG embedding model jointly operating in hyperbolic, complex, and Euclidean geometries.</p>
-            <div class="pub-btns">
-              <a href="https://ieeexplore.ieee.org/abstract/document/11400828" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <a href="https://github.com/JugalGajjar/HyperComplEx-Multi-Space-KG-Embeddings" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(5)">Details</button>
+
+          <div class="pub">
+            <div class="pub-n">05</div>
+            <div class="pub-body">
+              <div class="pub-ttl">MalCodeAI: Two-Phase LLM Pipeline for Semantic Malware Detection</div>
+              <div class="pub-venue">IEEE IRI 2025</div>
+              <div class="pub-meta">IEEE International Conference on Information Reuse and Integration · 2025</div>
+              <span class="pub-badge">Conference Paper</span>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--blue fade fd3" style="transform:rotate(-0.8deg)">
-            <div class="pub-venue">Complex Networks, 2025</div>
-            <div class="pub-title">VulnGraph</div>
-            <p>AST/CFG + LLM fusion via gating architecture for vulnerability detection. 93.57% accuracy.</p>
-            <div class="pub-btns">
-              <a href="https://arxiv.org/abs/2510.10321" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <a href="https://github.com/JugalGajjar/VulnGraph" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(6)">Details</button>
+
+          <div class="pub">
+            <div class="pub-n">06</div>
+            <div class="pub-body">
+              <div class="pub-ttl">YOLO-Based Roof Material Classification from Aerial Imagery</div>
+              <div class="pub-venue">IEEE ICCDS 2024</div>
+              <div class="pub-meta">International Conference on Computing &amp; Data Science · 2024</div>
+              <span class="pub-badge">&#127942; BEST PAPER AWARD</span>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--green fade fd4" style="transform:rotate(1.2deg)">
-            <div class="pub-venue">ICMLA, 2025</div>
-            <div class="pub-title">SecureFixAgent</div>
-            <p>LLM + bandit optimization for autonomous vulnerability repair. +13.5% patch success.</p>
-            <div class="pub-btns">
-              <a href="https://arxiv.org/abs/2509.16275" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <a href="https://github.com/KamalasankariSubramaniakuppusamy/SecureFixAgent" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(7)">Details</button>
+
+        </div>
+      </div><!-- /publications -->
+
+      <!-- CONTACT -->
+      <div class="sec" id="sec-contact">
+        <div class="sh">Connect</div>
+        <div class="contact-intro">
+          Let's talk AI, research, or just good ideas.<br>
+          <span style="color:#0000AA;">Open to collaborations · research · cool projects</span>
+        </div>
+        <div class="soc-grid">
+          <a class="soccard" href="https://www.linkedin.com/in/kamalasankari-s" target="_blank" rel="noopener">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" /><span>LinkedIn</span>
+          </a>
+          <a class="soccard" href="https://github.com/kamalasankaris" target="_blank" rel="noopener">
+            <img src="assets/icons/github.svg" alt="GitHub" /><span>GitHub</span>
+          </a>
+          <a class="soccard" href="https://scholar.google.com" target="_blank" rel="noopener">
+            <img src="assets/icons/scholar.svg" alt="Google Scholar" /><span>Scholar</span>
+          </a>
+          <a class="soccard" href="https://www.researchgate.net" target="_blank" rel="noopener">
+            <img src="assets/icons/researchgate.svg" alt="ResearchGate" /><span>ResearchGate</span>
+          </a>
+          <a class="soccard" href="https://medium.com" target="_blank" rel="noopener">
+            <img src="assets/icons/medium.svg" alt="Medium" /><span>Medium</span>
+          </a>
+          <a class="soccard" href="mailto:kamalasankari@gwu.edu">
+            <img src="assets/icons/email.svg" alt="Email" /><span>Email</span>
+          </a>
+        </div>
+        <div class="contact-resume">
+          <a class="resume-btn" href="assets/resume.pdf" target="_blank">Download Resume.pdf</a>
+        </div>
+      </div><!-- /contact -->
+
+      <!-- RESUME & CV -->
+      <div class="sec" id="sec-resume">
+        <div class="sh">Resume &amp; CV</div>
+        <div class="resume-cards-row">
+
+          <!-- Resume preview -->
+          <div class="rdoc-wrap">
+            <div class="rdoc-titlebar">
+              <svg viewBox="0 0 30 38" width="16" height="20" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="1,1 20,1 29,10 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/><polygon points="20,1 20,10 29,10" fill="#CCCCCC" stroke="#000" stroke-width="1"/><line x1="5" y1="15" x2="25" y2="15" stroke="#999" stroke-width="1"/><line x1="5" y1="19" x2="25" y2="19" stroke="#999" stroke-width="1"/><line x1="5" y1="23" x2="25" y2="23" stroke="#999" stroke-width="1"/></svg>
+              Resume.pdf
+            </div>
+            <div class="rdoc-preview">
+              <div class="rdoc-paper">
+                <div class="rdoc-dogear"></div>
+                <div class="rdoc-name">KAMALASANKARI SUBRAMANIAKUPPUSAMY</div>
+                <div class="rdoc-contact-line">kamalasankari@gwu.edu &nbsp;·&nbsp; Washington DC &nbsp;·&nbsp; github.com/kamalasankaris</div>
+                <div class="rdoc-divider"></div>
+                <div class="rdoc-section">EDUCATION</div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line med"></div>
+                <div class="rdoc-section">EXPERIENCE</div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line med"></div>
+                <div class="rdoc-section">SKILLS</div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line short"></div>
+                <div class="rdoc-section">PUBLICATIONS</div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line med"></div>
+              </div>
+            </div>
+            <div class="rdoc-actions">
+              <a class="hpr-btn" href="assets/resume.pdf" target="_blank">&#128196; Open PDF</a>
+              <a class="hpr-btn" href="assets/resume.pdf" download>&#8595; Download</a>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--pink fade fd5" style="transform:rotate(-1deg)">
-            <div class="pub-venue">IEEE, 2025</div>
-            <div class="pub-title">MalCodeAI</div>
-            <p>Two-phase LLM pipeline for semantic code reasoning and exploit simulation.</p>
-            <div class="pub-btns">
-              <a href="https://ieeexplore.ieee.org/abstract/document/11153184" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <a href="https://github.com/KamalasankariSubramaniakuppusamy/MalCodeAI-AI-Powered-Malicious-Code-Detection" target="_blank" class="sticker-btn sticker-btn--dark">Repo</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(8)">Details</button>
+
+          <!-- Research CV preview -->
+          <div class="rdoc-wrap">
+            <div class="rdoc-titlebar">
+              <svg viewBox="0 0 30 38" width="16" height="20" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="5,4 25,4 33,12 33,40 5,40" fill="#E8E8E8" stroke="#888" stroke-width="0.8"/><polygon points="1,1 21,1 29,9 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/><polygon points="21,1 21,9 29,9" fill="#CCCCCC" stroke="#000" stroke-width="1"/><line x1="5" y1="14" x2="25" y2="14" stroke="#999" stroke-width="1"/><line x1="5" y1="18" x2="25" y2="18" stroke="#999" stroke-width="1"/><line x1="5" y1="22" x2="25" y2="22" stroke="#999" stroke-width="1"/></svg>
+              Research_CV.pdf
+            </div>
+            <div class="rdoc-preview">
+              <div class="rdoc-paper">
+                <div class="rdoc-dogear"></div>
+                <div class="rdoc-name">KAMALASANKARI SUBRAMANIAKUPPUSAMY</div>
+                <div class="rdoc-contact-line">AI Researcher &nbsp;·&nbsp; GWU MSCS 2026 &nbsp;·&nbsp; LLM · XAI · Agentic Systems</div>
+                <div class="rdoc-divider"></div>
+                <div class="rdoc-section">RESEARCH INTERESTS</div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line med"></div>
+                <div class="rdoc-section">PUBLICATIONS <span class="rdoc-count">6</span></div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-section">AWARDS</div>
+                <div class="rdoc-line med"></div>
+                <div class="rdoc-section">EDUCATION</div>
+                <div class="rdoc-line long"></div>
+                <div class="rdoc-line short"></div>
+              </div>
+            </div>
+            <div class="rdoc-actions">
+              <a class="hpr-btn" href="assets/research_cv.pdf" target="_blank">&#128196; Open PDF</a>
+              <a class="hpr-btn" href="assets/research_cv.pdf" download>&#8595; Download</a>
             </div>
           </div>
-          <div class="pub-sticky pub-sticky--yellow fade fd5" style="transform:rotate(0.8deg)">
-            <div class="pub-venue">IEEE ICCDS, 2024 &bull; Best Paper Award</div>
-            <div class="pub-title">YOLO: Roof Material Detection</div>
-            <p>YOLO-based roof material classification from aerial imagery. Best Paper Award.</p>
-            <div class="pub-btns">
-              <a href="https://ieeexplore.ieee.org/abstract/document/10560402" target="_blank" class="sticker-btn sticker-btn--red">Paper</a>
-              <a href="assets/best-paper-award.pdf" target="_blank" class="sticker-btn sticker-btn--gold">Award</a>
-              <button type="button" class="sticker-btn sticker-btn--blue" onclick="goTo(9)">Details</button>
-            </div>
-          </div>
-        </div>
-        <div class="pg-footer"><span>pg. 7</span></div>
-      </div>
-      <div class="pg pg-right" style="display:flex;flex-direction:column">
-        <div class="section-label fade">Curriculum Vitae</div>
-        <p class="hand-sm fade fd1" style="margin-bottom:12px">
-          View or download my full <span class="ul-red">academic and research resume</span>.
-        </p>
-        <div class="resume-frame fade fd2" style="flex:1">
-          <iframe src="assets/resume.pdf" title="Resume Preview" loading="lazy"></iframe>
-        </div>
-        <div class="resume-btns fade fd3">
-          <a href="assets/resume.pdf" target="_blank" class="btn-red">Preview Full Screen</a>
-          <a href="assets/resume.pdf" download class="btn-red btn-dark">Download Resume</a>
-        </div>
-        <div class="pg-footer">
-          <span>pg. 8</span>
-          <span style="font-size:.8rem">&copy; 2025 Kamala &middot; All rights reserved</span>
-        </div>
+
+        </div><!-- /resume-cards-row -->
+      </div><!-- /resume -->
+
+      <!-- MARQUEE — bottom of all content -->
+      <div class="marquee-wrap">
+        <div class="mq-txt">AI RESEARCHER &nbsp;&nbsp; GWU MSCS 2026 &nbsp;&nbsp; CVPR 2026 &nbsp;&nbsp; 6 PUBLICATIONS &nbsp;&nbsp; BUILDING THE FUTURE &nbsp;&nbsp; AVAILABLE FOR COLLABORATION &nbsp;&nbsp; WASHINGTON DC &nbsp;&nbsp; OPEN TO OPPORTUNITIES &nbsp;&nbsp; LET'S CREATE SOMETHING AMAZING &nbsp;&nbsp;&nbsp;</div>
       </div>
 
-      <!-- FASS PUB DETAIL — pages 9 & 10 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">FASS</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Role:</span> Primary Author</div>
-          <div class="detail-row"><span class="detail-label">Co-Authors:</span> Jugal Gajjar</div>
-          <div class="detail-row"><span class="detail-label">Venue:</span> CVPR 2026</div>
-        </div>
-        <div class="sub-label">About the Paper</div>
-        <p class="hand-sm">Introduces the Feature Attribution Stability Suite, a comprehensive benchmark for measuring how stable post-hoc attribution methods are under real-world perturbations. The suite enforces prediction-invariance filtering to isolate explanation instability from model instability.</p>
-        <div class="sub-label">Problem Statement</div>
-        <p class="hand-sm">Existing XAI evaluation lacks standardized stability metrics. Explanations can change drastically under minor input perturbations even when the model prediction stays the same, undermining trust in deployed AI systems.</p>
-        <div class="pg-footer"><span>pg. 23</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Datasets Used</div>
-        <p class="hand-sm">ImageNet validation set with geometric (rotation, flip, crop), photometric (brightness, contrast, blur), and compression (JPEG quality) perturbation pipelines.</p>
-        <div class="sub-label">Results</div>
-        <p class="hand-sm">Grad-CAM shows highest stability across all perturbation types. GradientSHAP and LIME exhibit significant attribution drift. IG provides moderate stability. Results reveal method-level gaps previously unreported.</p>
-        <div class="detail-flow fade fd2">
-          <svg width="280" height="100" viewBox="0 0 280 100" fill="none">
-            <rect x="2" y="35" width="55" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="29" y="54" text-anchor="middle" font-family="Coming Soon" font-size="8" fill="#1A1028">Input</text>
-            <line x1="57" y1="50" x2="80" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="80" y="25" width="60" height="50" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="110" y="47" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Perturbation</text>
-            <text x="110" y="58" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Engine</text>
-            <line x1="140" y1="50" x2="163" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="163" y="25" width="55" height="50" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="190" y="47" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Attribution</text>
-            <text x="190" y="58" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Methods</text>
-            <line x1="218" y1="50" x2="241" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="241" y="30" width="35" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="258" y="47" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">FASS</text>
-            <text x="258" y="57" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Score</text>
-            <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#D6336C"/></marker></defs>
-          </svg>
-        </div>
-        <p class="margin-note fade fd3" style="margin-top:8px">"stability matters more than accuracy when humans are in the loop"</p>
-        <button type="button" class="back-btn" onclick="goTo(3)" style="margin-top:10px">&larr; Back to Publications</button>
-        <div class="pg-footer"><span>pg. 24</span></div>
-      </div>
+    </div><!-- /pcontent -->
+  </div><!-- /player-body -->
 
-      <!-- HYPERCOMPLX PUB DETAIL — pages 11 & 12 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">HyperComplEx</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Role:</span> Co-Author</div>
-          <div class="detail-row"><span class="detail-label">Co-Authors:</span> Jugal Gajjar, Kaustik Ranaware, Vaibhav C. Gandhi</div>
-          <div class="detail-row"><span class="detail-label">Venue:</span> IEEE 2025</div>
-        </div>
-        <div class="sub-label">About the Paper</div>
-        <p class="hand-sm">Proposes a multi-space knowledge graph embedding model that simultaneously operates in hyperbolic, complex, and Euclidean geometries to capture diverse relational patterns in a single unified architecture.</p>
-        <div class="sub-label">Problem Statement</div>
-        <p class="hand-sm">Single-geometry KG embeddings fail to capture the full spectrum of relation types. Hierarchical relations need hyperbolic space, rotational patterns need complex space, and translational patterns need Euclidean space.</p>
-        <div class="pg-footer"><span>pg. 31</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Datasets Used</div>
-        <p class="hand-sm">WN18RR, FB15k-237, and YAGO3-10 knowledge graph benchmarks for link prediction evaluation.</p>
-        <div class="sub-label">Results</div>
-        <p class="hand-sm">Outperforms RotatE, ComplEx, and MuRP on MRR and Hits@10 metrics. The multi-space fusion captures patterns that no single geometry can represent alone.</p>
-        <div class="detail-flow fade fd2">
-          <svg width="280" height="100" viewBox="0 0 280 100" fill="none">
-            <rect x="2" y="35" width="40" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="22" y="54" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">KG</text>
-            <line x1="42" y1="50" x2="60" y2="30" stroke="#D6336C" stroke-width="1"/>
-            <line x1="42" y1="50" x2="60" y2="50" stroke="#D6336C" stroke-width="1"/>
-            <line x1="42" y1="50" x2="60" y2="70" stroke="#D6336C" stroke-width="1"/>
-            <rect x="60" y="15" width="55" height="25" rx="4" stroke="#9B8CB8" stroke-width="1.5" fill="rgba(180,150,255,.1)"/>
-            <text x="87" y="31" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Hyperbolic</text>
-            <rect x="60" y="42" width="55" height="25" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="87" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Complex</text>
-            <rect x="60" y="70" width="55" height="25" rx="4" stroke="#82C8FF" stroke-width="1.5" fill="rgba(130,200,255,.1)"/>
-            <text x="87" y="86" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Euclidean</text>
-            <line x1="115" y1="28" x2="145" y2="50" stroke="#D6336C" stroke-width="1"/>
-            <line x1="115" y1="55" x2="145" y2="50" stroke="#D6336C" stroke-width="1"/>
-            <line x1="115" y1="83" x2="145" y2="50" stroke="#D6336C" stroke-width="1"/>
-            <rect x="145" y="35" width="50" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="170" y="54" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Fusion</text>
-            <line x1="195" y1="50" x2="215" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="215" y="32" width="55" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="242" y="47" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Link</text>
-            <text x="242" y="58" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Prediction</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd3" style="margin-top:8px">"one space to rule them all? no &mdash; three."</p>
-        <button type="button" class="back-btn" onclick="goTo(3)" style="margin-top:10px">&larr; Back to Publications</button>
-        <div class="pg-footer"><span>pg. 32</span></div>
-      </div>
+  <!-- STATUS BAR -->
+  <div class="pcontrols">
+    <div class="status-left" id="status-lbl">5 items</div>
+    <div class="status-zones">
+      <div class="status-zone" id="time-disp">12:00 PM</div>
+    </div>
+    <div style="display:none">
+      <button id="play-btn">&#9654;</button>
+      <div class="ctrl-btns"></div>
+      <div class="prog-track"><div class="prog-fill"></div></div>
+      <div class="vol-row"><div class="vol-bar"><div class="vol-fill"></div></div></div>
+    </div>
+  </div>
 
-      <!-- VULNGRAPH PUB DETAIL — pages 13 & 14 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">VulnGraph</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Role:</span> Co-Author</div>
-          <div class="detail-row"><span class="detail-label">Co-Authors:</span> Jugal Gajjar, Kaustik Ranaware</div>
-          <div class="detail-row"><span class="detail-label">Venue:</span> Complex Networks 2025</div>
-        </div>
-        <div class="sub-label">About the Paper</div>
-        <p class="hand-sm">Develops a multimodal vulnerability detection model that fuses code structure (AST/CFG graphs) with semantic understanding (LLM embeddings) through a two-way gating mechanism, enabling interpretable and accurate detection.</p>
-        <div class="sub-label">Problem Statement</div>
-        <p class="hand-sm">Existing detectors rely on either structural or semantic features alone. Structural approaches miss semantic context; LLM-based approaches miss control flow patterns. Neither produces interpretable explanations.</p>
-        <div class="pg-footer"><span>pg. 39</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Datasets Used</div>
-        <p class="hand-sm">Devign, Reveal, and BigVul multi-language vulnerability datasets spanning C, C++, Java, and Python codebases.</p>
-        <div class="sub-label">Results</div>
-        <p class="hand-sm">93.57% detection accuracy. Saliency subgraphs identify the exact vulnerable code regions. Outperforms Devign, Reveal, and LineVul baselines across all datasets.</p>
-        <div class="detail-flow fade fd2">
-          <svg width="280" height="100" viewBox="0 0 280 100" fill="none">
-            <rect x="2" y="20" width="45" height="25" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="24" y="36" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">AST/CFG</text>
-            <rect x="2" y="55" width="45" height="25" rx="4" stroke="#82C8FF" stroke-width="1.5" fill="rgba(130,200,255,.1)"/>
-            <text x="24" y="71" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">LLM</text>
-            <line x1="47" y1="33" x2="75" y2="45" stroke="#D6336C" stroke-width="1"/>
-            <line x1="47" y1="68" x2="75" y2="55" stroke="#82C8FF" stroke-width="1"/>
-            <rect x="75" y="32" width="55" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="102" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Two-Way</text>
-            <text x="102" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Gating</text>
-            <line x1="130" y1="50" x2="155" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="155" y="32" width="55" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="182" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">GNN</text>
-            <text x="182" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Classifier</text>
-            <line x1="210" y1="50" x2="235" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="235" y="32" width="40" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="255" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Vuln?</text>
-            <text x="255" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#D6336C">93.5%</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd3" style="margin-top:8px">"the graph sees what the LLM misses"</p>
-        <button type="button" class="back-btn" onclick="goTo(3)" style="margin-top:10px">&larr; Back to Publications</button>
-        <div class="pg-footer"><span>pg. 40</span></div>
-      </div>
+</div><!-- /player -->
 
-      <!-- SECUREFIXAGENT PUB DETAIL — pages 15 & 16 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">SecureFixAgent</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Role:</span> Co-Author</div>
-          <div class="detail-row"><span class="detail-label">Co-Authors:</span> Jugal Gajjar, Relsy Puthal, Kaustik Ranaware</div>
-          <div class="detail-row"><span class="detail-label">Venue:</span> ICMLA 2025</div>
-        </div>
-        <div class="sub-label">About the Paper</div>
-        <p class="hand-sm">Presents an autonomous agent that combines LLM code reasoning with multi-armed bandit optimization to detect, patch, and validate software vulnerabilities with explainable rationales for each repair decision.</p>
-        <div class="sub-label">Problem Statement</div>
-        <p class="hand-sm">Manual vulnerability repair is slow and error-prone. LLMs alone generate plausible but often incorrect patches. There's no feedback loop to learn from failed repair attempts.</p>
-        <div class="pg-footer"><span>pg. 47</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Datasets Used</div>
-        <p class="hand-sm">CVEfixes, Big-Vul, and PatchDB datasets covering real-world CVEs across C/C++ and Java codebases.</p>
-        <div class="sub-label">Results</div>
-        <p class="hand-sm">+13.5% patch success rate over baseline LLM repair. -10.8% false positive reduction. Explainable patch rationales validated by security experts.</p>
-        <div class="detail-flow fade fd2">
-          <svg width="280" height="100" viewBox="0 0 280 100" fill="none">
-            <rect x="2" y="35" width="50" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="27" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Vuln</text>
-            <text x="27" y="57" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Code</text>
-            <line x1="52" y1="50" x2="72" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="72" y="30" width="50" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="97" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">LLM</text>
-            <text x="97" y="57" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Reason</text>
-            <line x1="122" y1="50" x2="142" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="142" y="30" width="50" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="167" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Bandit</text>
-            <text x="167" y="57" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Opt.</text>
-            <line x1="192" y1="50" x2="212" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="212" y="30" width="55" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="239" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Patched</text>
-            <text x="239" y="57" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#D6336C">+13.5%</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd3" style="margin-top:8px">"let the bandit learn which patches actually work"</p>
-        <button type="button" class="back-btn" onclick="goTo(3)" style="margin-top:10px">&larr; Back to Publications</button>
-        <div class="pg-footer"><span>pg. 48</span></div>
-      </div>
 
-      <!-- MALCODEAI PUB DETAIL — pages 17 & 18 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">MalCodeAI</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Role:</span> Co-Author</div>
-          <div class="detail-row"><span class="detail-label">Co-Authors:</span> Jugal Gajjar, Noha El Kachach</div>
-          <div class="detail-row"><span class="detail-label">Venue:</span> IEEE IRI 2025</div>
-        </div>
-        <div class="sub-label">About the Paper</div>
-        <p class="hand-sm">Designs a two-phase LLM pipeline: Phase 1 performs deep semantic code reasoning to understand intent, Phase 2 simulates exploit scenarios to confirm malicious behavior. Automatically generates patches for detected threats.</p>
-        <div class="sub-label">Problem Statement</div>
-        <p class="hand-sm">Traditional malware detection relies on signatures and heuristics that fail against obfuscated or zero-day code. Semantic understanding of code intent is needed for generalizable detection.</p>
-        <div class="pg-footer"><span>pg. 55</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Datasets Used</div>
-        <p class="hand-sm">Custom-curated dataset of malicious code samples across Python, JavaScript, and C, paired with benign counterparts for contrastive evaluation.</p>
-        <div class="sub-label">Results</div>
-        <p class="hand-sm">Detects obfuscated malicious patterns that signature-based tools miss. Generates functional patches validated against exploit test suites. Language-agnostic across all tested codebases.</p>
-        <div class="detail-flow fade fd2">
-          <svg width="280" height="100" viewBox="0 0 280 100" fill="none">
-            <rect x="2" y="35" width="45" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="24" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Code</text>
-            <text x="24" y="57" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Input</text>
-            <line x1="47" y1="50" x2="67" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="67" y="28" width="58" height="44" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="96" y="44" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Phase 1:</text>
-            <text x="96" y="55" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Semantic</text>
-            <text x="96" y="66" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Reasoning</text>
-            <line x1="125" y1="50" x2="145" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="145" y="28" width="58" height="44" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="174" y="44" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Phase 2:</text>
-            <text x="174" y="55" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Exploit</text>
-            <text x="174" y="66" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Simulation</text>
-            <line x1="203" y1="50" x2="223" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="223" y="30" width="50" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="248" y="47" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Detect</text>
-            <text x="248" y="58" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">+ Patch</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd3" style="margin-top:8px">"understand intent first, then simulate the attack"</p>
-        <button type="button" class="back-btn" onclick="goTo(3)" style="margin-top:10px">&larr; Back to Publications</button>
-        <div class="pg-footer"><span>pg. 56</span></div>
-      </div>
+<!-- ═══════════════════════════════════
+     DIALOG — Classic Mac modal (no chrome, rounded rect)
+═══════════════════════════════════ -->
+<div id="dialog-overlay" class="hidden">
+  <div id="dialog">
+    <div class="dlg-inner">
+      <!-- Classic Mac stop/caution icon -->
+      <svg class="dlg-ico" viewBox="0 0 40 40" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="14,2 26,2 38,14 38,26 26,38 14,38 2,26 2,14" fill="#FFFFFF" stroke="#000" stroke-width="2"/>
+        <rect x="18" y="10" width="4" height="14" rx="1" fill="#000"/>
+        <rect x="18" y="28" width="4" height="4" rx="1" fill="#000"/>
+      </svg>
+      <div class="dlg-msg" id="dialog-msg">An error has occurred.</div>
+    </div>
+    <div class="dlg-btns">
+      <button id="dialog-ok" class="mac-btn mac-btn-default">OK</button>
+    </div>
+  </div>
+</div>
 
-      <!-- YOLO PUB DETAIL — pages 19 & 20 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">YOLO: Roof Material Detection</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Role:</span> Primary Author</div>
-          <div class="detail-row"><span class="detail-label">Co-Authors:</span> R. Avudaiamal, Neha Shirlin Christopher</div>
-          <div class="detail-row"><span class="detail-label">Venue:</span> IEEE ICCDS 2024 &bull; Best Paper Award</div>
-        </div>
-        <div class="sub-label">About the Paper</div>
-        <p class="hand-sm">Applies YOLOv8 object detection to aerial drone imagery for automated classification of rooftop materials including metal, asphalt, tile, and concrete. Designed for scalable urban infrastructure assessment and disaster resilience planning.</p>
-        <div class="sub-label">Problem Statement</div>
-        <p class="hand-sm">Manual roof surveys are expensive, slow, and dangerous. Satellite imagery lacks the resolution for material-level classification. Drone-based automated detection can scale to city-wide assessment.</p>
-        <div class="pg-footer"><span>pg. 63</span></div>
+<!-- About This Macintosh -->
+<div id="about-overlay" class="hidden">
+  <div id="about-mac">
+    <div class="about-header">
+      <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="4" width="36" height="30" rx="4" fill="#D4D0C8" stroke="#000" stroke-width="1.5"/>
+        <rect x="11" y="9" width="26" height="18" fill="#8C78B8" stroke="#555" stroke-width="0.8"/>
+        <rect x="16" y="34" width="16" height="4" fill="#C8C4C0" stroke="#000" stroke-width="1"/>
+        <rect x="10" y="38" width="28" height="5" rx="2" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
+      </svg>
+      <div>
+        <div class="about-os">Mac OS 8</div>
+        <div class="about-copy">© 1984–1997 Apple Computer, Inc.</div>
       </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Datasets Used</div>
-        <p class="hand-sm">Custom aerial drone imagery dataset with annotated rooftop regions across residential and commercial areas, covering 4 material categories with 5,000+ labeled instances.</p>
-        <div class="sub-label">Results</div>
-        <p class="hand-sm">High mAP across all roof material classes. Real-time inference on drone hardware. Recognized with the Best Paper Award at IEEE ICCDS 2024 for practical impact on urban planning and disaster response.</p>
-        <div class="detail-flow fade fd2">
-          <svg width="280" height="100" viewBox="0 0 280 100" fill="none">
-            <rect x="2" y="30" width="50" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="27" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Aerial</text>
-            <text x="27" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Imagery</text>
-            <line x1="52" y1="50" x2="75" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="75" y="30" width="55" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="102" y="47" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">YOLOv8</text>
-            <text x="102" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Detect</text>
-            <line x1="130" y1="50" x2="155" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="155" y="25" width="55" height="50" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="182" y="43" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Metal</text>
-            <text x="182" y="53" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Asphalt</text>
-            <text x="182" y="63" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Tile/Conc.</text>
-            <line x1="210" y1="50" x2="233" y2="50" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <rect x="233" y="30" width="42" height="40" rx="4" stroke="#F59E0B" stroke-width="2" fill="rgba(245,158,11,.1)"/>
-            <text x="254" y="47" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Best</text>
-            <text x="254" y="57" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#F59E0B">Paper!</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd3" style="margin-top:8px">"looking down to look ahead &mdash; literally"</p>
-        <button type="button" class="back-btn" onclick="goTo(3)" style="margin-top:10px">&larr; Back to Publications</button>
-        <div class="pg-footer"><span>pg. 64</span></div>
-      </div>
+    </div>
+    <div class="about-sep"></div>
+    <div class="about-row"><span>Total Memory:</span><span>∞ MB</span></div>
+    <div class="about-row"><span>Largest Unused Block:</span><span>∞ MB</span></div>
+    <div class="about-sep"></div>
+    <div class="about-app-row">
+      <div class="about-app-bar-wrap"><div class="about-app-bar"></div></div>
+      <span>Kamala Portfolio</span>
+    </div>
+    <div class="dlg-btns" style="margin-top:10px;">
+      <button class="mac-btn mac-btn-default" id="about-ok">OK</button>
+    </div>
+  </div>
+</div>
 
-      <!-- FASS PROJECT DETAIL — pages 21 & 22 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">FASS</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Type:</span> Research Tool / Benchmark</div>
-          <div class="detail-row"><span class="detail-label">Stack:</span> Python, PyTorch, Grad-CAM, IG, SHAP, LIME</div>
-          <div class="detail-row"><span class="detail-label">Status:</span> Published (CVPR 2026)</div>
-        </div>
-        <div class="sub-label">What It Does</div>
-        <p class="hand-sm">A benchmark suite that measures how stable post-hoc attribution methods are when inputs are perturbed. Tests geometric, photometric, and compression perturbations while enforcing prediction-invariance filtering.</p>
-        <div class="sub-label">Technical Highlights</div>
-        <p class="hand-sm">Evaluates Grad-CAM, Integrated Gradients, GradientSHAP, and LIME. Reveals that Grad-CAM is consistently the most stable method across perturbation types.</p>
-        <div class="pg-footer"><span>pg. 71</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Architecture</div>
-        <div class="detail-flow fade fd1">
-          <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-            <rect x="2" y="30" width="50" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="27" y="49" text-anchor="middle" font-family="Coming Soon" font-size="8" fill="#1A1028">Input</text>
-            <line x1="52" y1="45" x2="72" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="72" y="25" width="55" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="99" y="42" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Perturb</text>
-            <text x="99" y="53" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Engine</text>
-            <line x1="127" y1="45" x2="147" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="147" y="25" width="50" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="172" y="42" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">XAI</text>
-            <text x="172" y="53" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Methods</text>
-            <line x1="197" y1="45" x2="217" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="217" y="30" width="50" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="242" y="49" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">FASS Score</text>
-            <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#D6336C"/></marker></defs>
-          </svg>
-        </div>
-        <p class="margin-note fade fd2" style="margin-top:8px">"stability matters more than accuracy when humans are in the loop"</p>
-        <button type="button" class="back-btn" onclick="goTo(2)" style="margin-top:10px">&larr; Back to Projects</button>
-        <div class="pg-footer"><span>pg. 72</span></div>
-      </div>
 
-      <!-- VULNGRAPH PROJECT DETAIL — pages 23 & 24 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">VulnGraph</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Type:</span> ML Model / Detection System</div>
-          <div class="detail-row"><span class="detail-label">Stack:</span> Python, PyTorch, GNN, Transformers</div>
-          <div class="detail-row"><span class="detail-label">Status:</span> Published (Complex Networks 2025)</div>
-        </div>
-        <div class="sub-label">What It Does</div>
-        <p class="hand-sm">Fuses code structure (AST/CFG graphs) with LLM semantic embeddings through a two-way gating architecture for multi-language vulnerability detection with explainable saliency subgraphs.</p>
-        <div class="sub-label">Technical Highlights</div>
-        <p class="hand-sm">93.57% detection accuracy across C, C++, Java, Python. Saliency subgraphs highlight exact vulnerable code regions. Outperforms Devign, Reveal, and LineVul baselines.</p>
-        <div class="pg-footer"><span>pg. 75</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Architecture</div>
-        <div class="detail-flow fade fd1">
-          <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-            <rect x="2" y="15" width="45" height="25" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="24" y="31" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">AST/CFG</text>
-            <rect x="2" y="50" width="45" height="25" rx="4" stroke="#82C8FF" stroke-width="1.5" fill="rgba(130,200,255,.1)"/>
-            <text x="24" y="66" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">LLM</text>
-            <line x1="47" y1="28" x2="72" y2="40" stroke="#D6336C" stroke-width="1"/>
-            <line x1="47" y1="63" x2="72" y2="50" stroke="#82C8FF" stroke-width="1"/>
-            <rect x="72" y="30" width="50" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="97" y="49" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Gating</text>
-            <line x1="122" y1="45" x2="145" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="145" y="30" width="45" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="167" y="49" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">GNN</text>
-            <line x1="190" y1="45" x2="213" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="213" y="30" width="55" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="240" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Vuln?</text>
-            <text x="240" y="55" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#D6336C">93.5%</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd2" style="margin-top:8px">"the graph sees what the LLM misses"</p>
-        <button type="button" class="back-btn" onclick="goTo(2)" style="margin-top:10px">&larr; Back to Projects</button>
-        <div class="pg-footer"><span>pg. 76</span></div>
-      </div>
+<!-- TICKER hidden -->
+<div id="ticker" style="display:none"><div class="ticker-cur" id="ticker-cur"></div></div>
 
-      <!-- SECUREFIXAGENT PROJECT DETAIL — pages 25 & 26 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">SecureFixAgent</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Type:</span> Autonomous Agent</div>
-          <div class="detail-row"><span class="detail-label">Stack:</span> Python, LLM APIs, Bandit Algorithms</div>
-          <div class="detail-row"><span class="detail-label">Status:</span> Published (ICMLA 2025)</div>
-        </div>
-        <div class="sub-label">What It Does</div>
-        <p class="hand-sm">An autonomous agent that detects vulnerabilities, generates patches using LLM reasoning, and optimizes repair strategy via multi-armed bandit algorithms with explainable rationales.</p>
-        <div class="sub-label">Technical Highlights</div>
-        <p class="hand-sm">+13.5% patch success rate. -10.8% false positives. Bandit optimization learns which repair strategies work best across different vulnerability types.</p>
-        <div class="pg-footer"><span>pg. 79</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Architecture</div>
-        <div class="detail-flow fade fd1">
-          <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-            <rect x="2" y="30" width="45" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="24" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Vuln</text>
-            <text x="24" y="54" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Code</text>
-            <line x1="47" y1="45" x2="67" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="67" y="28" width="50" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="92" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">LLM</text>
-            <text x="92" y="55" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Reason</text>
-            <line x1="117" y1="45" x2="137" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="137" y="28" width="50" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="162" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Bandit</text>
-            <text x="162" y="55" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Opt.</text>
-            <line x1="187" y1="45" x2="207" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="207" y="28" width="55" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="234" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Patched</text>
-            <text x="234" y="55" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#D6336C">+13.5%</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd2" style="margin-top:8px">"let the bandit learn which patches actually work"</p>
-        <button type="button" class="back-btn" onclick="goTo(2)" style="margin-top:10px">&larr; Back to Projects</button>
-        <div class="pg-footer"><span>pg. 80</span></div>
-      </div>
 
-      <!-- MALCODEAI PROJECT DETAIL — pages 27 & 28 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">MalCodeAI</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Type:</span> Detection Pipeline</div>
-          <div class="detail-row"><span class="detail-label">Stack:</span> Python, LLM APIs, Static Analysis</div>
-          <div class="detail-row"><span class="detail-label">Status:</span> Published (IEEE IRI 2025)</div>
-        </div>
-        <div class="sub-label">What It Does</div>
-        <p class="hand-sm">A two-phase pipeline where Phase 1 performs deep semantic code reasoning to understand intent, and Phase 2 simulates exploit scenarios. Generates automated patches for detected malicious patterns.</p>
-        <div class="sub-label">Technical Highlights</div>
-        <p class="hand-sm">Detects obfuscated malicious patterns that signature-based tools miss. Language-agnostic across Python, JavaScript, and C. Generates functional patches validated against exploit test suites.</p>
-        <div class="pg-footer"><span>pg. 83</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Architecture</div>
-        <div class="detail-flow fade fd1">
-          <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-            <rect x="2" y="30" width="42" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="23" y="49" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Code</text>
-            <line x1="44" y1="45" x2="62" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="62" y="25" width="55" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="89" y="40" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Phase 1:</text>
-            <text x="89" y="51" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Semantic</text>
-            <text x="89" y="60" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Reasoning</text>
-            <line x1="117" y1="45" x2="135" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="135" y="25" width="55" height="40" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="162" y="40" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Phase 2:</text>
-            <text x="162" y="51" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Exploit</text>
-            <text x="162" y="60" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Simulate</text>
-            <line x1="190" y1="45" x2="210" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="210" y="28" width="55" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="237" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Detect</text>
-            <text x="237" y="55" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">+ Patch</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd2" style="margin-top:8px">"understand intent first, then simulate the attack"</p>
-        <button type="button" class="back-btn" onclick="goTo(2)" style="margin-top:10px">&larr; Back to Projects</button>
-        <div class="pg-footer"><span>pg. 84</span></div>
-      </div>
+<!-- ═══════════════════════════════════
+     DESKTOP ICONS — Classic Mac (right side)
+     Top: disk volume. Middle: folders. Bottom: Trash.
+═══════════════════════════════════ -->
+<div id="taskbar">
 
-      <!-- HYPERCOMPLX PROJECT DETAIL — pages 29 & 30 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">HyperComplEx</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Type:</span> ML Model / KG Embeddings</div>
-          <div class="detail-row"><span class="detail-label">Stack:</span> Python, PyTorch, Riemannian Optimization</div>
-          <div class="detail-row"><span class="detail-label">Status:</span> Published (IEEE 2025)</div>
-        </div>
-        <div class="sub-label">What It Does</div>
-        <p class="hand-sm">A multi-space knowledge graph embedding model that jointly operates in hyperbolic, complex, and Euclidean geometries to capture hierarchical, rotational, and translational relation patterns.</p>
-        <div class="sub-label">Technical Highlights</div>
-        <p class="hand-sm">Outperforms RotatE, ComplEx, and MuRP on WN18RR, FB15k-237, and YAGO3-10. The multi-space fusion captures patterns no single geometry can represent alone.</p>
-        <div class="pg-footer"><span>pg. 87</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Architecture</div>
-        <div class="detail-flow fade fd1">
-          <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-            <rect x="2" y="30" width="38" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="21" y="49" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">KG</text>
-            <line x1="40" y1="35" x2="58" y2="20" stroke="#D6336C" stroke-width="1"/>
-            <line x1="40" y1="45" x2="58" y2="45" stroke="#D6336C" stroke-width="1"/>
-            <line x1="40" y1="55" x2="58" y2="70" stroke="#D6336C" stroke-width="1"/>
-            <rect x="58" y="8" width="50" height="22" rx="4" stroke="#9B8CB8" stroke-width="1.5" fill="rgba(180,150,255,.1)"/>
-            <text x="83" y="23" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Hyperbolic</text>
-            <rect x="58" y="34" width="50" height="22" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="83" y="49" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Complex</text>
-            <rect x="58" y="60" width="50" height="22" rx="4" stroke="#82C8FF" stroke-width="1.5" fill="rgba(130,200,255,.1)"/>
-            <text x="83" y="75" text-anchor="middle" font-family="Coming Soon" font-size="6.5" fill="#1A1028">Euclidean</text>
-            <line x1="108" y1="19" x2="135" y2="40" stroke="#D6336C" stroke-width="1"/>
-            <line x1="108" y1="45" x2="135" y2="45" stroke="#D6336C" stroke-width="1"/>
-            <line x1="108" y1="71" x2="135" y2="50" stroke="#D6336C" stroke-width="1"/>
-            <rect x="135" y="30" width="45" height="30" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="157" y="49" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Fusion</text>
-            <line x1="180" y1="45" x2="200" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="200" y="28" width="65" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="232" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Link</text>
-            <text x="232" y="55" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Prediction</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd2" style="margin-top:8px">"one space to rule them all? no &mdash; three."</p>
-        <button type="button" class="back-btn" onclick="goTo(2)" style="margin-top:10px">&larr; Back to Projects</button>
-        <div class="pg-footer"><span>pg. 88</span></div>
-      </div>
+  <!-- Kamala HD — disk volume, always at top-right -->
+  <button class="tb-hd" id="hd-icon" title="Kamala HD">
+    <svg viewBox="0 0 38 28" width="38" height="28" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="3" width="36" height="22" rx="3" fill="#D4D0C8" stroke="#000" stroke-width="1.2"/>
+      <rect x="5" y="8" width="16" height="12" fill="#222244" stroke="#555" stroke-width="0.8"/>
+      <rect x="6" y="9" width="14" height="10" fill="#333366"/>
+      <circle cx="11" cy="12" r="1.5" fill="#8888CC"/>
+      <circle cx="16" cy="12" r="1.5" fill="#8888CC"/>
+      <path d="M10,16 Q13.5,19 17,16" stroke="#8888CC" stroke-width="1" fill="none"/>
+      <rect x="24" y="18" width="9" height="2" rx="1" fill="#999" stroke="#666" stroke-width="0.5"/>
+      <circle cx="29" cy="13" r="2" fill="#555"/>
+      <rect x="24" y="10" width="9" height="4" rx="1" fill="#BBB" stroke="#888" stroke-width="0.5"/>
+    </svg>
+    <span class="tb-ico-lbl">Kamala HD</span>
+  </button>
 
-      <!-- YOLO PROJECT DETAIL — pages 31 & 32 -->
-      <div class="pg pg-left">
-        <div class="section-label fade">YOLO: Roof Detection</div>
-        <div class="detail-meta">
-          <div class="detail-row"><span class="detail-label">Type:</span> Computer Vision / Object Detection</div>
-          <div class="detail-row"><span class="detail-label">Stack:</span> Python, YOLOv8, OpenCV</div>
-          <div class="detail-row"><span class="detail-label">Status:</span> Published (IEEE ICCDS 2024) &bull; Best Paper</div>
-        </div>
-        <div class="sub-label">What It Does</div>
-        <p class="hand-sm">Applies YOLOv8 object detection to aerial drone imagery for automated classification of rooftop materials — metal, asphalt, tile, and concrete. Designed for scalable urban infrastructure assessment.</p>
-        <div class="sub-label">Technical Highlights</div>
-        <p class="hand-sm">High mAP across all roof material classes. Real-time inference on drone hardware. Awarded Best Paper at IEEE ICCDS 2024 for practical impact on disaster response and urban planning.</p>
-        <div class="pg-footer"><span>pg. 91</span></div>
-      </div>
-      <div class="pg pg-right">
-        <div class="sub-label" style="margin-top:0">Architecture</div>
-        <div class="detail-flow fade fd1">
-          <svg width="280" height="90" viewBox="0 0 280 90" fill="none">
-            <rect x="2" y="28" width="50" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="27" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Aerial</text>
-            <text x="27" y="55" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Image</text>
-            <line x1="52" y1="45" x2="72" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="72" y="28" width="50" height="35" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="97" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">YOLOv8</text>
-            <text x="97" y="55" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Detect</text>
-            <line x1="122" y1="45" x2="142" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="142" y="22" width="55" height="46" rx="4" stroke="#D6336C" stroke-width="1.5" fill="rgba(214,51,108,.08)"/>
-            <text x="169" y="38" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Metal</text>
-            <text x="169" y="48" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Asphalt</text>
-            <text x="169" y="58" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#1A1028">Tile/Conc.</text>
-            <line x1="197" y1="45" x2="217" y2="45" stroke="#D6336C" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="217" y="28" width="50" height="35" rx="4" stroke="#F59E0B" stroke-width="2" fill="rgba(245,158,11,.1)"/>
-            <text x="242" y="44" text-anchor="middle" font-family="Coming Soon" font-size="7" fill="#1A1028">Best</text>
-            <text x="242" y="55" text-anchor="middle" font-family="Coming Soon" font-size="6" fill="#F59E0B">Paper!</text>
-          </svg>
-        </div>
-        <p class="margin-note fade fd2" style="margin-top:8px">"looking down to look ahead &mdash; literally"</p>
-        <button type="button" class="back-btn" onclick="goTo(2)" style="margin-top:10px">&larr; Back to Projects</button>
-        <div class="pg-footer"><span>pg. 92</span></div>
-      </div>
+  <div class="dock-shelf">
 
-    </div><!-- /flipbook -->
-  </div><!-- /book -->
-</div><!-- /notebook -->
+    <!-- HOME — folder icon -->
+    <button class="tb-ico" data-sec="home" title="home">
+      <svg viewBox="0 0 40 34" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="1,11 15,11 18,7 39,7 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
+        <rect x="2" y="12" width="36" height="3" fill="#A0C0F0" opacity="0.9"/>
+        <rect x="2" y="15" width="36" height="1" fill="#4A78B8" opacity="0.4"/>
+      </svg>
+      <span class="tb-ico-lbl">home</span>
+    </button>
 
-<div class="nav-hint">Drag a page corner &bull; Use arrow keys &bull; Swipe to navigate</div>
+    <!-- ABOUT — document icon -->
+    <button class="tb-ico" data-sec="about" title="about">
+      <svg viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="1,1 22,1 31,10 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+        <polygon points="22,1 22,10 31,10" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+        <line x1="5" y1="17" x2="27" y2="17" stroke="#888" stroke-width="1"/>
+        <line x1="5" y1="22" x2="27" y2="22" stroke="#888" stroke-width="1"/>
+        <line x1="5" y1="27" x2="20" y2="27" stroke="#888" stroke-width="1"/>
+      </svg>
+      <span class="tb-ico-lbl">about</span>
+    </button>
 
-<script src="js/Jquery.js"></script>
-<script src="js/Turn.js"></script>
-<script src="js/notebook.js"></script>
+    <!-- PROJECTS — folder icon -->
+    <button class="tb-ico" data-sec="projects" title="projects">
+      <svg viewBox="0 0 40 34" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="1,11 15,11 18,7 39,7 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
+        <rect x="2" y="12" width="36" height="3" fill="#A0C0F0" opacity="0.9"/>
+        <rect x="2" y="15" width="36" height="1" fill="#4A78B8" opacity="0.4"/>
+      </svg>
+      <span class="tb-ico-lbl">projects</span>
+    </button>
+
+    <!-- PAPERS — document icon -->
+    <button class="tb-ico" data-sec="publications" title="papers">
+      <svg viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="1,1 22,1 31,10 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+        <polygon points="22,1 22,10 31,10" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+        <line x1="5" y1="17" x2="27" y2="17" stroke="#888" stroke-width="1"/>
+        <line x1="5" y1="22" x2="27" y2="22" stroke="#888" stroke-width="1"/>
+        <line x1="5" y1="27" x2="20" y2="27" stroke="#888" stroke-width="1"/>
+      </svg>
+      <span class="tb-ico-lbl">papers</span>
+    </button>
+
+    <!-- RESUME — document stack icon -->
+    <button class="tb-ico" data-sec="resume" title="resume">
+      <svg viewBox="0 0 36 42" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="5,5 27,5 35,13 35,41 5,41" fill="#E0E8FF" stroke="#888" stroke-width="0.8"/>
+        <polygon points="1,1 23,1 31,9 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+        <polygon points="23,1 23,9 31,9" fill="#C8D8F0" stroke="#000" stroke-width="1"/>
+        <line x1="5" y1="15" x2="27" y2="15" stroke="#6B98D6" stroke-width="1.5"/>
+        <line x1="5" y1="20" x2="27" y2="20" stroke="#888" stroke-width="1"/>
+        <line x1="5" y1="25" x2="27" y2="25" stroke="#888" stroke-width="1"/>
+        <line x1="5" y1="30" x2="18" y2="30" stroke="#888" stroke-width="1"/>
+      </svg>
+      <span class="tb-ico-lbl">resume</span>
+    </button>
+
+    <!-- CONTACT — envelope icon -->
+    <button class="tb-ico" data-sec="contact" title="contact">
+      <svg viewBox="0 0 40 30" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="38" height="28" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
+        <polyline points="1,1 20,18 39,1" stroke="#000" stroke-width="1" fill="none"/>
+        <line x1="1" y1="29" x2="13" y2="17" stroke="#888" stroke-width="1"/>
+        <line x1="39" y1="29" x2="27" y2="17" stroke="#888" stroke-width="1"/>
+      </svg>
+      <span class="tb-ico-lbl">contact</span>
+    </button>
+
+  </div><!-- /dock-shelf -->
+
+  <!-- Trash — always at bottom-right of Mac desktop -->
+  <button class="tb-trash" id="trash-icon" title="Trash">
+    <svg viewBox="0 0 28 34" width="28" height="34" xmlns="http://www.w3.org/2000/svg">
+      <!-- handle -->
+      <rect x="10" y="1" width="8" height="3" rx="1" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
+      <!-- lid -->
+      <rect x="2" y="4" width="24" height="4" rx="1" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
+      <!-- body -->
+      <path d="M4,8 L5.5,32 L22.5,32 L24,8 Z" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
+      <!-- vertical ridges -->
+      <line x1="10" y1="12" x2="10" y2="29" stroke="#888" stroke-width="1"/>
+      <line x1="14" y1="12" x2="14" y2="29" stroke="#888" stroke-width="1"/>
+      <line x1="18" y1="12" x2="18" y2="29" stroke="#888" stroke-width="1"/>
+    </svg>
+    <span class="tb-ico-lbl">Trash</span>
+  </button>
+
+  <!-- hidden JS compat -->
+  <button class="tb-btn" data-win="player" style="display:none"></button>
+
+  <!-- hidden JS compat -->
+  <span class="tb-logo" style="display:none">KAMALA</span>
+  <span class="tb-sep" style="display:none"></span>
+  <span class="tb-heart" style="display:none">&#9825;</span>
+</div>
+
+
+<script src="js/y2k.js"></script>
 </body>
 </html>
