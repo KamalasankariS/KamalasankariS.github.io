@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE DOSSIER — KAMALA COMICS</title>
+  <meta name="description" content="Kamala Sankari — Resume and Research CV." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/comic.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    body.page-resume {
+      background: #C4956A;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* Comic-styled wood background — light warm oak with bold grain */
+    body.page-resume::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        /* Bold comic wood grain — thick exaggerated strokes */
+        repeating-linear-gradient(
+          2deg,
+          rgba(101,67,33,0.12) 0px,
+          transparent 2px,
+          transparent 12px,
+          rgba(101,67,33,0.08) 12px,
+          rgba(101,67,33,0.08) 14px,
+          transparent 14px,
+          transparent 28px
+        ),
+        /* Horizontal plank seams — thick comic borders */
+        repeating-linear-gradient(
+          90deg,
+          transparent 0px,
+          transparent 240px,
+          rgba(0,0,0,0.15) 240px,
+          rgba(0,0,0,0.15) 244px
+        ),
+        /* Vertical shelf dividers */
+        repeating-linear-gradient(
+          0deg,
+          transparent 0px,
+          transparent 300px,
+          rgba(0,0,0,0.06) 300px,
+          rgba(0,0,0,0.06) 302px
+        ),
+        /* Knot holes — comic dots */
+        radial-gradient(circle 8px at 120px 150px, rgba(101,67,33,0.2), transparent),
+        radial-gradient(circle 6px at 400px 80px, rgba(101,67,33,0.15), transparent),
+        radial-gradient(circle 10px at 700px 200px, rgba(101,67,33,0.18), transparent),
+        /* Base warm light oak */
+        linear-gradient(180deg, #D4A574 0%, #C4956A 30%, #B8875E 60%, #A87850 100%);
+      background-attachment: fixed;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Comic halftone overlay on the wood */
+    body.page-resume::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
+      background-size: 10px 10px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body.page-resume .section-title {
+      color: var(--ink);
+      text-shadow: 2px 2px 0 var(--yellow);
+      position: relative;
+      z-index: 1;
+    }
+
+    body.page-resume .page-subtitle {
+      color: rgba(40,20,10,0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Newsstand display ── */
+    .newsstand {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 20px;
+      perspective: 1200px;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    /* ── Comic book issue ── */
+    .comic-issue {
+      width: 260px;
+      height: 370px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .comic-issue:nth-child(1) { transform: rotate(-3deg); }
+    .comic-issue:nth-child(2) { transform: rotate(2deg); }
+
+    .comic-issue:hover {
+      transform: rotate(0deg) scale(1.06) translateY(-12px) !important;
+      z-index: 10;
+    }
+
+    /* The cover */
+    .issue-cover {
+      width: 100%;
+      height: 100%;
+      border: 5px solid var(--ink);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .issue-cover.pink-issue { background: var(--pink); }
+    .issue-cover.sky-issue { background: var(--sky); }
+
+    /* Halftone overlay on cover */
+    .issue-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1.5px, transparent 1.5px);
+      background-size: 8px 8px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Speed lines on cover */
+    .issue-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 6px,
+        rgba(255,255,255,0.06) 6px,
+        rgba(255,255,255,0.06) 8px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Top branding bar */
+    .issue-header {
+      background: rgba(0,0,0,0.85);
+      padding: 8px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .issue-brand {
+      font-family: var(--font-bang);
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--yellow);
+    }
+
+    .issue-price {
+      font-family: var(--font-bang);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--pink);
+    }
+
+    /* Issue number badge */
+    .issue-badge {
+      position: absolute;
+      top: 42px;
+      left: 14px;
+      background: var(--yellow);
+      border: 3px solid var(--ink);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      transform: rotate(-5deg);
+    }
+
+    .issue-badge span {
+      font-family: var(--font-bang);
+      font-size: 22px;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    /* Cover center content */
+    .issue-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .issue-icon {
+      font-size: 72px;
+      filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.3));
+      margin-bottom: 8px;
+    }
+
+    .issue-icon-svg {
+      width: 90px;
+      height: 90px;
+      filter: drop-shadow(3px 3px 0 rgba(0,0,0,0.25));
+      margin-bottom: 8px;
+    }
+
+    /* Big title on cover */
+    .issue-title {
+      font-family: var(--font-bang);
+      font-size: 42px;
+      letter-spacing: 3px;
+      color: #fff;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.4);
+      text-align: center;
+      line-height: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .issue-tagline {
+      font-family: var(--font-comic);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      margin-top: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Bottom bar with CTA */
+    .issue-footer {
+      background: rgba(0,0,0,0.9);
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .issue-contents {
+      font-family: var(--font-comic);
+      font-size: 10px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .issue-cta {
+      font-family: var(--font-bang);
+      font-size: 13px;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border: 2px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      background: transparent;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .issue-cta:hover {
+      background: var(--yellow);
+      color: var(--ink);
+      border-color: var(--yellow);
+    }
+
+    .issue-download {
+      background: var(--pink);
+      border-color: var(--pink);
+    }
+
+    .issue-download:hover {
+      background: var(--hot-pink);
+      color: #fff;
+      border-color: var(--hot-pink);
+    }
+
+    .issue-btns {
+      display: flex;
+      gap: 6px;
+    }
+
+    /* Starburst "NEW!" */
+    .starburst {
+      position: absolute;
+      top: 40px;
+      right: 14px;
+      width: 64px;
+      height: 64px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .starburst::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--yellow);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .starburst span {
+      font-family: var(--font-bang);
+      font-size: 14px;
+      color: var(--ink);
+      position: relative;
+      z-index: 1;
+      letter-spacing: 1px;
+    }
+
+    /* Comic-styled wooden shelf plank */
+    .shelf-line {
+      width: 96%;
+      max-width: 880px;
+      height: 18px;
+      background:
+        /* Wood grain on plank */
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.05) 0px,
+          transparent 3px,
+          transparent 20px
+        ),
+        linear-gradient(180deg, #9B7044, #8B6238, #7A5530);
+      margin: 8px auto 0;
+      position: relative;
+      z-index: 1;
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+    }
+
+    /* Comic shelf brackets — bold and chunky */
+    .shelf-line::before,
+    .shelf-line::after {
+      content: '';
+      position: absolute;
+      bottom: -26px;
+      width: 20px;
+      height: 26px;
+      background: linear-gradient(180deg, #7A5530, #6B4A28);
+      border: 3px solid var(--ink);
+      border-top: none;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    }
+    .shelf-line::before { left: 80px; }
+    .shelf-line::after { right: 80px; }
+
+    /* Bottom speech bubble */
+    .dossier-speech {
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .speech-box {
+      display: inline-block;
+      background: #fff;
+      border: 3px solid var(--ink);
+      border-radius: 20px;
+      padding: 12px 24px;
+      box-shadow: 3px 3px 0 var(--ink);
+      position: relative;
+      font-family: var(--font-comic);
+      font-size: 13px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .speech-box::after {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-bottom: 14px solid var(--ink);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+
+    .speech-box::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-bottom: 11px solid #fff;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      z-index: 1;
+    }
+
+    /* Override page section for fixed layout */
+    body.page-resume .page-section {
+      padding-top: 8px;
+      min-height: 0;
+    }
+    body.page-resume .page-title-wrap {
+      margin-bottom: 30px;
+      padding-top: 10px;
+    }
+    body.page-resume main {
+      padding-bottom: 50px;
+    }
+
+    /* Scale down inner elements for smaller cards */
+    .issue-title { font-size: 32px; }
+    .issue-tagline { font-size: 11px; }
+    .issue-icon-svg { width: 65px; height: 65px; }
+    .issue-badge { top: 36px; width: 40px; height: 40px; }
+    .issue-badge span { font-size: 18px; }
+    .starburst { top: 34px; width: 52px; height: 52px; }
+    .starburst span { font-size: 12px; }
+    .issue-header { padding: 6px 10px; }
+    .issue-brand { font-size: 9px; }
+    .issue-price { font-size: 9px; }
+    .issue-footer { padding: 10px 12px; }
+    .issue-contents { font-size: 8px; }
+    .issue-cta { font-size: 11px; padding: 4px 12px; }
+    .issue-center { padding: 14px; }
+
+    /* Shelf + speech tighter */
+    .shelf-line { margin-top: 4px; height: 14px; }
+    .shelf-line::before, .shelf-line::after { height: 20px; bottom: -20px; }
+    .dossier-speech { margin-top: 28px; margin-bottom: 10px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .newsstand {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      .comic-issue {
+        width: 240px;
+        height: 340px;
+      }
+      .comic-issue:nth-child(1),
+      .comic-issue:nth-child(2) {
+        transform: rotate(0deg);
+      }
+      .issue-title { font-size: 26px; }
+      .issue-icon-svg { width: 50px; height: 50px; }
+    }
+  </style>
+</head>
+<body class="inner-page page-resume">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="index.html">HOME</a>
+  <a class="nav-bubble" href="about.html">ABOUT</a>
+  <a class="nav-bubble" href="experience.html">XP</a>
+  <a class="nav-bubble" href="projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="pubs.html">PUBS</a>
+  <a class="nav-bubble active" href="resume.html">CV</a>
+  <a class="nav-bubble" href="contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble active" href="resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section" style="max-width: 900px; margin: 0 auto;">
+    <div class="page-title-wrap">
+      <h1 class="section-title">THE DOSSIER</h1>
+      <p class="page-subtitle">Collector's editions. Limited print run.</p>
+    </div>
+
+    <div class="newsstand">
+
+      <!-- ISSUE #1: RESUME -->
+      <div class="comic-issue">
+        <div class="issue-cover pink-issue">
+          <div class="issue-header">
+            <span class="issue-brand">KAMALA COMICS</span>
+            <span class="issue-price">2026 EDITION</span>
+          </div>
+          <div class="issue-badge"><span>#1</span></div>
+          <div class="starburst"><span>NEW!</span></div>
+          <div class="issue-center">
+            <img src="assets/icon-resume.svg" alt="Resume" class="issue-icon-svg" />
+            <div class="issue-title">RESUME</div>
+            <div class="issue-tagline">The one-pager that packs a punch</div>
+          </div>
+          <div class="issue-footer">
+            <div class="issue-contents">
+              INSIDE:<br>
+              AI/ML &bull; Agentic Systems &bull; Full-Stack
+            </div>
+            <div class="issue-btns">
+              <a href="assets/resume.pdf" target="_blank" class="issue-cta">READ</a>
+              <a href="assets/resume.pdf" download class="issue-cta issue-download">DOWNLOAD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ISSUE #2: RESEARCH CV -->
+      <div class="comic-issue">
+        <div class="issue-cover sky-issue">
+          <div class="issue-header">
+            <span class="issue-brand">KAMALA COMICS</span>
+            <span class="issue-price">SPECIAL EDITION</span>
+          </div>
+          <div class="issue-badge"><span>#2</span></div>
+          <div class="starburst"><span>7 PUBS</span></div>
+          <div class="issue-center">
+            <img src="assets/icon-research.svg" alt="Research" class="issue-icon-svg" />
+            <div class="issue-title">RESEARCH CV</div>
+            <div class="issue-tagline">The extended universe</div>
+          </div>
+          <div class="issue-footer">
+            <div class="issue-contents">
+              INSIDE:<br>
+              CVPR &bull; IEEE &bull; ICMLA &bull; arXiv
+            </div>
+            <div class="issue-btns">
+              <a href="assets/research-cv.pdf" target="_blank" class="issue-cta">READ</a>
+              <a href="assets/research-cv.pdf" download class="issue-cta issue-download">DOWNLOAD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="shelf-line"></div>
+
+    <div class="dossier-speech">
+      <div class="speech-box">
+        The highlight reel and the director's cut. Pick your arc.
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="js/comic.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

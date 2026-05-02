@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FASS: XAI STABILITY BENCHMARK — KAMALA COMICS</title>
+  <meta name="description" content="FASS: Faithfulness & Attribution Stability Score — comprehensive benchmark for post-hoc XAI methods." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble active" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble active" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(36px, 6vw, 72px);">FASS: XAI STABILITY BENCHMARK</h1>
+      <p class="page-subtitle">Faithfulness meets attribution. Every pixel accounted for.</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Situation -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">SITUATION</span>
+        </div>
+        <ul class="star-list">
+          <li>Post-hoc XAI methods (SHAP, LIME, Grad-CAM, Integrated Gradients) are widely used to explain deep learning predictions</li>
+          <li>No standardized benchmark existed to evaluate whether these explanations remain stable under real-world perturbations</li>
+          <li>Models deployed in high-stakes domains (medical imaging, autonomous driving) need reliable, consistent explanations</li>
+        </ul>
+      </div>
+
+      <!-- Task -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">TASK</span>
+        </div>
+        <ul class="star-list">
+          <li>Design and build a comprehensive stability benchmark across multiple datasets (CIFAR-10, COCO, ImageNet) and perturbation types (noise, rotation)</li>
+          <li>Evaluate 6+ XAI methods using multiple stability metrics (Average Sensitivity, Max Sensitivity, Rank Correlation, Attribution Overlap)</li>
+          <li>Produce actionable findings for practitioners choosing XAI methods for production systems</li>
+        </ul>
+      </div>
+
+      <!-- Action -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">ACTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Built full experimental pipeline in PyTorch with Captum, SHAP, and LIME integrations</li>
+          <li>Evaluated across 80K+ images spanning three datasets and two perturbation families</li>
+          <li>Computed component-level and aggregate FASS scores for each method-model-dataset combination</li>
+          <li>Ran ablation studies to isolate metric contributions</li>
+        </ul>
+      </div>
+
+      <!-- Result -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">RESULT</span>
+        </div>
+        <ul class="star-list">
+          <li>Published at CVPR 2026</li>
+          <li>Revealed that gradient-based methods (Integrated Gradients) are significantly more stable than perturbation-based methods (LIME) under noise</li>
+          <li>Open-sourced the full benchmark pipeline and results</li>
+          <li>Adopted by researchers as a reference stability evaluation framework</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="star-tech-stack">
+      <h3 class="star-tech-title">TECH STACK</h3>
+      <div class="card-back-tags">
+        <span class="card-tag">Python</span>
+        <span class="card-tag">PyTorch</span>
+        <span class="card-tag">Captum</span>
+        <span class="card-tag">SHAP</span>
+        <span class="card-tag">LIME</span>
+        <span class="card-tag">Jupyter</span>
+        <span class="card-tag">scikit-learn</span>
+        <span class="card-tag">matplotlib</span>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://github.com/KamalasankariS/xai-stability-benchmark" target="_blank" class="card-back-btn btn-repo">View Repo</a>
+      <a href="../projects.html" class="card-back-btn btn-project">Back to Projects</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

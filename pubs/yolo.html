@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOLO: ROOF MATERIAL DETECTION — KAMALA COMICS</title>
+  <meta name="description" content="YOLO: Roof Material Detection Using Aerial Imagery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(28px, 5vw, 56px);">YOLO: ROOF MATERIAL DETECTION USING AERIAL IMAGERY</h1>
+      <p class="page-subtitle">IEEE ICCDS &middot; 2024</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Problem Statement — full width top -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">PROBLEM STATEMENT</span>
+        </div>
+        <ul class="star-list">
+          <li>Urban planners and insurance companies need accurate roof material classification from aerial imagery</li>
+          <li>Manual inspection is expensive and unscalable across large urban areas</li>
+          <li>Existing object detection models lacked material-level classification precision for rooftops</li>
+        </ul>
+      </div>
+
+      <!-- Solution — left -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">SOLUTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Fine-tuned YOLOv8 on custom-annotated aerial imagery dataset for roof material classification</li>
+          <li>Optimized for real-world deployment in insurance underwriting and disaster preparedness</li>
+          <li>Achieved significant accuracy improvement over baseline models</li>
+        </ul>
+      </div>
+
+      <!-- Our Positioning — right -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">OUR POSITIONING</span>
+        </div>
+        <ul class="star-list">
+          <li>First application of YOLOv8 to roof material classification from aerial imagery</li>
+          <li>Practical utility for insurance risk assessment and municipal infrastructure planning</li>
+          <li>Demonstrated that careful problem selection yields high-impact results</li>
+        </ul>
+      </div>
+
+      <!-- Architecture — full width -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">ARCHITECTURE</span>
+        </div>
+        <ul class="star-list">
+          <li>YOLOv8 backbone with transfer learning from COCO pre-trained weights</li>
+          <li>Custom annotated dataset of aerial roof imagery with material labels</li>
+          <li>Data augmentation pipeline (rotation, scaling, color jitter)</li>
+          <li>Hyperparameter optimization for small object detection in aerial scenes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second comic page for Dataset + Results -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <!-- Dataset Used — left -->
+      <div class="star-panel" style="grid-column: 1/2; --panel-color: var(--lime);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: var(--yellow);">DATASET USED</span>
+        </div>
+        <ul class="star-list">
+          <li>Custom annotated aerial/satellite imagery dataset</li>
+          <li>Multiple roof material classes</li>
+          <li>Train/validation/test splits for rigorous evaluation</li>
+        </ul>
+      </div>
+
+      <!-- Results — right -->
+      <div class="star-panel" style="grid-column: 2/3; --panel-color: var(--hot-pink);">
+        <div class="star-panel-header">
+          <span class="star-label">RESULTS</span>
+        </div>
+        <ul class="star-list">
+          <li>Improved mAP by 32.5% over YOLOv5 baseline</li>
+          <li>Best Paper Award at IEEE ICCDS 2024</li>
+          <li>Demonstrated practical applicability for insurance and urban planning</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Third comic page for Awards -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <div class="star-panel" style="grid-column: 1/-1; --panel-color: var(--yellow);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: #fff;">AWARDS</span>
+        </div>
+        <ul class="star-list">
+          <li>Best Paper Award, IEEE ICCDS 2024</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://ieeexplore.ieee.org/document/10560402" target="_blank" class="card-back-btn btn-repo">View Paper</a>
+      <a href="../assets/best-paper-award.pdf" target="_blank" class="card-back-btn btn-project">View Award</a>
+      <a href="../pubs.html" class="card-back-btn" style="background: var(--yellow); color: var(--ink);">Back to Publications</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

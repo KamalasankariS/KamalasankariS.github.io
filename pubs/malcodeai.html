@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MALCODEAI — KAMALA COMICS</title>
+  <meta name="description" content="MalCodeAI: AI-Powered Malicious Code Detection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(28px, 5vw, 56px);">MALCODEAI: AI-POWERED MALICIOUS CODE DETECTION</h1>
+      <p class="page-subtitle">IEEE IRI &middot; 2025</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Problem Statement — full width top -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">PROBLEM STATEMENT</span>
+        </div>
+        <ul class="star-list">
+          <li>Malicious code can be semantically disguised within benign-looking programs</li>
+          <li>Traditional static analysis misses intent-level obfuscation</li>
+          <li>No tool combined intent comparison with component-level deep inspection</li>
+        </ul>
+      </div>
+
+      <!-- Solution — left -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">SOLUTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Two-phase pipeline: intent comparison + program decomposition</li>
+          <li>Phase 1: LLM generates code description, compared with user-stated intent via semantic similarity</li>
+          <li>Phase 2: AST-based decomposition into independent components, each scored and inspected</li>
+        </ul>
+      </div>
+
+      <!-- Our Positioning — right -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">OUR POSITIONING</span>
+        </div>
+        <ul class="star-list">
+          <li>Novel two-stage pipeline: first decomposes code into functional components, then applies semantic vulnerability detection with red-hat-style exploit reasoning and automatic remediation</li>
+          <li>Language-agnostic approach supporting 14 programming languages</li>
+          <li>Red-hat-style exploit tracing and CVSS-based risk scoring for actionable security assessment</li>
+          <li>Zero-shot generalization capability for detecting complex, zero-day vulnerabilities</li>
+          <li>Positioned against CodeBERT, GraphCodeBERT, GPT-based variants, VulDeePecker, VulBERTa which are constrained to known vulnerabilities or narrow datasets</li>
+        </ul>
+      </div>
+
+      <!-- Architecture — full width -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">ARCHITECTURE</span>
+        </div>
+        <ul class="star-list">
+          <li>Phase 1: DeepSeek Coder v2 (1.3B instruct) for code description generation</li>
+          <li>GTR-T5-Large for semantic similarity between generated and user descriptions</li>
+          <li>Phase 2: AST parsing + graph analysis for program decomposition</li>
+          <li>Robustness scoring (1-10) per component; low-scoring components undergo deep inspection</li>
+          <li>Threat classification with explanation and fix recommendation generation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second comic page for Dataset + Results -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <!-- Dataset Used — left -->
+      <div class="star-panel" style="grid-column: 1/2; --panel-color: var(--lime);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: var(--yellow);">DATASET USED</span>
+        </div>
+        <ul class="star-list">
+          <li>Custom dataset of labeled malicious and benign code snippets across 14 programming languages (Python, Java, C, C++, Rust, Go, Scala, and more)</li>
+          <li>Focused on 10 critical vulnerability types (SQL Injection, XSS, Remote Code Execution, etc.)</li>
+          <li>Remediation evaluation: 20 manually crafted code files spanning 4 mini-projects (Python, C, Java, JavaScript)</li>
+          <li>11 injected vulnerabilities in the insecure project; 6 in mixed-security setups</li>
+          <li>Qualitative evaluation: feedback from 15 developers (practitioners and CS students)</li>
+          <li>LoRA fine-tuning on Qwen2.5-Coder-3B-Instruct within MLX framework on Apple Silicon M4 Pro</li>
+        </ul>
+      </div>
+
+      <!-- Results — right -->
+      <div class="star-panel" style="grid-column: 2/3; --panel-color: var(--hot-pink);">
+        <div class="star-panel-header">
+          <span class="star-label">RESULTS</span>
+        </div>
+        <ul class="star-list">
+          <li>Phase 1 (Code Decomposition) best validation loss: 0.397 (200 iterations, 6 trainable layers)</li>
+          <li>Phase 2 (Vulnerability Detection) best validation loss: 0.199 (learning rate 4e-5, 6 trainable layers)</li>
+          <li>Developer survey (n=15): Usefulness 8.06/10, Readability 7.00/10, Interpretability 7.40/10</li>
+          <li>Remediation: 8/11 vulnerabilities detected in insecure project (5 specific fixes, 3 generic); 5/6 in mixed projects</li>
+          <li>System found 1 overlooked vulnerability confirmed upon manual inspection</li>
+          <li>Training time: ~3-4 hours per phase on Apple Silicon M4 Pro</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://ieeexplore.ieee.org/document/11153184" target="_blank" class="card-back-btn btn-repo">View Paper</a>
+      <a href="https://github.com/KamalasankariS/MalCodeAI-AI-Powered-Malicious-Code-Detection" target="_blank" class="card-back-btn btn-project">View Repo</a>
+      <a href="../pubs.html" class="card-back-btn" style="background: var(--yellow); color: var(--ink);">Back to Publications</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

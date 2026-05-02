@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OFF THE CLOCK — KAMALA COMICS</title>
+  <meta name="description" content="Kamala Sankari — AI Researcher, GWU MSCS 2026. About me." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/comic.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    /* ── About page: no-scroll, full viewport ── */
+    body.about-page {
+      overflow: hidden;
+      height: 100vh;
+      cursor: none;
+      background-color: #FFE8F0;
+      /* Bold comic halftone: magenta dots on bubblegum pink + paper grain */
+      background-image:
+        radial-gradient(circle, rgba(255,60,172,0.25) 1.5px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,217,61,0.2) 1.2px, transparent 1.2px),
+        url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size:
+        12px 12px,
+        18px 18px,
+        200px 200px;
+      background-position:
+        0 0,
+        6px 6px,
+        0 0;
+    }
+    /* Custom cursor enabled on this page */
+
+    /* Top accent bar */
+    .top-accent-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--pink), var(--yellow), var(--mint), var(--sky), var(--pink));
+      width: 100%;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 9999;
+    }
+
+    /* ── Layout ── */
+    .about-wrapper {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 12px 60px 62px 60px;
+      /* leave room for nav on the right */
+      padding-right: 120px;
+    }
+
+    /* Title row */
+    .about-title-row {
+      text-align: center;
+      padding-top: 16px;
+      flex-shrink: 0;
+    }
+    .about-title-row h1 {
+      font-family: var(--font-bang);
+      font-size: clamp(48px, 8vw, 96px);
+      letter-spacing: 4px;
+      line-height: 1;
+      color: var(--ink);
+      text-shadow: 4px 4px 0 var(--yellow);
+    }
+    .about-subtitle {
+      font-family: var(--font-comic);
+      font-size: clamp(13px, 1.4vw, 16px);
+      color: #666;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    /* ── Card grid: 3 cols x 2 rows, fills remaining space ── */
+    .about-cards {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      padding: 16px 0 10px;
+      min-height: 0;
+    }
+
+    /* ── Individual card (comic panel style) ── */
+    .about-card {
+      border: var(--border-heavy);
+      background: #fff;
+      box-shadow: var(--shadow-big);
+      padding: 22px 20px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-card:nth-child(n+4) {
+      padding-bottom: 32px;
+    }
+    .about-card:hover {
+      box-shadow: var(--shadow-huge);
+    }
+
+    /* Bright comic backgrounds */
+    .about-card:nth-child(1) { transform: rotate(-0.6deg); background: var(--pink); color: #fff; }
+    .about-card:nth-child(2) { transform: rotate(0.4deg);  background: var(--yellow); }
+    .about-card:nth-child(3) { transform: rotate(-0.5deg); background: var(--sky); }
+    .about-card:nth-child(4) { transform: rotate(0.5deg);  background: var(--mint); }
+    .about-card:nth-child(5) { transform: rotate(-0.3deg); background: var(--lime); }
+    .about-card:nth-child(6) { transform: rotate(0.6deg);  background: var(--hot-pink); color: #fff; }
+
+    /* Headings white on dark cards, ink on light cards */
+    .about-card:nth-child(1) h2 { color: #fff; }
+    .about-card:nth-child(2) h2 { color: var(--ink); }
+    .about-card:nth-child(3) h2 { color: var(--ink); }
+    .about-card:nth-child(4) h2 { color: var(--ink); }
+    .about-card:nth-child(5) h2 { color: var(--ink); }
+    .about-card:nth-child(6) h2 { color: #fff; }
+
+    /* Body text on dark cards */
+    .about-card:nth-child(1) p { color: #fff; }
+    .about-card:nth-child(6) p { color: #fff; }
+
+    /* Panel label badge */
+    .about-card .panel-label {
+      position: absolute;
+      top: -14px; left: 16px;
+      background: var(--pink);
+      color: #fff;
+      font-family: var(--font-bang);
+      font-size: 13px;
+      letter-spacing: 2px;
+      padding: 3px 10px;
+      border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0 var(--ink);
+      z-index: 2;
+    }
+
+    /* Card heading */
+    .about-card h2 {
+      font-family: var(--font-bang);
+      font-size: clamp(15px, 1.3vw, 20px);
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    /* Card body text — compact to fit long-form content */
+    .about-card p {
+      font-family: var(--font-comic);
+      font-size: clamp(9.5px, 0.78vw, 11.5px);
+      line-height: 1.4;
+      color: var(--ink);
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    /* Scrollbar styling for overflowed cards */
+    .about-card p::-webkit-scrollbar {
+      width: 4px;
+    }
+    .about-card p::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .about-card p::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2);
+      border-radius: 2px;
+    }
+
+    /* Accent color stripe at bottom of each card */
+    .about-card .card-stripe {
+      position: absolute;
+      bottom: 0; left: -1px; right: -1px;
+      height: 10px;
+      z-index: 3;
+    }
+    .about-card:nth-child(1) .card-stripe { background: var(--pink); }
+    .about-card:nth-child(2) .card-stripe { background: var(--yellow); }
+    .about-card:nth-child(3) .card-stripe { background: var(--sky); }
+    .about-card:nth-child(4) .card-stripe { background: var(--mint); }
+    .about-card:nth-child(5) .card-stripe { background: var(--lime); }
+    .about-card:nth-child(6) .card-stripe { background: var(--hot-pink); }
+
+    /* Panel labels contrast against bright card backgrounds */
+    .about-card:nth-child(1) .panel-label { background: var(--yellow); color: var(--ink); }
+    .about-card:nth-child(2) .panel-label { background: var(--pink); color: #fff; }
+    .about-card:nth-child(3) .panel-label { background: var(--pink); color: #fff; }
+    .about-card:nth-child(4) .panel-label { background: var(--pink); color: #fff; }
+    .about-card:nth-child(5) .panel-label { background: var(--pink); color: #fff; }
+    .about-card:nth-child(6) .panel-label { background: var(--yellow); color: var(--ink); }
+
+    /* Halftone dot overlay inside card */
+    .about-card .card-halftone {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, var(--ink) 1px, transparent 1px);
+      background-size: 14px 14px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Card buttons */
+    .about-card-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .about-card-btn {
+      font-family: var(--font-bang);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 4px 12px;
+      border: 2px solid var(--ink);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .about-card-btn:nth-child(1) {
+      background: var(--pink);
+    }
+    .about-card-btn:nth-child(2) {
+      background: var(--sky);
+    }
+    .about-card-btn:nth-child(1):hover {
+      background: var(--hot-pink);
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+    .about-card-btn:nth-child(2):hover {
+      background: var(--mint);
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    /* Nav uses global styles from comic.css — no overrides needed */
+
+    /* ── Footer pinned to bottom (matches home page) ── */
+    body.about-page footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      padding: 14px 32px;
+      font-family: var(--font-bang);
+      font-size: 16px;
+      letter-spacing: 3px;
+    }
+    body.about-page footer span {
+      color: var(--pink);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .about-wrapper {
+        padding: 12px 30px 10px 30px;
+        padding-right: 100px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .about-wrapper {
+        padding: 10px 16px 10px 16px;
+        padding-right: 16px;
+      }
+      .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        overflow-y: auto;
+      }
+      body.about-page {
+        overflow-y: auto;
+        height: auto;
+      }
+      .about-wrapper {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 60px;
+      }
+    }
+  </style>
+</head>
+<body class="about-page">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="index.html">HOME</a>
+  <a class="nav-bubble active" href="about.html">ABOUT</a>
+  <a class="nav-bubble" href="experience.html">XP</a>
+  <a class="nav-bubble" href="projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="pubs.html">PUBS</a>
+  <a class="nav-bubble" href="resume.html">CV</a>
+  <a class="nav-bubble" href="contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble active" href="about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<div class="about-wrapper">
+
+  <!-- Title -->
+  <div class="about-title-row">
+    <h1>OFF THE CLOCK</h1>
+    <p class="about-subtitle">The person and the stories Behind The Scenes.</p>
+  </div>
+
+  <!-- 6 Cards -->
+  <div class="about-cards">
+
+    <!-- Card 1: AI Researcher -->
+    <div class="about-card">
+      <div class="card-halftone"></div>
+      <div class="card-stripe"></div>
+      <span class="panel-label">PANEL 01</span>
+      <h2>AI RESEARCHER</h2>
+      <p>My research sits at the intersection of reasoning, explainability, and software security, places where AI is most often asked to be trustworthy and most often isn't. I work on structured attribution in small language models, stability of post-hoc explanations, and agentic systems that detect and repair vulnerabilities in code. I'm drawn to questions where the easy answer is suspicious: a model that scores well but reasons incoherently, an explanation that doesn't survive a small perturbation. The goal is always the same: systems that hold up under scrutiny, not just under benchmarks.</p>
+    </div>
+
+    <!-- Card 2: Best Paper Awardee -->
+    <div class="about-card">
+      <div class="card-halftone"></div>
+      <div class="card-stripe"></div>
+      <span class="panel-label">PANEL 02</span>
+      <h2>BEST PAPER AWARDEE</h2>
+      <p>My first published paper, <strong>YOLO: Roof Material Detection Using Aerial Imagery</strong>, won Best Paper at IEEE ICCDS 2024. It was a deep learning system for classifying roof materials from aerial imagery, aimed at urban analytics and disaster preparedness, and it improved mAP by 32.5% over YOLOv5. The award was generous, but what stayed with me was the problem: that careful work on something concrete, like helping a city understand its infrastructure before a storm hits, matters more than work that's technically flashier but disconnected from anyone's life. It set a standard I've kept since: pick problems where the answer would actually be useful to someone.</p>
+      <div class="about-card-buttons">
+        <a href="assets/best-paper-award.pdf" target="_blank" class="about-card-btn">Award</a>
+        <a href="https://ieeexplore.ieee.org/document/10560402" target="_blank" class="about-card-btn">Paper</a>
+      </div>
+    </div>
+
+    <!-- Card 3: Peer Reviewer -->
+    <div class="about-card">
+      <div class="card-halftone"></div>
+      <div class="card-stripe"></div>
+      <span class="panel-label">PANEL 03</span>
+      <h2>PEER REVIEWER</h2>
+      <p>I review for the ACL 2026 SURGeLLM Workshop. Reading other people's drafts carefully, finding what's supported by the evidence, what's quietly assumed, what claims do more work than the experiments behind them, has changed how I write more than any amount of self-editing. It's also taught me a kind of generosity: the reviewer's job isn't to win, it's to help the work get better. I try to write reviews I'd want to receive.</p>
+    </div>
+
+    <!-- Card 4: Trained Carnatic Singer -->
+    <div class="about-card">
+      <div class="card-halftone"></div>
+      <div class="card-stripe"></div>
+      <span class="panel-label">PANEL 04</span>
+      <h2>TRAINED CARNATIC SINGER</h2>
+      <p>More than ten years of Carnatic training rewired how I think. The art demands precision and a process-oriented mindset over quick results; the smallest shift in pitch matters, and you learn to hear structure everywhere. Years of repetition turned pattern recognition into instinct: calm, detail-oriented, self-correcting. It taught me patience with slow mastery and an ear for subtle inconsistencies, skills that carry far beyond music into how I approach research, code, and every problem worth solving.</p>
+    </div>
+
+    <!-- Card 5: Mentor -->
+    <div class="about-card">
+      <div class="card-halftone"></div>
+      <div class="card-stripe"></div>
+      <span class="panel-label">PANEL 05</span>
+      <h2>MENTORING</h2>
+      <p>As a Student Academic Assistant at GW, I assisted professors in the Advanced Machine Learning course, mentoring students through assignments, debugging sessions, and project milestones, turning half-formed intuitions into working models and clean, defensible results. Outside the university, I also mentor students on independent projects and early-stage ideas, helping them navigate everything from scoping a problem to shipping something real. Teaching became one of the most rewarding parts of my work, and giving back to the community that shaped me is something I'll never stop doing.</p>
+    </div>
+
+
+  </div><!-- /.about-cards -->
+
+</div><!-- /.about-wrapper -->
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="js/comic.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

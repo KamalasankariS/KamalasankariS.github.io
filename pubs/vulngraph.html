@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VULNGRAPH — KAMALA COMICS</title>
+  <meta name="description" content="VulnGraph: AST/CFG + LLM Fusion for Vulnerability Detection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(28px, 5vw, 56px);">VULNGRAPH: AST/CFG + LLM FUSION FOR VULNERABILITY DETECTION</h1>
+      <p class="page-subtitle">COMPLEX NETWORKS &middot; 2025</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Problem Statement — full width top -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">PROBLEM STATEMENT</span>
+        </div>
+        <ul class="star-list">
+          <li>Code vulnerability detection relies heavily on either structural analysis (AST/CFG) or semantic understanding (LLMs), but rarely both</li>
+          <li>Structural methods miss semantic context; LLM-only methods miss control flow patterns</li>
+          <li>Multi-language vulnerability detection (C/C++ and Python) adds complexity</li>
+        </ul>
+      </div>
+
+      <!-- Solution — left -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">SOLUTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Fused AST + CFG structural features with LLM semantic embeddings</li>
+          <li>Learned gating mechanism to dynamically weight structural vs. semantic signals</li>
+          <li>Unified framework supporting both C/C++ and Python codebases</li>
+        </ul>
+      </div>
+
+      <!-- Our Positioning — right -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">OUR POSITIONING</span>
+        </div>
+        <ul class="star-list">
+          <li>First framework to apply hybrid network-theoretic graph + lightweight local LLM approach to Java vulnerability detection</li>
+          <li>Most prior GNN work targets C/C++ and Assembly; Java remains underexplored despite widespread production deployment</li>
+          <li>Two-way gating fusion mechanism adaptively combines structural and semantic signals per-sample with interpretable scalar weights</li>
+          <li>Uses lightweight (&lt;4B parameter) local LLMs to avoid cost and privacy concerns of large cloud models</li>
+          <li>Composite training objective combining BCE + InfoNCE contrastive alignment + Laplacian regularization</li>
+        </ul>
+      </div>
+
+      <!-- Architecture — full width -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">ARCHITECTURE</span>
+        </div>
+        <ul class="star-list">
+          <li>AST and CFG extraction from source code using language-specific parsers</li>
+          <li>Graph neural network encoding of structural features</li>
+          <li>LLM-based semantic embedding of code snippets</li>
+          <li>Gating network to fuse structural and semantic representations</li>
+          <li>Binary classifier for vulnerable/safe prediction</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second comic page for Dataset + Results -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <!-- Dataset Used — left -->
+      <div class="star-panel" style="grid-column: 1/2; --panel-color: var(--lime);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: var(--yellow);">DATASET USED</span>
+        </div>
+        <ul class="star-list">
+          <li>Vul4J: Reproducible Java vulnerabilities dataset for program repair research</li>
+          <li>Kaggle CVE Fixes: Automated collection of vulnerabilities and fixes from open-source software</li>
+          <li>Kaggle Vulnerability Fixes (Biswas, S.): Vulnerability fix dataset</li>
+          <li>36,425 code samples collected; 6,000 synthetic safe files created by stripping vulnerable patterns</li>
+          <li>After deduplication and error removal: 35,610 CFG-parsable files (6,234 safe, 29,376 vulnerable)</li>
+          <li>CFGs generated using PROGEX (v3.4.5), averaging 20.6 nodes and 20.3 edges per graph</li>
+        </ul>
+      </div>
+
+      <!-- Results — right -->
+      <div class="star-panel" style="grid-column: 2/3; --panel-color: var(--hot-pink);">
+        <div class="star-panel-header">
+          <span class="star-label">RESULTS</span>
+        </div>
+        <ul class="star-list">
+          <li>Best overall accuracy: 93.57% (two-way gating fusion)</li>
+          <li>+8.36% improvement over GAT-based embeddings alone (85.21%)</li>
+          <li>+17.81% improvement over Qwen2.5 Coder 3B zero-shot baseline (75.76%)</li>
+          <li>Ablation: removing graphs drops accuracy by 14.64%; removing semantics drops by 8.36%</li>
+          <li>Concatenation fusion: 91.14%, Cross-attention fusion: 92.07%</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://arxiv.org/abs/2510.10321" target="_blank" class="card-back-btn btn-repo">View Paper</a>
+      <a href="https://github.com/JugalGajjar/VulnGraph" target="_blank" class="card-back-btn btn-project">View Repo</a>
+      <a href="../pubs.html" class="card-back-btn" style="background: var(--yellow); color: var(--ink);">Back to Publications</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SECUREFIXAGENT — KAMALA COMICS</title>
+  <meta name="description" content="SecureFixAgent: Autonomous Vulnerability Repair via LLM + Bandit Optimization." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(28px, 5vw, 56px);">SECUREFIXAGENT: AUTONOMOUS VULNERABILITY REPAIR VIA LLM + BANDIT OPTIMIZATION</h1>
+      <p class="page-subtitle">ICMLA &middot; 2025</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Problem Statement — full width top -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">PROBLEM STATEMENT</span>
+        </div>
+        <ul class="star-list">
+          <li>Static analyzers like Bandit flag thousands of potential vulnerabilities with high false positive rates</li>
+          <li>Manual triage and patching is expensive and doesn't scale</li>
+          <li>Existing LLM-based repair tools generate patches without verification</li>
+        </ul>
+      </div>
+
+      <!-- Solution — left -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">SOLUTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Agentic loop: Bandit scan &rarr; LLM classification (true/false positive) &rarr; patch generation &rarr; re-validation</li>
+          <li>Multi-armed bandit optimization for exploration-exploitation in repair strategies</li>
+          <li>Uses only lightweight open-source LLMs (&lt;=8B parameters)</li>
+        </ul>
+      </div>
+
+      <!-- Our Positioning — right -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">OUR POSITIONING</span>
+        </div>
+        <ul class="star-list">
+          <li>Hybrid repair framework integrating Bandit with lightweight local LLMs (&lt;8B parameters) in an iterative detect-repair-validate loop</li>
+          <li>Only system combining Bandit validation, local LLM deployment, AND iterative repair loop (vs. GitHub Copilot, Repairnator, MalCodeAI)</li>
+          <li>All inference performed locally with no cloud reliance, AES-128 encryption at rest, no external telemetry</li>
+          <li>Validation-driven repair mechanism that minimizes hallucinated fixes</li>
+        </ul>
+      </div>
+
+      <!-- Architecture — full width -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">ARCHITECTURE</span>
+        </div>
+        <ul class="star-list">
+          <li>Bandit static analyzer as the vulnerability oracle</li>
+          <li>LLM agent for classification, explanation, and patch generation</li>
+          <li>Re-validation loop (up to 5 iterations) re-running Bandit on patched code</li>
+          <li>Multi-armed bandit algorithm to select optimal repair strategies</li>
+          <li>Inference via HuggingFace Transformers, Ollama, or Apple MLX</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second comic page for Dataset + Results -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <!-- Dataset Used — left -->
+      <div class="star-panel" style="grid-column: 1/2; --panel-color: var(--lime);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: var(--yellow);">DATASET USED</span>
+        </div>
+        <ul class="star-list">
+          <li>Synthetic (Injected): 740 samples across 52 vulnerability types with randomized injection locations</li>
+          <li>CVE-Bench: 40 samples across 8 vulnerability types from publicly disclosed CVEs</li>
+          <li>PySecDB: 1,258 samples across 119 vulnerability types from real-world Python security commits</li>
+          <li>SecurityEval: 130 samples across 75 vulnerability types for evaluating code generation</li>
+          <li>Total: 2,168 samples across four sources</li>
+        </ul>
+      </div>
+
+      <!-- Results — right -->
+      <div class="star-panel" style="grid-column: 2/3; --panel-color: var(--hot-pink);">
+        <div class="star-panel-header">
+          <span class="star-label">RESULTS</span>
+        </div>
+        <ul class="star-list">
+          <li>SecureFixAgent (Fine-Tuned): 87.83% fix accuracy, 8.11% false positives, avg 3 iterations, explanation quality 4.5/5</li>
+          <li>Reduces false positives by 10.8% over static analysis alone</li>
+          <li>Improves fix accuracy by 13.51% over pre-trained LLMs</li>
+          <li>Developer study (n=15): explanation clarity improved from 2.9/5 (raw) to 4.5/5 (fine-tuned)</li>
+          <li>Convergence typically within 3 iterations for fine-tuned models</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://arxiv.org/abs/2509.16275" target="_blank" class="card-back-btn btn-repo">View Paper</a>
+      <a href="https://github.com/KamalasankariS/SecureFixAgent" target="_blank" class="card-back-btn btn-project">View Repo</a>
+      <a href="../pubs.html" class="card-back-btn" style="background: var(--yellow); color: var(--ink);">Back to Publications</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

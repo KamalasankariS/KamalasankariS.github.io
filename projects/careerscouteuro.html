@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAREERSCOUTEURO — KAMALA COMICS</title>
+  <meta name="description" content="CareerScoutEuro — European job search scraper and dashboard for AI/ML/SWE opportunities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble active" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble active" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(36px, 6vw, 72px);">CAREERSCOUTEURO</h1>
+      <p class="page-subtitle">Strategize your next move. Across borders.</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Situation -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">SITUATION</span>
+        </div>
+        <ul class="star-list">
+          <li>International students (especially Indian students in the US) exploring European job markets face fragmented information across job boards, Reddit, and university sites</li>
+          <li>No single tool combined job scraping, currency comparison, and community insights for European relocation planning</li>
+        </ul>
+      </div>
+
+      <!-- Task -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">TASK</span>
+        </div>
+        <ul class="star-list">
+          <li>Build a dashboard that aggregates European AI/ML/SWE job opportunities with supporting data (currency, universities, community insights)</li>
+          <li>Filter for practical constraints: no French requirement, no recommendation needed</li>
+          <li>Cache results and support background scraping for performance</li>
+        </ul>
+      </div>
+
+      <!-- Action -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">ACTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Built Flask backend with endpoints for European currency comparison, GitHub repo search, university data, job board scraping, and Reddit community scraping</li>
+          <li>Implemented filtering for language requirements and recommendation policies</li>
+          <li>Added caching layer and background scraping for responsive UX</li>
+          <li>Frontend dashboard with HTML/CSS/JS</li>
+        </ul>
+      </div>
+
+      <!-- Result -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">RESULT</span>
+        </div>
+        <ul class="star-list">
+          <li>Working prototype that aggregates jobs, currency data, university info, and Reddit insights in one dashboard</li>
+          <li>Practical filters for real constraints international students face</li>
+          <li>Designed for personal use and shared with peers navigating European job markets</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="star-tech-stack">
+      <h3 class="star-tech-title">TECH STACK</h3>
+      <div class="card-back-tags">
+        <span class="card-tag">Python</span>
+        <span class="card-tag">Flask</span>
+        <span class="card-tag">JavaScript</span>
+        <span class="card-tag">CSS</span>
+        <span class="card-tag">HTML</span>
+        <span class="card-tag">Web Scraping</span>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://github.com/KamalasankariS/CareerScoutEuro" target="_blank" class="card-back-btn btn-repo">View Repo</a>
+      <a href="../projects.html" class="card-back-btn btn-project">Back to Projects</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

@@ -3,1013 +3,441 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kamala Sankari — AI Researcher · LLM Reasoning · Agentic Systems" />
-  <title>Kamala Sankari — Portfolio</title>
-  <link rel="stylesheet" href="css/y2k.css">
+  <title>KAMALA SANKARI — Comic Portfolio</title>
+  <meta name="description" content="Kamala Sankari — AI Researcher, GWU MSCS 2026. LLM Reasoning, Agentic Systems, XAI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/comic.css" />
+  <link rel="stylesheet" href="css/pages.css" />
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     MENU BAR — Classic Mac OS 8/9
-═══════════════════════════════════ -->
-<div id="mac-menubar">
-  <span class="mmb-apple" id="mmb-apple-btn">&#63743;</span>
-  <strong class="mmb-appname">Finder</strong>
-  <span class="mmb-item" id="mmb-file">File</span>
-  <span class="mmb-item">Edit</span>
-  <span class="mmb-item">View</span>
-  <span class="mmb-item">Special</span>
-  <span class="mmb-item">Help</span>
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble active" href="index.html">HOME</a>
+  <a class="nav-bubble" href="about.html">ABOUT</a>
+  <a class="nav-bubble" href="experience.html">XP</a>
+  <a class="nav-bubble" href="projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="pubs.html">PUBS</a>
+  <a class="nav-bubble" href="resume.html">CV</a>
+  <a class="nav-bubble" href="contact.html">CONTACT</a>
+</nav>
 
-  <!-- Apple menu dropdown — Mac OS 9 authentic -->
-  <div id="apple-menu" class="hidden">
-    <div class="amenu-item amenu-bold" id="amenu-about"><span class="amenu-ico">🖥</span>About This Computer</div>
-    <div class="amenu-sep"></div>
-    <div class="amenu-item" onclick="showSection('about')"><span class="amenu-ico">👩‍💻</span>About Kamala</div>
-    <div class="amenu-item"><span class="amenu-ico">📋</span>Apple System Profiler</div>
-    <div class="amenu-item"><span class="amenu-ico">🎵</span>AppleCD Audio Player</div>
-    <div class="amenu-item"><span class="amenu-ico">⚙️</span>Automated Tasks<span class="amenu-arrow">▶</span></div>
-    <div class="amenu-item"><span class="amenu-ico">🔢</span>Calculator</div>
-    <div class="amenu-item"><span class="amenu-ico">📡</span>Chooser</div>
-    <div class="amenu-item"><span class="amenu-ico">🎛</span>Control Panels<span class="amenu-arrow">▶</span></div>
-    <div class="amenu-item"><span class="amenu-ico">⭐</span>Favorites</div>
-    <div class="amenu-item"><span class="amenu-ico">📊</span>Graphing Calculator</div>
-    <div class="amenu-item"><span class="amenu-ico">🌐</span>Internet Access<span class="amenu-arrow">▶</span></div>
-    <div class="amenu-item"><span class="amenu-ico">⌨️</span>Key Caps</div>
-    <div class="amenu-item"><span class="amenu-ico">🗂</span>Network Browser</div>
-    <div class="amenu-item"><span class="amenu-ico">📒</span>Note Pad</div>
-    <div class="amenu-item" onclick="showSection('projects')"><span class="amenu-ico">📁</span>Recent Projects<span class="amenu-arrow">▶</span></div>
-    <div class="amenu-item" onclick="showSection('publications')"><span class="amenu-ico">📄</span>Recent Documents<span class="amenu-arrow">▶</span></div>
-    <div class="amenu-item"><span class="amenu-ico">🖧</span>Recent Servers<span class="amenu-arrow">▶</span></div>
-    <div class="amenu-item"><span class="amenu-ico">📶</span>Remote Access Status</div>
-    <div class="amenu-item"><span class="amenu-ico">📚</span>Scrapbook</div>
-    <div class="amenu-item"><span class="amenu-ico">🔍</span>Sherlock</div>
-    <div class="amenu-item"><span class="amenu-ico">🔊</span>SimpleSound</div>
-    <div class="amenu-item"><span class="amenu-ico">📝</span>Stickies</div>
-    <div class="amenu-sep"></div>
-    <div class="amenu-item" id="amenu-sleep"><span class="amenu-ico">💤</span>Sleep</div>
-    <div class="amenu-item" id="amenu-shut"><span class="amenu-ico">🔴</span>Shut Down…</div>
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble active" href="index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="contact.html">CONTACT</a>
   </div>
-  <div class="mmb-right">
-    <span class="mmb-clock" id="tb-clock">12:34 PM</span>
-    <span class="mmb-finder">
-      <svg viewBox="0 0 18 14" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="16" height="12" rx="1" fill="#D4D0C8" stroke="#000" stroke-width="0.8"/>
-        <rect x="3" y="3" width="12" height="7" fill="#6666AA"/>
-        <rect x="5" y="11" width="8" height="2" fill="#A8A4A0"/>
-      </svg>
-      Kamala HD
-    </span>
-  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation"><span class="burger-line"></span></button>
 </div>
 
-<!-- ═══════════════════════════════════
-     BOOT SCREEN — Happy Mac
-═══════════════════════════════════ -->
-<div id="boot">
-  <!-- Mac OS 9 authentic startup splash -->
-  <div class="boot-panel">
-  <div class="boot-splash">
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<!-- Page flash for transitions -->
+<div id="page-flash"></div>
 
-    <!-- Mac OS 9 Finder face SVG -->
-    <svg class="boot-os9-logo" viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Clip to the rounded face shape so both halves respect the corners -->
-        <clipPath id="face-clip">
-          <rect x="18" y="26" width="164" height="160" rx="3"/>
-        </clipPath>
-      </defs>
+<!-- SECRET PANEL (Easter egg) -->
+<div id="secret-overlay"></div>
+<div id="secret-panel" role="dialog" aria-modal="true">
+  <h2>&#9733; SECRET ISSUE! &#9733;</h2>
+  <p>YOU FOUND THE SECRET ISSUE!<br><br>Kamala appreciates your attention to detail. &#11088;<br><br>Most people see the portfolio. You saw the <em>whole comic.</em></p>
+  <button id="secret-close">CLOSE &times;</button>
+</div>
 
-      <!-- LEFT half — lighter periwinkle blue -->
-      <rect x="18" y="26" width="164" height="160" rx="3" fill="#8090CC"/>
-      <!-- RIGHT half — darker indigo blue, clipped to face shape -->
-      <rect x="100" y="26" width="82" height="160" fill="#3D52A8" clip-path="url(#face-clip)"/>
-
-      <!-- Left eye -->
-      <rect x="56" y="66" width="14" height="38" rx="7" fill="#0C1235"/>
-
-      <!-- Right eye -->
-      <rect x="118" y="66" width="14" height="38" rx="7" fill="#0C1235"/>
-
-      <!-- Finder swoosh / lightning bolt:
-           enters above top-center, curves RIGHT as it descends,
-           elbows hard LEFT at mid-face, exits below bottom-center -->
-      <path d="M 90 6
-               C 93 38, 114 65, 134 106
-               L 50 122
-               C 62 150, 72 172, 82 208"
-            stroke="#0C1235" stroke-width="11"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-
-      <!-- Smile: wide curved arc in lower third of face -->
-      <path d="M 52 164 Q 100 194 148 164"
-            stroke="#0C1235" stroke-width="9"
-            fill="none"
-            stroke-linecap="round"/>
-    </svg>
-
-    <div class="boot-os9-title">Mac OS 9</div>
-    <div class="boot-os9-rule"></div>
-    <div class="boot-os9-ver">Version 9.2.2</div>
-    <div class="boot-os9-copy">Built-in Memory: 64 MB &nbsp;&nbsp; Virtual Memory: 65 MB</div>
-    <div class="boot-os9-copy">&#169; Apple Computer, Inc. 1983–2001</div>
+<!-- ============================================================
+     LOADER — Comic Book Cover
+     ============================================================ -->
+<div id="loader" role="presentation" aria-hidden="true">
+  <div class="loader-halftone"></div>
+  <div class="loader-top-strip">
+    <span>KAMALA COMICS PRESENTS</span>
+    <span>WASHINGTON DC &middot; 2026</span>
   </div>
-  </div><!-- /boot-panel -->
-
-  <!-- Mac OS 9 authentic loading bar -->
-  <div class="boot-progress-area">
-    <div class="boot-starting-txt">Starting Up...</div>
-    <div class="boot-bar-outer">
-      <div class="boot-bar-fill" id="boot-bar-fill"></div>
+  <div class="loader-inner no-select">
+    <div class="loader-title">KAMALA</div>
+    <div class="loader-subtitle">THE COMIC PORTFOLIO</div>
+    <div class="loader-issue-badge">Issue #001</div>
+    <div class="loader-price">$3.99</div>
+  </div>
+  <div class="loader-bottom">
+    <span class="loader-loading-text">NOW LOADING...</span>
+    <div class="barcode" id="loader-barcode" title="Tap 3x for a secret...">
+      <div class="barcode-bar" style="width:2px;height:90%"></div>
+      <div class="barcode-bar" style="width:1px;height:70%"></div>
+      <div class="barcode-bar" style="width:3px;height:100%"></div>
+      <div class="barcode-bar" style="width:1px;height:60%"></div>
+      <div class="barcode-bar" style="width:2px;height:80%"></div>
+      <div class="barcode-bar" style="width:1px;height:100%"></div>
+      <div class="barcode-bar" style="width:4px;height:90%"></div>
+      <div class="barcode-bar" style="width:1px;height:70%"></div>
+      <div class="barcode-bar" style="width:2px;height:100%"></div>
+      <div class="barcode-bar" style="width:1px;height:80%"></div>
+      <div class="barcode-bar" style="width:3px;height:90%"></div>
+      <div class="barcode-bar" style="width:1px;height:60%"></div>
+      <div class="barcode-bar" style="width:2px;height:100%"></div>
+      <div class="barcode-bar" style="width:1px;height:75%"></div>
+      <div class="barcode-bar" style="width:3px;height:85%"></div>
+      <div class="barcode-bar" style="width:2px;height:100%"></div>
+      <div class="barcode-bar" style="width:1px;height:65%"></div>
+      <div class="barcode-bar" style="width:2px;height:90%"></div>
+      <div class="barcode-bar" style="width:1px;height:100%"></div>
+      <div class="barcode-bar" style="width:3px;height:80%"></div>
     </div>
   </div>
 </div>
 
-<!-- hidden JS compat -->
-<div id="starfield" style="display:none"></div>
-<div id="cursor" style="display:none"></div>
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
 
-<!-- ═══════════════════════════════════
-     MAIN WINDOW — Classic Mac Finder
-═══════════════════════════════════ -->
-<div class="win" id="player">
+<!-- ============================================================
+     MOSAIC — Full-viewport comic panel dashboard
+     ============================================================ -->
+<!-- ══════════════════════════
+     HERO PANEL (independent, full width)
+     ══════════════════════════ -->
+<div class="mpanel mpanel-hero">
+  <div class="mpanel-inner">
+    <div class="hero-speed-lines"></div>
+    <div class="hero-starburst-bg"></div>
 
-  <!-- Title bar -->
-  <div class="wchrome">
-    <div class="mac-close-area">
-      <div class="tl cl"></div>
+    <!-- Floating decorations -->
+    <div class="hero-deco pow" aria-hidden="true">POW!</div>
+    <div class="hero-deco zap" aria-hidden="true">ZAP!</div>
+    <div class="hero-deco star" aria-hidden="true">&#9733;</div>
+    <div class="hero-deco bang" aria-hidden="true">!</div>
+
+    <div class="hero-text-block">
+      <span class="hero-hey">HEY, I'M</span>
+      <h1 class="hero-bigname" id="hero-name">KAMALA</h1>
+      <span class="hero-subtitle">This is a snapshot of my professional life</span>
     </div>
-    <span class="wtitle">Kamala Sankari — Portfolio</span>
-    <div class="mac-zoom-area">
-      <div class="tl mn"></div>
-      <div class="tl mx"></div>
+
+    <div class="hero-meta-strip">
+      AI&nbsp;Researcher &nbsp;&middot;&nbsp; GWU&nbsp;MSCS&nbsp;2026 &nbsp;&middot;&nbsp; LLM&nbsp;Reasoning &nbsp;&middot;&nbsp; Agentic&nbsp;Systems &nbsp;&middot;&nbsp; XAI
+    </div>
+
+    <!-- Issue stamp -->
+    <div class="hero-issue-stamp">ISSUE #001<br><span>$3.99</span></div>
+  </div>
+</div>
+
+<div id="mosaic">
+
+  <!-- ══════════════════════════
+       ABOUT PANEL (left-middle)
+       ══════════════════════════ -->
+  <div class="mpanel mpanel-about">
+    <div class="mpanel-inner">
+      <div class="mpanel-halftone"></div>
+      <div class="mpanel-header">
+        <span class="mpanel-num">01</span>
+        <h2 class="mpanel-title"><span class="sfx-letter sfx-o">O</span>RIGIN<br>STORY</h2>
+      </div>
+      <div class="mpanel-body" id="about-body">
+
+        <div class="about-blurb">
+          MS Computer Science @ <strong>GWU 2026</strong>. Building at the intersection of LLM reasoning, agentic systems, and explainable AI. Based in <strong>Washington DC</strong>.
+        </div>
+
+        <h3 class="mlist-section-head">TECH STACK</h3>
+        <div class="skills-wrap">
+          <span class="skill-sticker">Python</span>
+          <span class="skill-sticker">SQL</span>
+          <span class="skill-sticker">PyTorch</span>
+          <span class="skill-sticker">TensorFlow</span>
+          <span class="skill-sticker">LangChain</span>
+          <span class="skill-sticker">FastAPI</span>
+          <span class="skill-sticker">NumPy</span>
+          <span class="skill-sticker">Pandas</span>
+          <span class="skill-sticker">Docker</span>
+          <span class="skill-sticker">AWS</span>
+        </div>
+
+        <div class="stats-mini-row">
+          <div class="stat-mini"><span class="stat-mini-n">7</span><span class="stat-mini-l">Papers</span></div>
+          <div class="stat-mini"><span class="stat-mini-n">3</span><span class="stat-mini-l">Roles</span></div>
+          <div class="stat-mini"><span class="stat-mini-n">2</span><span class="stat-mini-l">Unis</span></div>
+          <div class="stat-mini"><span class="stat-mini-n">&#8734;</span><span class="stat-mini-l">Drive</span></div>
+        </div>
+
+        <h3 class="mlist-section-head">EDUCATION</h3>
+        <div class="edu-item">
+          <span class="edu-deg">M.S. Computer Science</span>
+          <span class="edu-school">George Washington University · 2026</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-deg">B.E. Electronics &amp; Communication Engineering</span>
+          <span class="edu-school">St. Joseph's College of Engineering · 2024</span>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <!-- Info bar — Classic Mac Finder: item count | path -->
-  <div class="wtoolbar">
-    <!-- Nav arrows: hidden visually but JS-wired for keyboard nav -->
-    <button id="prev-btn" style="display:none"></button>
-    <button id="next-btn" style="display:none"></button>
-    <span class="winfo-count" id="status-lbl">5 items</span>
-    <span class="winfo-sep"></span>
-    <span class="mac-path-bar"><span id="track-name"><span>&#128193; home</span></span></span>
-  </div>
-
-  <!-- Body: sidebar + content -->
-  <div class="player-body">
-
-    <!-- ── SIDEBAR ── -->
-    <div class="psidebar">
-
-      <div class="mac-sidebar-hdr">FAVORITES</div>
-      <div class="playlist">
-
-        <!-- HOME — large folder icon -->
-        <div class="pl-item on" data-sec="home">
-          <svg class="pl-icon" viewBox="0 0 40 34" width="40" height="34" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="1,11 15,11 18,6 39,6 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
-            <polygon points="1,11 15,11 18,6 24,6 21,11" fill="#5580C0" stroke="#000" stroke-width="0.5"/>
-            <rect x="2" y="12" width="36" height="2" fill="#A0C0F0" opacity="0.8"/>
-            <rect x="2" y="14" width="36" height="18" fill="#7AAAE0" opacity="0.3"/>
-          </svg>
-          <span>home</span>
-        </div>
-
-        <!-- ABOUT — large document icon -->
-        <div class="pl-item" data-sec="about">
-          <svg class="pl-icon" viewBox="0 0 30 38" width="30" height="38" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="1,1 20,1 29,10 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-            <polygon points="20,1 20,10 29,10" fill="#CCCCCC" stroke="#000" stroke-width="1"/>
-            <line x1="5" y1="15" x2="25" y2="15" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="19" x2="25" y2="19" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="23" x2="25" y2="23" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="27" x2="18" y2="27" stroke="#999" stroke-width="1"/>
-          </svg>
-          <span>about_me</span>
-        </div>
-
-        <!-- PROJECTS — large folder icon -->
-        <div class="pl-item" data-sec="projects">
-          <svg class="pl-icon" viewBox="0 0 40 34" width="40" height="34" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="1,11 15,11 18,6 39,6 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
-            <polygon points="1,11 15,11 18,6 24,6 21,11" fill="#5580C0" stroke="#000" stroke-width="0.5"/>
-            <rect x="2" y="12" width="36" height="2" fill="#A0C0F0" opacity="0.8"/>
-            <rect x="2" y="14" width="36" height="18" fill="#7AAAE0" opacity="0.3"/>
-          </svg>
-          <span>projects</span>
-        </div>
-
-        <!-- PUBLICATIONS — large document icon with stack effect -->
-        <div class="pl-item" data-sec="publications">
-          <svg class="pl-icon" viewBox="0 0 34 40" width="34" height="40" xmlns="http://www.w3.org/2000/svg">
-            <!-- back page -->
-            <polygon points="5,4 25,4 33,12 33,40 5,40" fill="#E8E8E8" stroke="#888" stroke-width="0.8"/>
-            <!-- front page -->
-            <polygon points="1,1 21,1 29,9 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-            <polygon points="21,1 21,9 29,9" fill="#CCCCCC" stroke="#000" stroke-width="1"/>
-            <line x1="5" y1="14" x2="25" y2="14" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="18" x2="25" y2="18" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="22" x2="25" y2="22" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="26" x2="16" y2="26" stroke="#999" stroke-width="1"/>
-          </svg>
-          <span>papers.bib</span>
-        </div>
-
-        <!-- RESUME & CV — document stack icon -->
-        <div class="pl-item" data-sec="resume">
-          <svg class="pl-icon" viewBox="0 0 36 42" width="36" height="42" xmlns="http://www.w3.org/2000/svg">
-            <!-- back doc -->
-            <polygon points="5,5 27,5 35,13 35,41 5,41" fill="#E0E8FF" stroke="#888" stroke-width="0.8"/>
-            <!-- front doc -->
-            <polygon points="1,1 23,1 31,9 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-            <polygon points="23,1 23,9 31,9" fill="#C8D8F0" stroke="#000" stroke-width="1"/>
-            <line x1="5" y1="15" x2="27" y2="15" stroke="#6B98D6" stroke-width="1.5"/>
-            <line x1="5" y1="20" x2="27" y2="20" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="24" x2="27" y2="24" stroke="#999" stroke-width="1"/>
-            <line x1="5" y1="28" x2="18" y2="28" stroke="#999" stroke-width="1"/>
-          </svg>
-          <span>resume.pdf</span>
-        </div>
-
-        <!-- CONTACT — large envelope icon -->
-        <div class="pl-item" data-sec="contact">
-          <svg class="pl-icon" viewBox="0 0 40 30" width="40" height="30" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="1" width="38" height="28" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-            <!-- envelope flap -->
-            <polygon points="1,1 20,17 39,1" fill="#E8E8E8" stroke="#000" stroke-width="1"/>
-            <!-- bottom crease lines -->
-            <line x1="1" y1="29" x2="14" y2="16" stroke="#BBBBBB" stroke-width="1"/>
-            <line x1="39" y1="29" x2="26" y2="16" stroke="#BBBBBB" stroke-width="1"/>
-          </svg>
-          <span>connect.url</span>
-        </div>
-
-      </div><!-- /playlist -->
-
-      <div class="mac-sidebar-hdr">LINKS</div>
-      <div class="sb-social">
-        <div class="sb-social-row">
-          <a class="sb-soc-ico" href="https://www.linkedin.com/in/kamalasankari-s" target="_blank" rel="noopener" title="LinkedIn">
-            <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
-          </a>
-          <a class="sb-soc-ico" href="https://github.com/kamalasankaris" target="_blank" rel="noopener" title="GitHub">
-            <img src="assets/icons/github.svg" alt="GitHub" />
-          </a>
-          <a class="sb-soc-ico" href="https://scholar.google.com" target="_blank" rel="noopener" title="Google Scholar">
-            <img src="assets/icons/scholar.svg" alt="Scholar" />
-          </a>
-          <a class="sb-soc-ico" href="https://www.researchgate.net" target="_blank" rel="noopener" title="ResearchGate">
-            <img src="assets/icons/researchgate.svg" alt="ResearchGate" />
-          </a>
-          <a class="sb-soc-ico" href="https://medium.com" target="_blank" rel="noopener" title="Medium">
-            <img src="assets/icons/medium.svg" alt="Medium" />
-          </a>
-          <a class="sb-soc-ico" href="mailto:kamalasankari@gwu.edu" title="Email">
-            <img src="assets/icons/email.svg" alt="Email" />
-          </a>
-        </div>
+  <!-- ══════════════════════════
+       PROJECTS PANEL (right-middle)
+       ══════════════════════════ -->
+  <div class="mpanel mpanel-projects">
+    <div class="mpanel-inner">
+      <div class="mpanel-halftone"></div>
+      <div class="mpanel-header">
+        <span class="mpanel-num">02</span>
+        <h2 class="mpanel-title"><span class="sfx-letter sfx-p">P</span>ROJECTS</h2>
       </div>
+      <div class="mpanel-body">
+        <ul class="mosaic-list">
 
-    </div><!-- /psidebar -->
-
-    <!-- ── CONTENT ── -->
-    <div class="pcontent">
-
-      <!-- HOME -->
-      <div class="sec on" id="sec-home">
-        <div class="sh">Home</div>
-
-        <!-- ROW 1: photo + info boxes -->
-        <div class="home-layout">
-          <div class="home-photo-wrap">
-            <div class="home-photo-frame">
-              <img src="assets/kamala-photo.jpg" alt="Kamala" />
+          <li class="mlist-item" style="--accent:#FF3CAC;">
+            <div class="mlist-meta">
+              <span class="mlist-num">No.01</span>
+              <span class="mlist-tag" style="background:#FF3CAC;color:#fff;">CVPR 2026</span>
             </div>
-            <div class="home-photo-caption">kamala.jpg</div>
-          </div>
+            <div class="mlist-title">FASS: XAI Stability Benchmark</div>
+            <div class="mlist-desc">Faithfulness &amp; Attribution Stability Score for post-hoc XAI method stability across CIFAR-10, COCO, and ImageNet.</div>
+            <a class="go-btn" href="projects/fass.html">Go to Project Page &#8594;</a>
+          </li>
 
-          <div class="home-content">
-            <div class="hc-ts">&gt; kamalasankari_s</div>
-            <div class="hc-box">
-              <span class="hc-bold">Kamalasankari Subramaniakuppusamy</span><br>
-              AI Researcher &nbsp;·&nbsp; GWU MSCS 2026<br>
-              LLM Reasoning &nbsp;·&nbsp; Agentic Systems &nbsp;·&nbsp; XAI
+          <li class="mlist-item" style="--accent:#5EF2C2;">
+            <div class="mlist-meta">
+              <span class="mlist-num">No.02</span>
+              <span class="mlist-tag" style="background:#5EF2C2;">ICMLA 2025</span>
             </div>
+            <div class="mlist-title">Automated Vulnerability Repair</div>
+            <div class="mlist-desc">Hybrid LLM agents paired with Bandit static analyzer to detect, explain, and auto-repair Python vulnerabilities.</div>
+            <a class="go-btn" href="projects/securefixagent.html">Go to Project Page &#8594;</a>
+          </li>
 
-            <div class="hc-ts">&gt; research areas</div>
-            <div class="hc-box">
-              <span class="hc-bold">focus:</span> &nbsp;AI &nbsp;·&nbsp; LLM Reasoning &nbsp;·&nbsp; Computer Vision<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XAI &nbsp;·&nbsp; Deep Learning &nbsp;·&nbsp; Agentic Systems
+          <li class="mlist-item" style="--accent:#FFD93D;">
+            <div class="mlist-meta">
+              <span class="mlist-num">No.03</span>
+              <span class="mlist-tag" style="background:#FFD93D;">IEEE IRI 2025</span>
             </div>
+            <div class="mlist-title">Semantic Malware Detection</div>
+            <div class="mlist-desc">Two-phase LLM pipeline: static code analysis + semantic understanding for high-precision malware classification.</div>
+            <a class="go-btn" href="projects/malcodeai.html">Go to Project Page &#8594;</a>
+          </li>
 
-            <div class="hc-ts">&gt; 6 publications &nbsp;·&nbsp; 2 universities &nbsp;·&nbsp; infinite curiosity</div>
-          </div>
-              <!--EXPERIENCE AND CONTACT-->
+          <li class="mlist-item" style="--accent:#6EDCFF;">
+            <div class="mlist-meta">
+              <span class="mlist-num">No.04</span>
+              <span class="mlist-tag" style="background:#6EDCFF;">arXiv 2025</span>
+            </div>
+            <div class="mlist-title">MultiLang Code Parser Dataset</div>
+            <div class="mlist-desc">7M+ parsed source code records across 10 programming languages with universal AST representations.</div>
+            <a class="go-btn" href="projects/multilang.html">Go to Project Page &#8594;</a>
+          </li>
 
-  <!-- EXPERIENCE -->
-  <div class="home-experience home-mini-card">
-    <div class="home-proj-hdr">experience.log — 3 items</div>
-    <div class="home-mini-list">
+          <li class="mlist-item" style="--accent:#B8FF3C;">
+            <div class="mlist-meta">
+              <span class="mlist-num">No.05</span>
+              <span class="mlist-tag" style="background:#B8FF3C;">IEEE ICCDS 2024</span>
+            </div>
+            <div class="mlist-title">Aerial Roof Material Detection</div>
+            <div class="mlist-desc">YOLOv8-based aerial imagery classification of roof materials for insurance and urban planning. Best Paper Award.</div>
+            <a class="go-btn" href="projects/yolo-roof.html">Go to Project Page &#8594;</a>
+          </li>
 
-      <div class="hm-row">
-        <div class="hm-left">
-          <div class="hm-title">AI Software Engineer Intern</div>
-          <div class="hm-meta">Lillup · 2025</div>
-        </div>
+          <li class="mlist-item" style="--accent:#FF5DA2;">
+            <div class="mlist-meta">
+              <span class="mlist-num">No.06</span>
+              <span class="mlist-tag" style="background:#FF5DA2;color:#fff;">Full-Stack</span>
+            </div>
+            <div class="mlist-title">LedgerDesk</div>
+            <div class="mlist-desc">Agentic financial operations copilot for transaction exception handling and auditable workflow automation.</div>
+            <a class="go-btn" href="projects/ledgerdesk.html">Go to Project Page &#8594;</a>
+          </li>
+
+        </ul>
       </div>
-
-      <div class="hm-row">
-        <div class="hm-left">
-          <div class="hm-title">Graduate Assistant — ML</div>
-          <div class="hm-meta">GWU · 2025</div>
-        </div>
-      </div>
-
-      <div class="hm-row">
-        <div class="hm-left">
-          <div class="hm-title">Technical Support Assistant</div>
-          <div class="hm-meta">GWU · 2025</div>
-        </div>
-      </div>
-
-    </div>
-    </div>
-
-  <!-- CONTACT -->
-  <div class="home-contact home-mini-card">
-    <div class="home-proj-hdr">contact.card — 4 items</div>
-    <div class="home-mini-list">
-
-      <div class="hm-row">
-        <div class="hm-title">email</div>
-        <div class="hm-meta">kamala@...</div>
-      </div>
-
-      <div class="hm-row">
-        <div class="hm-title">linkedin</div>
-        <div class="hm-meta">/kamalasankari</div>
-      </div>
-
-      <div class="hm-row">
-        <div class="hm-title">github</div>
-        <div class="hm-meta">/KamalasankariS</div>
-      </div>
-
-      <div class="hm-row">
-        <div class="hm-title">location</div>
-        <div class="hm-meta">Washington DC</div>
-      </div>
-
     </div>
   </div>
 
-        <!-- ROW 2: projects + publications cards, perfectly aligned -->
-        
+  <!-- ══════════════════════════
+       EXPERIENCE PANEL (bottom-left)
+       ══════════════════════════ -->
+  <div class="mpanel mpanel-experience">
+    <div class="mpanel-inner">
+      <div class="mpanel-halftone"></div>
+      <div class="mpanel-header">
+        <span class="mpanel-num">03</span>
+        <h2 class="mpanel-title"><span class="sfx-letter sfx-x">X</span>PERIENCE</h2>
+      </div>
+      <div class="mpanel-body">
+        <ul class="mosaic-list">
 
-          <!-- ── PROJECTS MINI-CARD ── -->
-          <div class="home-projects home-proj-card">
-            <div class="home-proj-hdr">
-              <svg viewBox="0 0 20 16" width="14" height="11" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="0,5 7,5 8.5,3 20,3 20,15 0,15" fill="#6B98D6" stroke="#000" stroke-width="0.8"/></svg>
-              projects.dir &nbsp;&mdash;&nbsp; 6 items
+          <li class="mlist-item" style="--accent:#FF3CAC;">
+            <div class="mlist-meta">
+              <span class="mlist-num">XP.01</span>
+              <span class="mlist-tag" style="background:#FF3CAC;color:#fff;">2025</span>
             </div>
-            <div class="home-proj-list">
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">01 / FASS</div>
-                  <div class="hpr-name">XAI Stability Benchmark</div>
-                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Grad-CAM</span><span class="ptag">SHAP</span><span class="ptag">LIME</span></div>
-                  <span class="hpr-venue">CVPR 2026</span>
-                </div>
-                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">02 / VulnGraph</div>
-                  <div class="hpr-name">Code Vulnerability Detection</div>
-                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">GNN</span><span class="ptag">Transformers</span></div>
-                  <span class="hpr-venue">Complex Networks 2025</span> <span class="hpr-result">Acc: 93.57%</span>
-                </div>
-                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">03 / SecureFixAgent</div>
-                  <div class="hpr-name">Automated Vulnerability Repair</div>
-                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Bandit Algos</span></div>
-                  <span class="hpr-venue">ICMLA 2025</span> <span class="hpr-result">+13.5% patch success</span>
-                </div>
-                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">04 / MalCodeAI</div>
-                  <div class="hpr-name">Semantic Malware Detection</div>
-                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Static Analysis</span></div>
-                  <span class="hpr-venue">IEEE IRI 2025</span>
-                </div>
-                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">05 / HyperComplEx</div>
-                  <div class="hpr-name">Multi-Space Knowledge Graphs</div>
-                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Riemannian Opt.</span></div>
-                  <span class="hpr-venue">IEEE 2025</span>
-                </div>
-                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">06 / YOLO Roof</div>
-                  <div class="hpr-name">Aerial Roof Material Detection</div>
-                  <div class="hpr-tags"><span class="ptag">Python</span><span class="ptag">YOLOv8</span><span class="ptag">OpenCV</span></div>
-                  <span class="hpr-venue">IEEE ICCDS 2024</span> <span class="hpr-result">&#127942; Best Paper</span>
-                </div>
-                <button class="hpr-btn" onclick="showSection('projects')">Learn More &#187;</button>
-              </div>
-            </div><!-- /home-proj-list -->
-          </div><!-- /projects card -->
+            <div class="mlist-title">AI Software Engineer Intern</div>
+            <div class="mlist-desc">Lillup — LLM voice tutoring &amp; adaptive learning AI</div>
+            <a class="go-btn" href="experience.html">Go to Experience Page &#8594;</a>
+          </li>
 
-          <!-- ── PUBLICATIONS MINI-CARD ── -->
-          <div class="home-publications home-proj-card">
-            <div class="home-proj-hdr">
-              <svg viewBox="0 0 20 16" width="14" height="11" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="0,5 7,5 8.5,3 20,3 20,15 0,15" fill="#AA88CC" stroke="#000" stroke-width="0.8"/></svg>
-              publications.dir &nbsp;&mdash;&nbsp; 6 items
+          <li class="mlist-item" style="--accent:#FFD93D;">
+            <div class="mlist-meta">
+              <span class="mlist-num">XP.02</span>
+              <span class="mlist-tag" style="background:#FFD93D;">2025</span>
             </div>
-            <div class="home-proj-list">
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">01</div>
-                  <div class="hpr-name">FASS: Faithfulness &amp; Attribution Stability Score for Post-Hoc XAI Methods</div>
-                  <span class="hpr-venue">CVPR 2026</span>
-                  <div class="hpr-desc">Computer Vision &amp; Pattern Recognition &nbsp;·&nbsp; 2026</div>
-                </div>
-                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">02</div>
-                  <div class="hpr-name">HyperComplEx: Multi-Space Knowledge Graph Embeddings via Hyperbolic, Complex &amp; Euclidean Geometry</div>
-                  <span class="hpr-venue">IEEE 2025</span>
-                  <div class="hpr-desc">Institute of Electrical and Electronics Engineers &nbsp;·&nbsp; 2025</div>
-                </div>
-                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">03</div>
-                  <div class="hpr-name">VulnGraph: AST/CFG + LLM Fusion for Multi-Language Vulnerability Detection</div>
-                  <span class="hpr-venue">Complex Networks 2025</span>
-                  <div class="hpr-desc">International Conference on Complex Networks &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; Acc. 93.57%</div>
-                </div>
-                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">04</div>
-                  <div class="hpr-name">SecureFixAgent: Autonomous Vulnerability Repair via LLM + Bandit Optimization</div>
-                  <span class="hpr-venue">ICMLA 2025</span>
-                  <div class="hpr-desc">International Conference on Machine Learning and Applications &nbsp;·&nbsp; 2025</div>
-                </div>
-                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">05</div>
-                  <div class="hpr-name">MalCodeAI: Two-Phase LLM Pipeline for Semantic Malware Detection</div>
-                  <span class="hpr-venue">IEEE IRI 2025</span>
-                  <div class="hpr-desc">IEEE International Conference on Information Reuse and Integration &nbsp;·&nbsp; 2025</div>
-                </div>
-                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
-              </div>
-              <div class="hpr-row">
-                <div class="hpr-left">
-                  <div class="hpr-num">06</div>
-                  <div class="hpr-name">YOLO-Based Roof Material Classification from Aerial Imagery</div>
-                  <span class="hpr-venue">IEEE ICCDS 2024</span>
-                  <span class="hpr-result">&#127942; Best Paper Award</span>
-                  <div class="hpr-desc">International Conference on Computing &amp; Data Science &nbsp;·&nbsp; 2024</div>
-                </div>
-                <button class="hpr-btn" onclick="showSection('publications')">Read &#187;</button>
-              </div>
-            </div><!-- /home-proj-list -->
-          </div><!-- /publications card -->
-        </div> <!-- CLOSE home-layout -->
-        
+            <div class="mlist-title">Graduate Assistant — ML</div>
+            <div class="mlist-desc">George Washington University — ML &amp; CV instruction</div>
+            <a class="go-btn" href="experience.html">Go to Experience Page &#8594;</a>
+          </li>
 
-      </div><!-- /home -->
-
-      <!-- ABOUT -->
-      <div class="sec" id="sec-about">
-        <div class="sh">About Me</div>
-        <div class="about-grid">
-
-          <div class="acard">
-            <div class="card-hdr">EDUCATION</div>
-            <div class="edu-item">
-              <div class="item-deg">M.S. Computer Science</div>
-              <div class="item-school">George Washington University</div>
-              <div class="item-meta">Washington DC · May 2026 · GPA 3.5/4.0</div>
+          <li class="mlist-item" style="--accent:#6EDCFF;">
+            <div class="mlist-meta">
+              <span class="mlist-num">XP.03</span>
+              <span class="mlist-tag" style="background:#6EDCFF;">2025</span>
             </div>
-            <div class="edu-item">
-              <div class="item-deg">B.E. Electronics &amp; Communication Eng.</div>
-              <div class="item-school">St. Joseph's College of Engineering</div>
-              <div class="item-meta">Chennai, India · May 2024 · CGPA 9.3/10</div>
+            <div class="mlist-title">Technical Support Assistant</div>
+            <div class="mlist-desc">George Washington University — Systems &amp; infrastructure</div>
+            <a class="go-btn" href="experience.html">Go to Experience Page &#8594;</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════
+       PUBLICATIONS PANEL (bottom-center)
+       ══════════════════════════ -->
+  <div class="mpanel mpanel-pubs">
+    <div class="mpanel-inner">
+      <div class="mpanel-halftone"></div>
+      <div class="mpanel-header">
+        <span class="mpanel-num">04</span>
+        <h2 class="mpanel-title">HALL OF<br><span class="sfx-letter sfx-pub">P</span>UBLICATIONS</h2>
+      </div>
+      <div class="mpanel-body">
+        <ul class="mosaic-list">
+
+          <li class="mlist-item" style="--accent:#FF3CAC;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.01</span>
+              <span class="mlist-tag" style="background:#FF3CAC;color:#fff;">CVPR 2026</span>
             </div>
-          </div>
+            <div class="mlist-title">Feature Attribution Stability Suite: How Stable Are Post-Hoc Attributions?</div>
+            <a class="go-btn" href="pubs/fass.html">Details &#8594;</a>
+          </li>
 
-          <div class="acard">
-            <div class="card-hdr">AWARDS &amp; HONORS</div>
-            <div class="award">
-              <span class="award-ico">&#127942;</span>
-              <div class="award-txt">GW SEAS Dean's Award Scholarship<br>
-                <span style="color:#666;font-size:10px;">George Washington University · 2024</span>
-              </div>
+          <li class="mlist-item" style="--accent:#6EDCFF;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.02</span>
+              <span class="mlist-tag" style="background:#6EDCFF;">IEEE BIG DATA 2025</span>
             </div>
-            <div class="award">
-              <span class="award-ico">&#129351;</span>
-              <div class="award-txt">Best Paper Award<br>
-                <span style="color:#666;font-size:10px;">IEEE ICCDS 2024 — YOLO Roof Detection</span>
-              </div>
+            <div class="mlist-title">HyperComplEx: Adaptive Multi-Space Knowledge Graph Embeddings</div>
+            <a class="go-btn" href="pubs/hypercomplex.html">Details &#8594;</a>
+          </li>
+
+          <li class="mlist-item" style="--accent:#5EF2C2;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.03</span>
+              <span class="mlist-tag" style="background:#5EF2C2;">COMPLEX NETWORKS 2025</span>
             </div>
-            <div class="award">
-              <span class="award-ico">&#128196;</span>
-              <div class="award-txt">6 Peer-Reviewed Publications<br>
-                <span style="color:#666;font-size:10px;">CVPR, IEEE, Complex Networks, ICMLA</span>
-              </div>
+            <div class="mlist-title">Bridging Semantics &amp; Structure for Software Vulnerability Detection Using Hybrid Network Models</div>
+            <a class="go-btn" href="pubs/vulngraph.html">Details &#8594;</a>
+          </li>
+
+          <li class="mlist-item" style="--accent:#B8FF3C;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.04</span>
+              <span class="mlist-tag" style="background:#B8FF3C;">ICMLA 2025</span>
             </div>
-          </div>
+            <div class="mlist-title">SecureFixAgent: A Hybrid LLM Agent for Automated Python Static Vulnerability Repair</div>
+            <a class="go-btn" href="pubs/securefixagent.html">Details &#8594;</a>
+          </li>
 
-          <div class="acard full">
-            <div class="card-hdr">EXPERIENCE</div>
-            <div class="exp-item">
-              <div class="item-deg">Student Academic Assistant</div>
-              <div class="item-school">George Washington University</div>
-              <div class="item-meta">Washington DC · Sep 2025 – Present</div>
-              <div class="item-desc">Advanced ML &amp; AI instruction for graduate students. Office hours, grading, and curriculum support for machine learning and computer vision coursework.</div>
+          <li class="mlist-item" style="--accent:#FFD93D;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.05</span>
+              <span class="mlist-tag" style="background:#FFD93D;">IEEE IRI 2025</span>
             </div>
-            <div class="exp-item">
-              <div class="item-deg">Software Engineer Intern</div>
-              <div class="item-school">Lillup</div>
-              <div class="item-meta">Remote · Apr 2025 – Aug 2025</div>
-              <div class="item-desc">Built AI voice tutoring systems and data processing pipelines. Designed and deployed LLM-based conversational AI for adaptive learning platforms.</div>
+            <div class="mlist-title">MalCodeAI: Autonomous Vulnerability Detection and Remediation via Language Agnostic Code Reasoning</div>
+            <a class="go-btn" href="pubs/malcodeai.html">Details &#8594;</a>
+          </li>
+
+          <li class="mlist-item" style="--accent:#FF5DA2;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.06</span>
+              <span class="mlist-tag" style="background:#FF5DA2;color:#fff;">arXiv 2025</span>
             </div>
-          </div>
+            <div class="mlist-title">MLCPD: A Unified Multi-Language Code Parsing Dataset with Universal AST Schema</div>
+            <a class="go-btn" href="pubs/multilang.html">Details &#8594;</a>
+          </li>
 
-        </div>
-      </div><!-- /about -->
-
-      <!-- PROJECTS -->
-      <div class="sec" id="sec-projects">
-        <div class="sh">Projects</div>
-        <div class="proj-grid">
-
-          <div class="pcard">
-            <div class="p-num">01 / FASS</div>
-            <div class="p-name">XAI Stability Benchmark</div>
-            <div class="p-desc">Faithfulness &amp; Attribution Stability Score — a comprehensive benchmark for evaluating post-hoc attribution method stability across perturbations (noise, rotation) on CIFAR-10, COCO, and ImageNet.</div>
-            <div class="p-tags">
-              <span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Grad-CAM</span><span class="ptag">SHAP</span><span class="ptag">LIME</span><span class="ptag">IG</span>
+          <li class="mlist-item" style="--accent:#FF3CAC;">
+            <div class="mlist-meta">
+              <span class="mlist-num">PUB.07</span>
+              <span class="mlist-tag" style="background:#FF3CAC;color:#fff;">IEEE ICCDS 2024</span>
             </div>
-            <span class="p-stat">CVPR 2026</span>
-          </div>
+            <div class="mlist-title">YOLO: Roof Material Detection Using Aerial Imagery</div>
+            <a class="go-btn" href="pubs/yolo.html">Details &#8594;</a>
+          </li>
 
-          <div class="pcard">
-            <div class="p-num">02 / VulnGraph</div>
-            <div class="p-name">Code Vulnerability Detection</div>
-            <div class="p-desc">AST + CFG structural analysis fused with LLM semantic embeddings via a learned gating mechanism for multi-language vulnerability detection in C/C++ and Python.</div>
-            <div class="p-tags">
-              <span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">GNN</span><span class="ptag">Transformers</span>
-            </div>
-            <span class="p-stat">Complex Networks 2025</span>
-            <div class="p-result">Accuracy: 93.57%</div>
-          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-          <div class="pcard">
-            <div class="p-num">03 / SecureFixAgent</div>
-            <div class="p-name">Automated Vulnerability Repair</div>
-            <div class="p-desc">LLM-driven autonomous patch generation using multi-armed bandit optimization to intelligently select repair strategies. Reduces false positives while improving patch success.</div>
-            <div class="p-tags">
-              <span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Bandit Algos</span>
-            </div>
-            <span class="p-stat">ICMLA 2025</span>
-            <div class="p-result">+13.5% patch success · −10.8% false pos.</div>
-          </div>
-
-          <div class="pcard">
-            <div class="p-num">04 / MalCodeAI</div>
-            <div class="p-name">Semantic Malware Detection</div>
-            <div class="p-desc">Two-phase LLM pipeline combining static code analysis with semantic understanding for high-precision malware and malicious code classification across multiple programming languages.</div>
-            <div class="p-tags">
-              <span class="ptag">Python</span><span class="ptag">LLM APIs</span><span class="ptag">Static Analysis</span>
-            </div>
-            <span class="p-stat">IEEE IRI 2025</span>
-          </div>
-
-          <div class="pcard">
-            <div class="p-num">05 / HyperComplEx</div>
-            <div class="p-name">Multi-Space Knowledge Graphs</div>
-            <div class="p-desc">Simultaneous embedding of knowledge graph entities in Hyperbolic, Complex, and Euclidean spaces with Riemannian optimization for superior link prediction and entity alignment.</div>
-            <div class="p-tags">
-              <span class="ptag">Python</span><span class="ptag">PyTorch</span><span class="ptag">Riemannian Opt.</span>
-            </div>
-            <span class="p-stat">IEEE 2025</span>
-          </div>
-
-          <div class="pcard">
-            <div class="p-num">06 / YOLO Roof</div>
-            <div class="p-name">Aerial Roof Material Detection</div>
-            <div class="p-desc">YOLOv8-based aerial imagery classification of roof materials (metal, asphalt, tile, concrete) for insurance and urban planning applications.
-              <strong style="color:#0000AA;"> Best Paper Award — IEEE ICCDS 2024</strong>
-            </div>
-            <div class="p-tags">
-              <span class="ptag">Python</span><span class="ptag">YOLOv8</span><span class="ptag">OpenCV</span>
-            </div>
-            <span class="p-stat">IEEE ICCDS 2024</span>
-          </div>
-
-        </div>
-      </div><!-- /projects -->
-
-      <!-- PUBLICATIONS -->
-      <div class="sec" id="sec-publications">
-        <div class="sh">Publications</div>
-        <div class="pub-list">
-
-          <div class="pub">
-            <div class="pub-n">01</div>
-            <div class="pub-body">
-              <div class="pub-ttl">FASS: Faithfulness &amp; Attribution Stability Score for Post-Hoc XAI Methods</div>
-              <div class="pub-venue">CVPR 2026</div>
-              <div class="pub-meta">Computer Vision &amp; Pattern Recognition · 2026</div>
-              <span class="pub-badge">Conference Paper</span>
-            </div>
-          </div>
-
-          <div class="pub">
-            <div class="pub-n">02</div>
-            <div class="pub-body">
-              <div class="pub-ttl">HyperComplEx: Multi-Space Knowledge Graph Embeddings via Hyperbolic, Complex &amp; Euclidean Geometry</div>
-              <div class="pub-venue">IEEE 2025</div>
-              <div class="pub-meta">Institute of Electrical and Electronics Engineers · 2025</div>
-              <span class="pub-badge">Conference Paper</span>
-            </div>
-          </div>
-
-          <div class="pub">
-            <div class="pub-n">03</div>
-            <div class="pub-body">
-              <div class="pub-ttl">VulnGraph: AST/CFG + LLM Fusion for Multi-Language Vulnerability Detection</div>
-              <div class="pub-venue">Complex Networks 2025</div>
-              <div class="pub-meta">International Conference on Complex Networks · 2025 · Acc. 93.57%</div>
-              <span class="pub-badge">Conference Paper</span>
-            </div>
-          </div>
-
-          <div class="pub">
-            <div class="pub-n">04</div>
-            <div class="pub-body">
-              <div class="pub-ttl">SecureFixAgent: Autonomous Vulnerability Repair via LLM + Bandit Optimization</div>
-              <div class="pub-venue">ICMLA 2025</div>
-              <div class="pub-meta">International Conference on Machine Learning and Applications · 2025</div>
-              <span class="pub-badge">Conference Paper</span>
-            </div>
-          </div>
-
-          <div class="pub">
-            <div class="pub-n">05</div>
-            <div class="pub-body">
-              <div class="pub-ttl">MalCodeAI: Two-Phase LLM Pipeline for Semantic Malware Detection</div>
-              <div class="pub-venue">IEEE IRI 2025</div>
-              <div class="pub-meta">IEEE International Conference on Information Reuse and Integration · 2025</div>
-              <span class="pub-badge">Conference Paper</span>
-            </div>
-          </div>
-
-          <div class="pub">
-            <div class="pub-n">06</div>
-            <div class="pub-body">
-              <div class="pub-ttl">YOLO-Based Roof Material Classification from Aerial Imagery</div>
-              <div class="pub-venue">IEEE ICCDS 2024</div>
-              <div class="pub-meta">International Conference on Computing &amp; Data Science · 2024</div>
-              <span class="pub-badge">&#127942; BEST PAPER AWARD</span>
-            </div>
-          </div>
-
-        </div>
-      </div><!-- /publications -->
-
-      <!-- CONTACT -->
-      <div class="sec" id="sec-contact">
-        <div class="sh">Connect</div>
-        <div class="contact-intro">
-          Let's talk AI, research, or just good ideas.<br>
-          <span style="color:#0000AA;">Open to collaborations · research · cool projects</span>
-        </div>
-        <div class="soc-grid">
-          <a class="soccard" href="https://www.linkedin.com/in/kamalasankari-s" target="_blank" rel="noopener">
-            <img src="assets/icons/linkedin.svg" alt="LinkedIn" /><span>LinkedIn</span>
-          </a>
-          <a class="soccard" href="https://github.com/kamalasankaris" target="_blank" rel="noopener">
+  <!-- ══════════════════════════
+       CONTACT PANEL (bottom-right)
+       ══════════════════════════ -->
+  <div class="mpanel mpanel-contact">
+    <div class="mpanel-inner">
+      <div class="mpanel-halftone"></div>
+      <div class="mpanel-header">
+        <span class="mpanel-num">05</span>
+        <h2 class="mpanel-title">FIND ME<br>HERE</h2>
+      </div>
+      <div class="mpanel-body">
+        <div class="social-icons-dice">
+          <a class="social-icon-link icon-github" href="https://github.com/kamalasankaris" target="_blank" rel="noopener" aria-label="GitHub">
             <img src="assets/icons/github.svg" alt="GitHub" /><span>GitHub</span>
           </a>
-          <a class="soccard" href="https://scholar.google.com" target="_blank" rel="noopener">
-            <img src="assets/icons/scholar.svg" alt="Google Scholar" /><span>Scholar</span>
+          <a class="social-icon-link icon-linkedin" href="https://www.linkedin.com/in/kamalasankari-s" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" /><span>LinkedIn</span>
           </a>
-          <a class="soccard" href="https://www.researchgate.net" target="_blank" rel="noopener">
-            <img src="assets/icons/researchgate.svg" alt="ResearchGate" /><span>ResearchGate</span>
-          </a>
-          <a class="soccard" href="https://medium.com" target="_blank" rel="noopener">
+          <a class="social-icon-link icon-medium dice-center" href="https://medium.com/@kamalasankari" target="_blank" rel="noopener" aria-label="Medium">
             <img src="assets/icons/medium.svg" alt="Medium" /><span>Medium</span>
           </a>
-          <a class="soccard" href="mailto:kamalasankari@gwu.edu">
+          <a class="social-icon-link icon-email" href="mailto:kamalasankari@gwu.edu" aria-label="Email">
             <img src="assets/icons/email.svg" alt="Email" /><span>Email</span>
           </a>
+          <a class="social-icon-link icon-scholar" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <img src="assets/icons/scholar.svg" alt="Google Scholar" /><span>Scholar</span>
+          </a>
         </div>
-        <div class="contact-resume">
-          <a class="resume-btn" href="assets/resume.pdf" target="_blank">Download Resume.pdf</a>
-        </div>
-      </div><!-- /contact -->
-
-      <!-- RESUME & CV -->
-      <div class="sec" id="sec-resume">
-        <div class="sh">Resume &amp; CV</div>
-        <div class="resume-cards-row">
-
-          <!-- Resume preview -->
-          <div class="rdoc-wrap">
-            <div class="rdoc-titlebar">
-              <svg viewBox="0 0 30 38" width="16" height="20" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="1,1 20,1 29,10 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/><polygon points="20,1 20,10 29,10" fill="#CCCCCC" stroke="#000" stroke-width="1"/><line x1="5" y1="15" x2="25" y2="15" stroke="#999" stroke-width="1"/><line x1="5" y1="19" x2="25" y2="19" stroke="#999" stroke-width="1"/><line x1="5" y1="23" x2="25" y2="23" stroke="#999" stroke-width="1"/></svg>
-              Resume.pdf
-            </div>
-            <div class="rdoc-preview">
-              <div class="rdoc-paper">
-                <div class="rdoc-dogear"></div>
-                <div class="rdoc-name">KAMALASANKARI SUBRAMANIAKUPPUSAMY</div>
-                <div class="rdoc-contact-line">kamalasankari@gwu.edu &nbsp;·&nbsp; Washington DC &nbsp;·&nbsp; github.com/kamalasankaris</div>
-                <div class="rdoc-divider"></div>
-                <div class="rdoc-section">EDUCATION</div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line med"></div>
-                <div class="rdoc-section">EXPERIENCE</div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line med"></div>
-                <div class="rdoc-section">SKILLS</div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line short"></div>
-                <div class="rdoc-section">PUBLICATIONS</div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line med"></div>
-              </div>
-            </div>
-            <div class="rdoc-actions">
-              <a class="hpr-btn" href="assets/resume.pdf" target="_blank">&#128196; Open PDF</a>
-              <a class="hpr-btn" href="assets/resume.pdf" download>&#8595; Download</a>
-            </div>
-          </div>
-
-          <!-- Research CV preview -->
-          <div class="rdoc-wrap">
-            <div class="rdoc-titlebar">
-              <svg viewBox="0 0 30 38" width="16" height="20" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:5px"><polygon points="5,4 25,4 33,12 33,40 5,40" fill="#E8E8E8" stroke="#888" stroke-width="0.8"/><polygon points="1,1 21,1 29,9 29,37 1,37" fill="#FFFFFF" stroke="#000" stroke-width="1"/><polygon points="21,1 21,9 29,9" fill="#CCCCCC" stroke="#000" stroke-width="1"/><line x1="5" y1="14" x2="25" y2="14" stroke="#999" stroke-width="1"/><line x1="5" y1="18" x2="25" y2="18" stroke="#999" stroke-width="1"/><line x1="5" y1="22" x2="25" y2="22" stroke="#999" stroke-width="1"/></svg>
-              Research_CV.pdf
-            </div>
-            <div class="rdoc-preview">
-              <div class="rdoc-paper">
-                <div class="rdoc-dogear"></div>
-                <div class="rdoc-name">KAMALASANKARI SUBRAMANIAKUPPUSAMY</div>
-                <div class="rdoc-contact-line">AI Researcher &nbsp;·&nbsp; GWU MSCS 2026 &nbsp;·&nbsp; LLM · XAI · Agentic Systems</div>
-                <div class="rdoc-divider"></div>
-                <div class="rdoc-section">RESEARCH INTERESTS</div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line med"></div>
-                <div class="rdoc-section">PUBLICATIONS <span class="rdoc-count">6</span></div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-section">AWARDS</div>
-                <div class="rdoc-line med"></div>
-                <div class="rdoc-section">EDUCATION</div>
-                <div class="rdoc-line long"></div>
-                <div class="rdoc-line short"></div>
-              </div>
-            </div>
-            <div class="rdoc-actions">
-              <a class="hpr-btn" href="assets/research_cv.pdf" target="_blank">&#128196; Open PDF</a>
-              <a class="hpr-btn" href="assets/research_cv.pdf" download>&#8595; Download</a>
-            </div>
-          </div>
-
-        </div><!-- /resume-cards-row -->
-      </div><!-- /resume -->
-
-      <!-- MARQUEE — bottom of all content -->
-      <div class="marquee-wrap">
-        <div class="mq-txt">AI RESEARCHER &nbsp;&nbsp; GWU MSCS 2026 &nbsp;&nbsp; CVPR 2026 &nbsp;&nbsp; 6 PUBLICATIONS &nbsp;&nbsp; BUILDING THE FUTURE &nbsp;&nbsp; AVAILABLE FOR COLLABORATION &nbsp;&nbsp; WASHINGTON DC &nbsp;&nbsp; OPEN TO OPPORTUNITIES &nbsp;&nbsp; LET'S CREATE SOMETHING AMAZING &nbsp;&nbsp;&nbsp;</div>
-      </div>
-
-    </div><!-- /pcontent -->
-  </div><!-- /player-body -->
-
-  <!-- STATUS BAR -->
-  <div class="pcontrols">
-    <div class="status-left" id="status-lbl">5 items</div>
-    <div class="status-zones">
-      <div class="status-zone" id="time-disp">12:00 PM</div>
-    </div>
-    <div style="display:none">
-      <button id="play-btn">&#9654;</button>
-      <div class="ctrl-btns"></div>
-      <div class="prog-track"><div class="prog-fill"></div></div>
-      <div class="vol-row"><div class="vol-bar"><div class="vol-fill"></div></div></div>
-    </div>
-  </div>
-
-</div><!-- /player -->
-
-
-<!-- ═══════════════════════════════════
-     DIALOG — Classic Mac modal (no chrome, rounded rect)
-═══════════════════════════════════ -->
-<div id="dialog-overlay" class="hidden">
-  <div id="dialog">
-    <div class="dlg-inner">
-      <!-- Classic Mac stop/caution icon -->
-      <svg class="dlg-ico" viewBox="0 0 40 40" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="14,2 26,2 38,14 38,26 26,38 14,38 2,26 2,14" fill="#FFFFFF" stroke="#000" stroke-width="2"/>
-        <rect x="18" y="10" width="4" height="14" rx="1" fill="#000"/>
-        <rect x="18" y="28" width="4" height="4" rx="1" fill="#000"/>
-      </svg>
-      <div class="dlg-msg" id="dialog-msg">An error has occurred.</div>
-    </div>
-    <div class="dlg-btns">
-      <button id="dialog-ok" class="mac-btn mac-btn-default">OK</button>
-    </div>
-  </div>
-</div>
-
-<!-- About This Macintosh -->
-<div id="about-overlay" class="hidden">
-  <div id="about-mac">
-    <div class="about-header">
-      <svg viewBox="0 0 48 48" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="4" width="36" height="30" rx="4" fill="#D4D0C8" stroke="#000" stroke-width="1.5"/>
-        <rect x="11" y="9" width="26" height="18" fill="#8C78B8" stroke="#555" stroke-width="0.8"/>
-        <rect x="16" y="34" width="16" height="4" fill="#C8C4C0" stroke="#000" stroke-width="1"/>
-        <rect x="10" y="38" width="28" height="5" rx="2" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
-      </svg>
-      <div>
-        <div class="about-os">Mac OS 8</div>
-        <div class="about-copy">© 1984–1997 Apple Computer, Inc.</div>
       </div>
     </div>
-    <div class="about-sep"></div>
-    <div class="about-row"><span>Total Memory:</span><span>∞ MB</span></div>
-    <div class="about-row"><span>Largest Unused Block:</span><span>∞ MB</span></div>
-    <div class="about-sep"></div>
-    <div class="about-app-row">
-      <div class="about-app-bar-wrap"><div class="about-app-bar"></div></div>
-      <span>Kamala Portfolio</span>
-    </div>
-    <div class="dlg-btns" style="margin-top:10px;">
-      <button class="mac-btn mac-btn-default" id="about-ok">OK</button>
-    </div>
+  </div>
+
+</div><!-- /#mosaic -->
+
+<!-- ============================================================
+     DETAIL OVERLAY — Full-screen project/experience/paper page
+     ============================================================ -->
+<div id="detail-overlay" aria-hidden="true">
+  <div id="detail-panel">
+    <button id="detail-close" aria-label="Back to mosaic">&#8592; BACK TO HOME</button>
+    <div id="detail-content"></div>
   </div>
 </div>
 
+<!-- Footer -->
+<footer class="mosaic-footer">
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
 
-<!-- TICKER hidden -->
-<div id="ticker" style="display:none"><div class="ticker-cur" id="ticker-cur"></div></div>
-
-
-<!-- ═══════════════════════════════════
-     DESKTOP ICONS — Classic Mac (right side)
-     Top: disk volume. Middle: folders. Bottom: Trash.
-═══════════════════════════════════ -->
-<div id="taskbar">
-
-  <!-- Kamala HD — disk volume, always at top-right -->
-  <button class="tb-hd" id="hd-icon" title="Kamala HD">
-    <svg viewBox="0 0 38 28" width="38" height="28" xmlns="http://www.w3.org/2000/svg">
-      <rect x="1" y="3" width="36" height="22" rx="3" fill="#D4D0C8" stroke="#000" stroke-width="1.2"/>
-      <rect x="5" y="8" width="16" height="12" fill="#222244" stroke="#555" stroke-width="0.8"/>
-      <rect x="6" y="9" width="14" height="10" fill="#333366"/>
-      <circle cx="11" cy="12" r="1.5" fill="#8888CC"/>
-      <circle cx="16" cy="12" r="1.5" fill="#8888CC"/>
-      <path d="M10,16 Q13.5,19 17,16" stroke="#8888CC" stroke-width="1" fill="none"/>
-      <rect x="24" y="18" width="9" height="2" rx="1" fill="#999" stroke="#666" stroke-width="0.5"/>
-      <circle cx="29" cy="13" r="2" fill="#555"/>
-      <rect x="24" y="10" width="9" height="4" rx="1" fill="#BBB" stroke="#888" stroke-width="0.5"/>
-    </svg>
-    <span class="tb-ico-lbl">Kamala HD</span>
-  </button>
-
-  <div class="dock-shelf">
-
-    <!-- HOME — folder icon -->
-    <button class="tb-ico" data-sec="home" title="home">
-      <svg viewBox="0 0 40 34" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="1,11 15,11 18,7 39,7 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
-        <rect x="2" y="12" width="36" height="3" fill="#A0C0F0" opacity="0.9"/>
-        <rect x="2" y="15" width="36" height="1" fill="#4A78B8" opacity="0.4"/>
-      </svg>
-      <span class="tb-ico-lbl">home</span>
-    </button>
-
-    <!-- ABOUT — document icon -->
-    <button class="tb-ico" data-sec="about" title="about">
-      <svg viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="1,1 22,1 31,10 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-        <polygon points="22,1 22,10 31,10" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
-        <line x1="5" y1="17" x2="27" y2="17" stroke="#888" stroke-width="1"/>
-        <line x1="5" y1="22" x2="27" y2="22" stroke="#888" stroke-width="1"/>
-        <line x1="5" y1="27" x2="20" y2="27" stroke="#888" stroke-width="1"/>
-      </svg>
-      <span class="tb-ico-lbl">about</span>
-    </button>
-
-    <!-- PROJECTS — folder icon -->
-    <button class="tb-ico" data-sec="projects" title="projects">
-      <svg viewBox="0 0 40 34" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="1,11 15,11 18,7 39,7 39,33 1,33" fill="#6B98D6" stroke="#000" stroke-width="1"/>
-        <rect x="2" y="12" width="36" height="3" fill="#A0C0F0" opacity="0.9"/>
-        <rect x="2" y="15" width="36" height="1" fill="#4A78B8" opacity="0.4"/>
-      </svg>
-      <span class="tb-ico-lbl">projects</span>
-    </button>
-
-    <!-- PAPERS — document icon -->
-    <button class="tb-ico" data-sec="publications" title="papers">
-      <svg viewBox="0 0 32 40" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="1,1 22,1 31,10 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-        <polygon points="22,1 22,10 31,10" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
-        <line x1="5" y1="17" x2="27" y2="17" stroke="#888" stroke-width="1"/>
-        <line x1="5" y1="22" x2="27" y2="22" stroke="#888" stroke-width="1"/>
-        <line x1="5" y1="27" x2="20" y2="27" stroke="#888" stroke-width="1"/>
-      </svg>
-      <span class="tb-ico-lbl">papers</span>
-    </button>
-
-    <!-- RESUME — document stack icon -->
-    <button class="tb-ico" data-sec="resume" title="resume">
-      <svg viewBox="0 0 36 42" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="5,5 27,5 35,13 35,41 5,41" fill="#E0E8FF" stroke="#888" stroke-width="0.8"/>
-        <polygon points="1,1 23,1 31,9 31,39 1,39" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-        <polygon points="23,1 23,9 31,9" fill="#C8D8F0" stroke="#000" stroke-width="1"/>
-        <line x1="5" y1="15" x2="27" y2="15" stroke="#6B98D6" stroke-width="1.5"/>
-        <line x1="5" y1="20" x2="27" y2="20" stroke="#888" stroke-width="1"/>
-        <line x1="5" y1="25" x2="27" y2="25" stroke="#888" stroke-width="1"/>
-        <line x1="5" y1="30" x2="18" y2="30" stroke="#888" stroke-width="1"/>
-      </svg>
-      <span class="tb-ico-lbl">resume</span>
-    </button>
-
-    <!-- CONTACT — envelope icon -->
-    <button class="tb-ico" data-sec="contact" title="contact">
-      <svg viewBox="0 0 40 30" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="38" height="28" fill="#FFFFFF" stroke="#000" stroke-width="1"/>
-        <polyline points="1,1 20,18 39,1" stroke="#000" stroke-width="1" fill="none"/>
-        <line x1="1" y1="29" x2="13" y2="17" stroke="#888" stroke-width="1"/>
-        <line x1="39" y1="29" x2="27" y2="17" stroke="#888" stroke-width="1"/>
-      </svg>
-      <span class="tb-ico-lbl">contact</span>
-    </button>
-
-  </div><!-- /dock-shelf -->
-
-  <!-- Trash — always at bottom-right of Mac desktop -->
-  <button class="tb-trash" id="trash-icon" title="Trash">
-    <svg viewBox="0 0 28 34" width="28" height="34" xmlns="http://www.w3.org/2000/svg">
-      <!-- handle -->
-      <rect x="10" y="1" width="8" height="3" rx="1" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
-      <!-- lid -->
-      <rect x="2" y="4" width="24" height="4" rx="1" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
-      <!-- body -->
-      <path d="M4,8 L5.5,32 L22.5,32 L24,8 Z" fill="#D4D0C8" stroke="#000" stroke-width="1"/>
-      <!-- vertical ridges -->
-      <line x1="10" y1="12" x2="10" y2="29" stroke="#888" stroke-width="1"/>
-      <line x1="14" y1="12" x2="14" y2="29" stroke="#888" stroke-width="1"/>
-      <line x1="18" y1="12" x2="18" y2="29" stroke="#888" stroke-width="1"/>
-    </svg>
-    <span class="tb-ico-lbl">Trash</span>
-  </button>
-
-  <!-- hidden JS compat -->
-  <button class="tb-btn" data-win="player" style="display:none"></button>
-
-  <!-- hidden JS compat -->
-  <span class="tb-logo" style="display:none">KAMALA</span>
-  <span class="tb-sep" style="display:none"></span>
-  <span class="tb-heart" style="display:none">&#9825;</span>
-</div>
-
-
-<script src="js/y2k.js"></script>
+<script src="js/comic.js"></script>
+<script src="js/chatbot.js"></script>
 </body>
 </html>

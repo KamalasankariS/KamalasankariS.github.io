@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HALL OF PAPERS — KAMALA COMICS</title>
+  <meta name="description" content="Kamala Sankari — Publications and research papers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/comic.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    .pub-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .pub-btn {
+      font-family: var(--font-bang);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 4px 12px;
+      border: 2px solid var(--ink);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .pub-btn:hover {
+      transform: translate(-1px,-1px);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+    .pub-btn-paper { background: var(--pink); }
+    .pub-btn-paper:hover { background: var(--hot-pink); }
+    .pub-btn-repo { background: var(--sky); }
+    .pub-btn-repo:hover { background: var(--mint); }
+    .pub-btn-details { background: var(--yellow); color: var(--ink); }
+    .pub-btn-details:hover { background: var(--lime); }
+    .pub-btn-award { background: var(--mint); color: var(--ink); }
+    .pub-btn-award:hover { background: var(--yellow); }
+  </style>
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="index.html">HOME</a>
+  <a class="nav-bubble" href="about.html">ABOUT</a>
+  <a class="nav-bubble" href="experience.html">XP</a>
+  <a class="nav-bubble" href="projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="pubs.html">PUBS</a>
+  <a class="nav-bubble" href="resume.html">CV</a>
+  <a class="nav-bubble" href="contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section id="publications" class="page-section">
+    <div class="page-title-wrap">
+      <h1 class="section-title">THE HALL OF PAPERS</h1>
+    </div>
+
+    <div class="pub-list">
+
+      <div class="pub-card">
+        <span class="pub-venue cvpr">CVPR 2026</span>
+        <h3 class="pub-title-text">FEATURE ATTRIBUTION STABILITY SUITE: HOW STABLE ARE POST-HOC ATTRIBUTIONS?</h3>
+        <div class="pub-buttons">
+          <a href="https://arxiv.org/abs/2604.02532" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="https://github.com/KamalasankariS/xai-stability-benchmark" target="_blank" class="pub-btn pub-btn-repo">Repo</a>
+          <a href="pubs/fass.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-venue bigdata" style="background: var(--sky);">IEEE BIG DATA 2025</span>
+        <h3 class="pub-title-text">HYPERCOMPLEX: ADAPTIVE MULTI-SPACE KNOWLEDGE GRAPH EMBEDDINGS</h3>
+        <div class="pub-buttons">
+          <a href="https://arxiv.org/abs/2511.10842" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="https://github.com/JugalGajjar/HyperComplEx-Multi-Space-KG-Embeddings" target="_blank" class="pub-btn pub-btn-repo">Repo</a>
+          <a href="pubs/hypercomplex.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-venue complexnets" style="background: var(--mint);">COMPLEX NETWORKS 2025</span>
+        <h3 class="pub-title-text">BRIDGING SEMANTICS &amp; STRUCTURE FOR SOFTWARE VULNERABILITY DETECTION USING HYBRID NETWORK MODELS</h3>
+        <div class="pub-buttons">
+          <a href="https://arxiv.org/abs/2510.10321" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="https://github.com/JugalGajjar/VulnGraph" target="_blank" class="pub-btn pub-btn-repo">Repo</a>
+          <a href="pubs/vulngraph.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-venue icmla" style="background: var(--lime);">ICMLA 2025</span>
+        <h3 class="pub-title-text">SECUREFIXAGENT: A HYBRID LLM AGENT FOR AUTOMATED PYTHON STATIC VULNERABILITY REPAIR</h3>
+        <div class="pub-buttons">
+          <a href="https://arxiv.org/abs/2509.16275" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="https://github.com/KamalasankariS/SecureFixAgent" target="_blank" class="pub-btn pub-btn-repo">Repo</a>
+          <a href="pubs/securefixagent.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-venue iri" style="background: var(--yellow);">IEEE IRI 2025</span>
+        <h3 class="pub-title-text">MALCODEAI: AUTONOMOUS VULNERABILITY DETECTION AND REMEDIATION VIA LANGUAGE AGNOSTIC CODE REASONING</h3>
+        <div class="pub-buttons">
+          <a href="https://ieeexplore.ieee.org/document/11153184" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="https://github.com/KamalasankariS/MalCodeAI-AI-Powered-Malicious-Code-Detection" target="_blank" class="pub-btn pub-btn-repo">Repo</a>
+          <a href="pubs/malcodeai.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-venue" style="background: var(--hot-pink); color: #fff;">ARXIV 2025</span>
+        <h3 class="pub-title-text">MLCPD: A UNIFIED MULTI-LANGUAGE CODE PARSING DATASET WITH UNIVERSAL AST SCHEMA</h3>
+        <div class="pub-buttons">
+          <a href="https://arxiv.org/abs/2510.16357" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="https://github.com/KamalasankariS/MultiLang-Code-Parser-Dataset" target="_blank" class="pub-btn pub-btn-repo">Repo</a>
+          <a href="pubs/multilang.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-venue" style="background: var(--pink); color: #fff;">IEEE ICCDS 2024</span>
+        <h3 class="pub-title-text">YOLO: ROOF MATERIAL DETECTION USING AERIAL IMAGERY</h3>
+        <div class="pub-buttons">
+          <a href="https://ieeexplore.ieee.org/document/10560402" target="_blank" class="pub-btn pub-btn-paper">Paper</a>
+          <a href="assets/best-paper-award.pdf" target="_blank" class="pub-btn pub-btn-award">Award</a>
+          <a href="pubs/yolo.html" class="pub-btn pub-btn-details">Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="js/comic.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

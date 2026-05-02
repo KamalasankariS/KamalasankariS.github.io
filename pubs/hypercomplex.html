@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HYPERCOMPLEX — KAMALA COMICS</title>
+  <meta name="description" content="HyperComplEx: Multi-Space Knowledge Graph Embeddings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(28px, 5vw, 56px);">HYPERCOMPLEX: MULTI-SPACE KNOWLEDGE GRAPH EMBEDDINGS</h1>
+      <p class="page-subtitle">IEEE BIG DATA &middot; 2025</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Problem Statement — full width top -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">PROBLEM STATEMENT</span>
+        </div>
+        <ul class="star-list">
+          <li>Knowledge graphs contain diverse relational structures (hierarchical, cyclic, symmetric)</li>
+          <li>Single geometric space embeddings (Euclidean-only) cannot capture all relation types effectively</li>
+          <li>Existing multi-space approaches lack unified optimization frameworks</li>
+        </ul>
+      </div>
+
+      <!-- Solution — left -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">SOLUTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Simultaneous embedding in Hyperbolic, Complex, and Euclidean spaces</li>
+          <li>Riemannian optimization for geometrically faithful gradient updates</li>
+          <li>Learned gating mechanism to weight contributions from each space per relation type</li>
+        </ul>
+      </div>
+
+      <!-- Our Positioning — right -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">OUR POSITIONING</span>
+        </div>
+        <ul class="star-list">
+          <li>Adaptive space attention mechanism that dynamically selects optimal geometric representations (hyperbolic, complex, or Euclidean) for each relation type</li>
+          <li>Multi-space consistency regularization loss encouraging agreement between different geometric spaces</li>
+          <li>Scalable architecture with adaptive dimension allocation, scaling from thousands to hundreds of millions of entities</li>
+          <li>Incrementally consolidates and simplifies multi-geometry reasoning through a unified lightweight scoring interface (vs. fixed-geometry methods like TransE, RotatE, ComplEx, SEPA, UltraE)</li>
+        </ul>
+      </div>
+
+      <!-- Architecture — full width -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">ARCHITECTURE</span>
+        </div>
+        <ul class="star-list">
+          <li>Triple encoder: Hyperbolic (Poincar&eacute; ball), Complex (rotation-based), Euclidean (translation-based)</li>
+          <li>Relation-specific gating network to blend space contributions</li>
+          <li>Riemannian Adam optimizer for manifold-aware parameter updates</li>
+          <li>Scoring function combines distance/similarity from all three spaces</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second comic page for Dataset + Results -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <!-- Dataset Used — left -->
+      <div class="star-panel" style="grid-column: 1/2; --panel-color: var(--lime);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: var(--yellow);">DATASET USED</span>
+        </div>
+        <ul class="star-list">
+          <li>Custom CS Knowledge Graphs from OpenAlex and Semantic Scholar (5 scholarly relation types: AUTHORED, CITES, PUBLISHED IN, BELONGS TO, COLLABORATES WITH)</li>
+          <li>CS-1K: 5,237 entities, 25,317 triples</li>
+          <li>CS-10K: 44,930 entities, 227,502 triples</li>
+          <li>CS-100K: 348,983 entities, 2,162,386 triples</li>
+          <li>CS-1M: 2,384,896 entities, 13,530,177 triples</li>
+          <li>CS-10M: 7,210,506 entities, 44,631,484 triples</li>
+          <li>Standard benchmarks: DBP15K (172,747 entities, 470,781 triples), Hetionet (47,031 entities, 2,250,197 triples), FB15K (14,951 entities, 592,213 triples)</li>
+          <li>All splits: 80% train / 10% validation / 10% test</li>
+        </ul>
+      </div>
+
+      <!-- Results — right -->
+      <div class="star-panel" style="grid-column: 2/3; --panel-color: var(--hot-pink);">
+        <div class="star-panel-header">
+          <span class="star-label">RESULTS</span>
+        </div>
+        <ul class="star-list">
+          <li>HyperComplEx achieves best MRR across all 8 datasets: 0.831 (CS-1K), 0.771 (CS-10K), 0.704 (CS-100K), 0.608 (CS-1M), 0.612 (CS-10M), 0.411 (DBP15K), 0.642 (Hetionet), 0.692 (FB15K)</li>
+          <li>Up to 5.3% relative gain over ComplEx on CS graphs; 17.5% relative gain on DBP15K</li>
+          <li>Scalability: near-linear (T ∝ |E|^1.06); CS-10M trains in 47.85 hours, inference at 85.23 ms/triple</li>
+          <li>Ablation: removing complex subspace causes largest degradation (CS-1M MRR drops from 0.608 to 0.547)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://arxiv.org/abs/2511.10842" target="_blank" class="card-back-btn btn-repo">View Paper</a>
+      <a href="https://github.com/JugalGajjar/HyperComplEx-Multi-Space-KG-Embeddings" target="_blank" class="card-back-btn btn-project">View Repo</a>
+      <a href="../pubs.html" class="card-back-btn" style="background: var(--yellow); color: var(--ink);">Back to Publications</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

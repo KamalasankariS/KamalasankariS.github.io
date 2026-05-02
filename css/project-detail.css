@@ -1,0 +1,308 @@
+/* ============================================================
+   PROJECT-DETAIL.CSS — Authentic comic book panel layout
+   ============================================================ */
+
+.project-detail {
+  max-width: 1000px;
+}
+
+/* Venue subtitle as comic dialogue box on pub detail pages */
+body.page-pubs .project-detail .page-subtitle {
+  display: inline-block;
+  background: #fff;
+  border: 2px solid var(--ink);
+  padding: 4px 16px;
+  font-family: var(--font-comic);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  margin-top: 14px;
+}
+
+/* ── Comic book page spread ── */
+.comic-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 6px;
+  margin-bottom: 40px;
+  padding: 14px;
+  border: 5px solid var(--ink);
+  background: var(--ink);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Ink-black gutters between panels (the gap IS the gutter) */
+
+/* ── Panel grid positions ── */
+.star-panel:nth-child(1) {
+  /* SITUATION — wide top panel */
+  grid-column: 1 / -1;
+}
+
+.star-panel:nth-child(2) {
+  /* TASK — left */
+  grid-column: 1 / 2;
+}
+
+.star-panel:nth-child(3) {
+  /* ACTION — right */
+  grid-column: 2 / 3;
+}
+
+.star-panel:nth-child(4) {
+  /* RESULT — full width bottom */
+  grid-column: 1 / -1;
+}
+
+/* ── Individual panel ── */
+.star-panel {
+  background: var(--panel-color, #fff);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: none;
+}
+
+/* Halftone dot overlay on every panel — the comic signature */
+.star-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.35) 1.2px, transparent 1.2px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Slight rotation on middle panels for dynamic feel */
+.star-panel:nth-child(2) { transform: rotate(-0.3deg); }
+.star-panel:nth-child(3) { transform: rotate(0.3deg); }
+
+/* Panel colors */
+.star-panel:nth-child(1) { --panel-color: var(--pink); }
+.star-panel:nth-child(2) { --panel-color: var(--yellow); }
+.star-panel:nth-child(3) { --panel-color: var(--mint); }
+.star-panel:nth-child(4) { --panel-color: var(--sky); }
+
+/* ── Panel header — bold comic caption box ── */
+.star-panel-header {
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.8);
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 0;
+  /* Jagged comic caption shape */
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+  min-width: 200px;
+}
+
+/* Remove the old halftone on headers */
+.star-panel-header::after {
+  display: none;
+}
+
+.star-label {
+  font-family: var(--font-bang);
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: var(--yellow);
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+/* ── Bullet list ── */
+.star-list {
+  padding: 16px 20px 18px 38px;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  z-index: 2;
+}
+
+.star-list li {
+  font-family: var(--font-comic);
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 5px 0;
+  position: relative;
+  padding-left: 22px;
+}
+
+.star-list li::before {
+  content: '\25C6';  /* diamond */
+  position: absolute;
+  left: 0;
+  color: var(--ink);
+  font-size: 10px;
+  top: 7px;
+}
+
+/* White text on dark-bg panels (pink) — only in the first comic-page */
+.comic-page:first-of-type > .star-panel:nth-child(1) .star-list li,
+.comic-page:first-of-type > .star-panel:nth-child(1) .star-list li::before {
+  color: #fff;
+}
+
+/* White text on hot-pink Results panels (dark background) */
+.star-panel[style*="hot-pink"] .star-list li,
+.star-panel[style*="hot-pink"] .star-list li::before {
+  color: #fff;
+}
+
+/* ── Speed lines overlay on Situation panel ── */
+.star-panel:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -60deg,
+    transparent,
+    transparent 4px,
+    rgba(255,255,255,0.08) 4px,
+    rgba(255,255,255,0.08) 6px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Action lines on Result panel ── */
+.star-panel:nth-child(4)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgba(0,0,0,0.04) 5px,
+    rgba(0,0,0,0.04) 7px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── "POW!" style panel number badges ── */
+.star-panel-header .panel-issue {
+  float: right;
+  font-family: var(--font-bang);
+  font-size: 11px;
+  color: var(--pink);
+  letter-spacing: 2px;
+}
+
+/* ── Tech stack — editor's note strip ── */
+.star-tech-stack {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border: 4px solid var(--ink);
+  background: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+  position: relative;
+}
+
+/* Halftone on tech stack */
+.star-tech-stack::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--ink) 0.8px, transparent 0.8px);
+  background-size: 10px 10px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.star-tech-title {
+  font-family: var(--font-bang);
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  color: var(--ink);
+  text-shadow: 1px 1px 0 var(--yellow);
+}
+
+/* Cycling colors on tech stack tags */
+.star-tech-stack .card-tag:nth-child(6n+1) { background: var(--pink); color: #fff; }
+.star-tech-stack .card-tag:nth-child(6n+2) { background: var(--yellow); color: var(--ink); }
+.star-tech-stack .card-tag:nth-child(6n+3) { background: var(--mint); color: var(--ink); }
+.star-tech-stack .card-tag:nth-child(6n+4) { background: var(--sky); color: #fff; }
+.star-tech-stack .card-tag:nth-child(6n+5) { background: var(--lime); color: var(--ink); }
+.star-tech-stack .card-tag:nth-child(6n+6) { background: var(--hot-pink); color: #fff; }
+
+/* ── Buttons row ── */
+.star-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.card-back-btn {
+  font-family: var(--font-bang);
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 10px 24px;
+  border: 3px solid var(--ink);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Halftone on buttons */
+.card-back-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px);
+  background-size: 5px 5px;
+  pointer-events: none;
+}
+
+.btn-repo { background: var(--pink); }
+.btn-project { background: var(--sky); }
+.btn-repo:hover {
+  background: var(--hot-pink);
+  transform: translate(-2px,-2px) rotate(-1deg);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.btn-project:hover {
+  background: var(--mint);
+  transform: translate(-2px,-2px) rotate(1deg);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+/* ── Responsive — stack on mobile ── */
+@media (max-width: 768px) {
+  .comic-page {
+    grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 4px;
+  }
+  .star-panel:nth-child(1),
+  .star-panel:nth-child(2),
+  .star-panel:nth-child(3),
+  .star-panel:nth-child(4) {
+    grid-column: 1 / -1;
+    transform: none;
+  }
+  .star-panel-header {
+    clip-path: none;
+    min-width: auto;
+    display: block;
+  }
+}

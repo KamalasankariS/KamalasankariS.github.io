@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GREATEST HITS — KAMALA COMICS</title>
+  <meta name="description" content="Kamala Sankari — Projects and research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/comic.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    /* Category Headings */
+    .category-heading {
+      margin: 48px 0 24px;
+      text-align: center;
+      position: relative;
+    }
+    .category-heading::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 4px;
+      background: var(--pink);
+      margin: 10px auto 0;
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+    .category-label {
+      font-family: var(--font-bang);
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: #fff;
+      background: var(--yellow);
+      border: 2px solid var(--ink);
+      padding: 2px 14px;
+      box-shadow: 2px 2px 0 var(--ink);
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .category-title {
+      font-family: var(--font-bang);
+      font-size: clamp(28px, 5vw, 48px);
+      letter-spacing: 3px;
+      color: var(--ink);
+      margin: 0;
+      text-shadow: 2px 2px 0 var(--pink);
+    }
+
+    /* Back-face buttons */
+    .card-back-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .card-back-btn {
+      font-family: var(--font-bang);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border: 2px solid var(--ink);
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+      z-index: 10;
+      cursor: pointer;
+    }
+    .btn-repo { background: var(--pink); }
+    .btn-project { background: var(--sky); }
+    .btn-repo:hover { background: var(--hot-pink); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+    .btn-project:hover { background: var(--mint); transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+
+    .card-flip-back-btn {
+      font-family: var(--font-bang);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border: 2px solid var(--ink);
+      background: var(--yellow);
+      color: var(--ink);
+      box-shadow: 2px 2px 0 var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      margin-top: 10px;
+      align-self: flex-end;
+    }
+    .card-flip-back-btn:hover {
+      background: var(--pink);
+      color: #fff;
+      transform: translate(-1px,-1px);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+  </style>
+</head>
+<body class="inner-page">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="index.html">HOME</a>
+  <a class="nav-bubble" href="about.html">ABOUT</a>
+  <a class="nav-bubble" href="experience.html">XP</a>
+  <a class="nav-bubble active" href="projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="pubs.html">PUBS</a>
+  <a class="nav-bubble" href="resume.html">CV</a>
+  <a class="nav-bubble" href="contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble active" href="projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section id="work" class="page-section">
+    <div class="page-title-wrap">
+      <h1 class="section-title">THE ARCHIVES</h1>
+      <div class="comic-dialogue-box">
+        <p>From agentic AI systems and vulnerability detection to full-stack platforms and data pipelines &mdash; these are the projects I've built, broken, and shipped. Click any cover to flip it open.</p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         VOL. I — RESEARCH / AI
+         ═══════════════════════════════════════ -->
+    <div class="category-heading">
+      <span class="category-label">VOL. I</span>
+      <h2 class="category-title">RESEARCH / AI</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 01: FASS -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--pink);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 01</span>
+            <div class="card-title-area">
+              <h3 class="card-title">FASS: XAI STABILITY BENCHMARK</h3>
+              <p class="card-teaser">Faithfulness meets attribution. Every pixel accounted for.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 01 &middot; FASS</span>
+            <h3 class="card-back-title" style="color: var(--pink);">FASS: XAI STABILITY BENCHMARK</h3>
+            <p class="card-back-desc">Faithfulness &amp; Attribution Stability Score, a comprehensive benchmark for post-hoc XAI method stability across perturbations on CIFAR-10, COCO, and ImageNet. Featured at CVPR 2026.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--pink); color: #fff;">XAI</span>
+              <span class="card-tag">CIFAR-10</span>
+              <span class="card-tag">ImageNet</span>
+              <span class="card-tag">COCO</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/xai-stability-benchmark" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/fass.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02: SecureFixAgent -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--mint);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 02</span>
+            <div class="card-title-area">
+              <h3 class="card-title">AUTOMATED VULNERABILITY REPAIR</h3>
+              <p class="card-teaser">Patch it. Ship it. Win it.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 02 &middot; SECUREFIXAGENT</span>
+            <h3 class="card-back-title" style="color: var(--mint);">AUTOMATED VULNERABILITY REPAIR</h3>
+            <p class="card-back-desc">Hybrid LLM agents paired with Bandit static analyzer to detect, explain, and auto-repair Python vulnerabilities using multi-armed bandit optimization. Collaboration with Jugal Gajjar.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--mint); color: var(--ink);">LLM</span>
+              <span class="card-tag">Bandit</span>
+              <span class="card-tag">Auto-Patch</span>
+              <span class="card-tag">Python</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/SecureFixAgent" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/securefixagent.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03: MalCodeAI -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--yellow);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 03</span>
+            <div class="card-title-area">
+              <h3 class="card-title">SEMANTIC MALWARE DETECTION</h3>
+              <p class="card-teaser">Two-phase. High-precision. No mercy.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 03 &middot; MALCODEAI</span>
+            <h3 class="card-back-title" style="color: var(--yellow);">SEMANTIC MALWARE DETECTION</h3>
+            <p class="card-back-desc">Two-phase LLM pipeline: static code analysis + semantic understanding for high-precision malware classification. Published on arXiv.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--yellow); color: var(--ink);">LLM</span>
+              <span class="card-tag">Security</span>
+              <span class="card-tag">Static Analysis</span>
+              <span class="card-tag">AST</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/MalCodeAI-AI-Powered-Malicious-Code-Detection" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/malcodeai.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04: MultiLang Code Parser Dataset -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--sky);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 04</span>
+            <div class="card-title-area">
+              <h3 class="card-title">MULTILANG CODE PARSER DATASET</h3>
+              <p class="card-teaser">7 million records. 10 languages. One schema.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 04 &middot; MULTILANG</span>
+            <h3 class="card-back-title" style="color: var(--sky);">MULTILANG CODE PARSER DATASET</h3>
+            <p class="card-back-desc">7M+ parsed source code records across 10 programming languages with universal AST representations. Published on arXiv and hosted on HuggingFace.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--sky); color: #fff;">Dataset</span>
+              <span class="card-tag">AST</span>
+              <span class="card-tag">TreeSitter</span>
+              <span class="card-tag">HuggingFace</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/MultiLang-Code-Parser-Dataset" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/multilang.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 05: YOLO Roof -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--hot-pink);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 05</span>
+            <div class="card-title-area">
+              <h3 class="card-title">AERIAL ROOF MATERIAL DETECTION</h3>
+              <p class="card-teaser">From the sky. For the ground.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 05 &middot; YOLO ROOF</span>
+            <h3 class="card-back-title" style="color: var(--hot-pink);">AERIAL ROOF MATERIAL DETECTION</h3>
+            <p class="card-back-desc">YOLOv8-based aerial imagery classification of roof materials for insurance and urban planning. Best Paper at IEEE ICCDS 2024.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--hot-pink); color: #fff;">YOLOv8</span>
+              <span class="card-tag">Computer Vision</span>
+              <span class="card-tag">Aerial Imagery</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="#" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/yolo-roof.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.projects-grid -->
+
+    <!-- ═══════════════════════════════════════
+         VOL. II — WEB / FULL-STACK
+         ═══════════════════════════════════════ -->
+    <div class="category-heading">
+      <span class="category-label">VOL. II</span>
+      <h2 class="category-title">WEB / FULL-STACK</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 06: LedgerDesk -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--lime);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. II</span></div>
+            <span class="card-number">NO. 06</span>
+            <div class="card-title-area">
+              <h3 class="card-title">LEDGERDESK</h3>
+              <p class="card-teaser">Agentic AI meets financial ops.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 06 &middot; LEDGERDESK</span>
+            <h3 class="card-back-title" style="color: var(--lime);">LEDGERDESK</h3>
+            <p class="card-back-desc">Agentic financial operations copilot for transaction exception handling, policy-grounded case resolution, and auditable workflow automation.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--lime); color: var(--ink);">Next.js</span>
+              <span class="card-tag">FastAPI</span>
+              <span class="card-tag">PostgreSQL</span>
+              <span class="card-tag">Multi-Agent</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/LedgerDesk" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/ledgerdesk.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 07: GreenShoes -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--pink);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. II</span></div>
+            <span class="card-number">NO. 07</span>
+            <div class="card-title-area">
+              <h3 class="card-title">GREENSHOES</h3>
+              <p class="card-teaser">Luxury meets sustainability. Full stack.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 07 &middot; GREENSHOES</span>
+            <h3 class="card-back-title" style="color: var(--pink);">GREENSHOES</h3>
+            <p class="card-back-desc">Full-stack e-commerce platform for luxury sustainable footwear. React storefronts, Node.js/Prisma API, admin dashboard, all from scratch.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--pink); color: #fff;">React</span>
+              <span class="card-tag">Node.js</span>
+              <span class="card-tag">Prisma</span>
+              <span class="card-tag">PostgreSQL</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/greenshoes-eco-shoe-store" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/greenshoes.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 08: CareerScoutEuro -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--yellow);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. II</span></div>
+            <span class="card-number">NO. 08</span>
+            <div class="card-title-area">
+              <h3 class="card-title">CAREERSCOUTEURO</h3>
+              <p class="card-teaser">Strategize your next move. Across borders.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 08 &middot; CAREERSCOUTEURO</span>
+            <h3 class="card-back-title" style="color: var(--yellow);">CAREERSCOUTEURO</h3>
+            <p class="card-back-desc">European job search scraper and dashboard targeting AI/ML/SWE opportunities with currency comparison, university data, and Reddit community scraping.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--yellow); color: var(--ink);">Flask</span>
+              <span class="card-tag">Scraping</span>
+              <span class="card-tag">Dashboard</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="https://github.com/KamalasankariS/CareerScoutEuro" target="_blank" class="card-back-btn btn-repo">Repo</a>
+              <a href="projects/careerscouteuro.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.projects-grid -->
+
+    <!-- ═══════════════════════════════════════
+         VOL. III — INDUSTRY / INTERNSHIP
+         ═══════════════════════════════════════ -->
+    <div class="category-heading">
+      <span class="category-label">VOL. III</span>
+      <h2 class="category-title">INDUSTRY / INTERNSHIP</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 09: Lillup Scribe -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--mint);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. III</span></div>
+            <span class="card-number">NO. 09</span>
+            <div class="card-title-area">
+              <h3 class="card-title">LILLUP SCRIBE</h3>
+              <p class="card-teaser">20+ formats. One universal schema.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 09 &middot; LILLUP SCRIBE</span>
+            <h3 class="card-back-title" style="color: var(--mint);">LILLUP SCRIBE</h3>
+            <p class="card-back-desc">Cloud-powered file parser converting 20+ formats (docx, xlsx, pdf, epub, mp3, iWork) into standardized JSON schema for the Lillup Scribe iOS app.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--mint); color: var(--ink);">Python</span>
+              <span class="card-tag">File Parsing</span>
+              <span class="card-tag">iOS</span>
+              <span class="card-tag">Cloud</span>
+            </div>
+            <div class="card-back-buttons">
+              <a href="projects/lillup-scribe.html" class="card-back-btn btn-project">Project</a>
+            </div>
+            <button class="card-flip-back-btn">FLIP BACK &hookleftarrow;</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.projects-grid -->
+
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="js/comic.js"></script>
+<script src="js/chatbot.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(function(card) {
+      // Click anywhere on front → flip in
+      var front = card.querySelector('.project-card-front');
+      if (front) {
+        front.style.cursor = 'pointer';
+        front.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          card.classList.add('flipped');
+        }, true);
+      }
+
+      // Flip back button
+      var flipBtn = card.querySelector('.card-flip-back-btn');
+      if (flipBtn) {
+        flipBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          card.classList.remove('flipped');
+        }, true);
+      }
+
+      // Repo and Project buttons — force navigation
+      var links = card.querySelectorAll('.card-back-btn');
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.stopImmediatePropagation();
+          var href = link.getAttribute('href');
+          if (!href || href === '#') return;
+          if (link.getAttribute('target') === '_blank') {
+            window.open(href, '_blank');
+          } else {
+            window.location.href = href;
+          }
+        }, true);
+      });
+    });
+  });
+</script>
+</body>
+</html>

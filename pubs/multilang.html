@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MULTILANG CODE PARSER DATASET — KAMALA COMICS</title>
+  <meta name="description" content="MultiLang Code Parser Dataset: Unified AST Representations Across 10 Languages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page page-pubs">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble active" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble active" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(28px, 5vw, 56px);">MULTILANG CODE PARSER DATASET: UNIFIED AST REPRESENTATIONS ACROSS 10 LANGUAGES</h1>
+      <p class="page-subtitle">ARXIV &middot; 2025</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Problem Statement — full width top -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">PROBLEM STATEMENT</span>
+        </div>
+        <ul class="star-list">
+          <li>AI code models train on raw source code without structural understanding</li>
+          <li>No large-scale dataset provides unified AST representations across multiple languages</li>
+          <li>Cross-language code intelligence research lacked a common evaluation schema</li>
+        </ul>
+      </div>
+
+      <!-- Solution — left -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">SOLUTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Parsed source code from 10 programming languages into a universal AST representation using TreeSitter</li>
+          <li>Standardized schema enables cross-language code analysis on a single dataset</li>
+          <li>Published openly on arXiv and HuggingFace for community use</li>
+        </ul>
+      </div>
+
+      <!-- Our Positioning — right -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">OUR POSITIONING</span>
+        </div>
+        <ul class="star-list">
+          <li>Provides both hierarchical tree representations and rich metadata for every file, ensuring lossless syntactic coverage and structural uniformity</li>
+          <li>Prior datasets (The Stack, StarCoder, CodeSearchNet) focus on token-level data rather than syntactic or structural representations</li>
+          <li>Universal four-layer AST schema: Metadata Block, Flat Node Array, Node Categorization, Cross-Language Map</li>
+          <li>Four design criteria: Losslessness, Uniformity, Queryability, Scalability</li>
+          <li>Only approach with all four properties (Structural Rep, Cross-Lang, Lossless, Uniformity) vs. existing code datasets and parsing frameworks</li>
+        </ul>
+      </div>
+
+      <!-- Architecture — full width -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">ARCHITECTURE</span>
+        </div>
+        <ul class="star-list">
+          <li>TreeSitter-based parsing pipeline for 10 languages</li>
+          <li>Universal AST schema with language-agnostic node types</li>
+          <li>Parquet format for efficient storage and loading (~114 GB total)</li>
+          <li>AST visualization tool for dataset exploration</li>
+          <li>HuggingFace Datasets integration for easy loading</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second comic page for Dataset + Results -->
+    <div class="comic-page" style="margin-top: 20px;">
+      <!-- Dataset Used — left -->
+      <div class="star-panel" style="grid-column: 1/2; --panel-color: var(--lime);">
+        <div class="star-panel-header">
+          <span class="star-label" style="color: var(--yellow);">DATASET USED</span>
+        </div>
+        <ul class="star-list">
+          <li>Source data: Permissively licensed source files from the StarCoder dataset (MIT, Apache-2.0, BSD licenses)</li>
+          <li>10 programming languages: C, C++, C#, Go, Java, JavaScript, Python, Ruby, Scala, TypeScript</li>
+          <li>Total: 7,021,722 parsed files across 40 Parquet files (~114 GB on disk, ~600 GB in memory)</li>
+          <li>Filtering: IQR-based, retained files with 10-10,000 lines; deduplicated via SHA-256 content hashing</li>
+          <li>Preprocessing: UTF-8 normalization, BOM removal, non-printable character removal</li>
+          <li>Parser: Tree-sitter with all 10 grammars compiled into a shared dynamic library</li>
+        </ul>
+      </div>
+
+      <!-- Results — right -->
+      <div class="star-panel" style="grid-column: 2/3; --panel-color: var(--hot-pink);">
+        <div class="star-panel-header">
+          <span class="star-label">RESULTS</span>
+        </div>
+        <ul class="star-list">
+          <li>99.99994% AST conversion success rate (4 failures out of 7,021,722 files)</li>
+          <li>Cross-language cosine similarity: C/C++ >0.90; JavaScript/TypeScript 0.96; C#/Scala align with Java at 0.87-0.89</li>
+          <li>PCA projection reveals natural syntactic clusters (Java/Scala, JavaScript/TypeScript as neighbors)</li>
+          <li>Stable ~5.5x compression ratio across all languages</li>
+          <li>Published on arXiv, hosted on HuggingFace and GitHub</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://arxiv.org/abs/2510.16357" target="_blank" class="card-back-btn btn-repo">View Paper</a>
+      <a href="https://github.com/KamalasankariS/MultiLang-Code-Parser-Dataset" target="_blank" class="card-back-btn btn-project">View Repo</a>
+      <a href="../pubs.html" class="card-back-btn" style="background: var(--yellow); color: var(--ink);">Back to Publications</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

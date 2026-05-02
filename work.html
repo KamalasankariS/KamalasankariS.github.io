@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GREATEST HITS — KAMALA COMICS</title>
+  <meta name="description" content="Kamala Sankari — Projects and research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/comic.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body class="inner-page">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="index.html">HOME</a>
+  <a class="nav-bubble" href="about.html">ABOUT</a>
+  <a class="nav-bubble" href="experience.html">XP</a>
+  <a class="nav-bubble active" href="work.html">WORK</a>
+  <a class="nav-bubble" href="pubs.html">PUBS</a>
+  <a class="nav-bubble" href="resume.html">CV</a>
+  <a class="nav-bubble" href="contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble active" href="work.html">WORK</a>
+    <a class="fab-nav-link nav-bubble" href="pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<main>
+  <section id="work" class="page-section">
+    <div class="page-title-wrap">
+      <h1 class="section-title">GREATEST HITS</h1>
+      <p class="page-subtitle">Click any cover to flip it open &rarr;</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 01: FASS -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--pink);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 01</span>
+            <div class="card-title-area">
+              <h3 class="card-title">FASS: XAI STABILITY BENCHMARK</h3>
+              <p class="card-teaser">Faithfulness meets attribution. Every pixel accounted for.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 01 &middot; FASS</span>
+            <h3 class="card-back-title" style="color: var(--pink);">FASS: XAI STABILITY BENCHMARK</h3>
+            <p class="card-back-desc">Faithfulness &amp; Attribution Stability Score &mdash; comprehensive benchmark for post-hoc XAI method stability across perturbations on CIFAR-10, COCO, and ImageNet. Featured at CVPR 2026.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--pink); color: #fff;">XAI</span>
+              <span class="card-tag">CIFAR-10</span>
+              <span class="card-tag">ImageNet</span>
+              <span class="card-tag">COCO</span>
+            </div>
+            <span class="card-back-flip-hint">CLICK TO FLIP BACK &hookleftarrow;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02: VulnGraph -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--mint);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 02</span>
+            <div class="card-title-area">
+              <h3 class="card-title">CODE VULNERABILITY DETECTION</h3>
+              <p class="card-teaser">AST + CFG + LLM. Triple threat.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 02 &middot; VULNGRAPH</span>
+            <h3 class="card-back-title" style="color: var(--mint);">CODE VULNERABILITY DETECTION</h3>
+            <p class="card-back-desc">AST + CFG structural analysis fused with LLM semantic embeddings via learned gating for multi-language vulnerability detection in C/C++ and Python. Published at ICSE 2025.</p>
+            <div class="card-back-tags">
+              <span class="card-tag">AST/CFG</span>
+              <span class="card-tag">LLM</span>
+              <span class="card-tag" style="background: var(--red); color: #fff;">C/C++</span>
+              <span class="card-tag">Python</span>
+            </div>
+            <span class="card-back-flip-hint">CLICK TO FLIP BACK &hookleftarrow;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03: Vulnerability Repair -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--yellow);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. I</span></div>
+            <span class="card-number">NO. 03</span>
+            <div class="card-title-area">
+              <h3 class="card-title">AUTOMATED VULNERABILITY REPAIR</h3>
+              <p class="card-teaser">Patch it. Ship it. Win it.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 03 &middot; SECUREFIXAGENT</span>
+            <h3 class="card-back-title" style="color: var(--yellow);">AUTOMATED VULNERABILITY REPAIR</h3>
+            <p class="card-back-desc">LLM-driven autonomous patch generation using multi-armed bandit optimization. Reduces false positives in vulnerability repair with intelligent exploration-exploitation strategy.</p>
+            <div class="card-back-tags">
+              <span class="card-tag">LLM</span>
+              <span class="card-tag">Bandit</span>
+              <span class="card-tag">Auto-Patch</span>
+            </div>
+            <span class="card-back-flip-hint">CLICK TO FLIP BACK &hookleftarrow;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 04: Malware -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--sky);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. II</span></div>
+            <span class="card-number">NO. 04</span>
+            <div class="card-title-area">
+              <h3 class="card-title">SEMANTIC MALWARE DETECTION</h3>
+              <p class="card-teaser">Two-phase. High-precision. No mercy.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 04 &middot; MALWARE</span>
+            <h3 class="card-back-title" style="color: var(--sky);">SEMANTIC MALWARE DETECTION</h3>
+            <p class="card-back-desc">Two-phase LLM pipeline &mdash; static code analysis + semantic understanding for high-precision malware classification.</p>
+            <div class="card-back-tags">
+              <span class="card-tag">LLM</span>
+              <span class="card-tag">Security</span>
+              <span class="card-tag">Static Analysis</span>
+            </div>
+            <span class="card-back-flip-hint">CLICK TO FLIP BACK &hookleftarrow;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 05: Knowledge Graphs -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--lime);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. II</span></div>
+            <span class="card-number">NO. 05</span>
+            <div class="card-title-area">
+              <h3 class="card-title">MULTI-SPACE KNOWLEDGE GRAPHS</h3>
+              <p class="card-teaser">Hyperbolic. Complex. Euclidean. All at once.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 05 &middot; HYPERCOMPLEX</span>
+            <h3 class="card-back-title" style="color: var(--lime);">MULTI-SPACE KNOWLEDGE GRAPHS</h3>
+            <p class="card-back-desc">Simultaneous Hyperbolic, Complex &amp; Euclidean embedding with Riemannian optimization for link prediction on knowledge graph benchmarks.</p>
+            <div class="card-back-tags">
+              <span class="card-tag">KG</span>
+              <span class="card-tag">Hyperbolic</span>
+              <span class="card-tag">Riemannian</span>
+            </div>
+            <span class="card-back-flip-hint">CLICK TO FLIP BACK &hookleftarrow;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 06: Roof Detection -->
+      <div class="project-card">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="card-bg" style="background: var(--hot-pink);"></div>
+            <div class="card-halftone"></div>
+            <div class="card-top-strip"><span>KAMALA COMICS</span><span>VOL. II</span></div>
+            <span class="card-number">NO. 06</span>
+            <div class="card-title-area">
+              <h3 class="card-title">AERIAL ROOF MATERIAL DETECTION</h3>
+              <p class="card-teaser">From the sky. For the ground.</p>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <span class="card-back-number">NO. 06 &middot; ROOFVISION</span>
+            <h3 class="card-back-title" style="color: var(--hot-pink);">AERIAL ROOF MATERIAL DETECTION</h3>
+            <p class="card-back-desc">YOLOv8-based aerial imagery classification of roof materials for insurance and urban planning applications.</p>
+            <div class="card-back-tags">
+              <span class="card-tag" style="background: var(--red); color: #fff;">YOLOv8</span>
+              <span class="card-tag">Computer Vision</span>
+              <span class="card-tag">Aerial Imagery</span>
+            </div>
+            <span class="card-back-flip-hint">CLICK TO FLIP BACK &hookleftarrow;</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="js/comic.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

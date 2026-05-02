@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEDGERDESK — KAMALA COMICS</title>
+  <meta name="description" content="LedgerDesk — Agentic financial operations copilot for transaction exception handling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/comic.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+</head>
+<body class="inner-page">
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+
+
+<!-- Side Navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <a class="nav-bubble" href="../index.html">HOME</a>
+  <a class="nav-bubble" href="../about.html">ABOUT</a>
+  <a class="nav-bubble" href="../experience.html">XP</a>
+  <a class="nav-bubble active" href="../projects.html">PROJECTS</a>
+  <a class="nav-bubble" href="../pubs.html">PUBS</a>
+  <a class="nav-bubble" href="../resume.html">CV</a>
+  <a class="nav-bubble" href="../contact.html">CONTACT</a>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="nav-fab">
+  <div class="nav-fab-menu">
+    <a class="fab-nav-link nav-bubble" href="../index.html">HOME</a>
+    <a class="fab-nav-link nav-bubble" href="../about.html">ABOUT</a>
+    <a class="fab-nav-link nav-bubble" href="../experience.html">XP</a>
+    <a class="fab-nav-link nav-bubble active" href="../projects.html">PROJECTS</a>
+    <a class="fab-nav-link nav-bubble" href="../pubs.html">PUBS</a>
+    <a class="fab-nav-link nav-bubble" href="../resume.html">CV</a>
+    <a class="fab-nav-link nav-bubble" href="../contact.html">CONTACT</a>
+  </div>
+  <button class="nav-fab-btn" id="nav-fab-btn" aria-label="Toggle navigation">&#9733;</button>
+</div>
+
+<!-- SFX Toggle -->
+<button id="sfx-toggle" aria-label="Toggle sound effects">&#128266;<span id="sfx-badge">SOUND ON</span></button>
+
+<main>
+  <section class="page-section project-detail">
+    <div class="page-title-wrap">
+      <h1 class="section-title" style="font-size: clamp(36px, 6vw, 72px);">LEDGERDESK</h1>
+      <p class="page-subtitle">Agentic AI meets financial ops.</p>
+    </div>
+
+    <div class="comic-page">
+      <!-- Situation -->
+      <div class="star-panel" style="border-color: var(--pink);">
+        <div class="star-panel-header" style="background: var(--pink);">
+          <span class="star-label">SITUATION</span>
+        </div>
+        <ul class="star-list">
+          <li>Financial operations teams spend hours manually triaging transaction exceptions and policy violations</li>
+          <li>Case resolution requires cross-referencing multiple internal tools (transaction timelines, settlement status, account history)</li>
+          <li>Existing automation lacks the reasoning depth to handle nuanced financial edge cases</li>
+        </ul>
+      </div>
+
+      <!-- Task -->
+      <div class="star-panel" style="border-color: var(--yellow);">
+        <div class="star-panel-header" style="background: var(--yellow);">
+          <span class="star-label" style="color: var(--ink);">TASK</span>
+        </div>
+        <ul class="star-list">
+          <li>Build a production-grade agentic copilot that automates transaction exception handling with policy-grounded reasoning</li>
+          <li>Implement human-in-the-loop review with full audit trails for compliance</li>
+          <li>Design a multi-agent pipeline with safety gates and confidence thresholds</li>
+        </ul>
+      </div>
+
+      <!-- Action -->
+      <div class="star-panel" style="border-color: var(--mint);">
+        <div class="star-panel-header" style="background: var(--mint);">
+          <span class="star-label" style="color: var(--ink);">ACTION</span>
+        </div>
+        <ul class="star-list">
+          <li>Built multi-agent pipeline: Triage Agent &rarr; Retrieval Agent &rarr; Tool Planner &rarr; Tool Executor &rarr; Decision Agent &rarr; Safety Gate</li>
+          <li>Frontend in Next.js 15 with a vintage financial design system (cream backgrounds, ledger-style tables)</li>
+          <li>Backend in FastAPI with PostgreSQL + pgvector for RAG over policy documents</li>
+          <li>Redis + Celery for async task queues, full Docker Compose setup</li>
+        </ul>
+      </div>
+
+      <!-- Result -->
+      <div class="star-panel" style="border-color: var(--sky);">
+        <div class="star-panel-header" style="background: var(--sky);">
+          <span class="star-label" style="color: var(--ink);">RESULT</span>
+        </div>
+        <ul class="star-list">
+          <li>Functional prototype with case management queue, policy retrieval, and mock internal tool integration</li>
+          <li>Human-in-the-loop workflow: approve, reject, or escalate with full audit trail</li>
+          <li>Designed for production with confidence thresholds and safety gates</li>
+          <li>Roadmap through v2.0 with expanded tool integration</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="star-tech-stack">
+      <h3 class="star-tech-title">TECH STACK</h3>
+      <div class="card-back-tags">
+        <span class="card-tag">Next.js</span>
+        <span class="card-tag">FastAPI</span>
+        <span class="card-tag">PostgreSQL</span>
+        <span class="card-tag">pgvector</span>
+        <span class="card-tag">Redis</span>
+        <span class="card-tag">Celery</span>
+        <span class="card-tag">Docker</span>
+        <span class="card-tag">Tailwind CSS</span>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="star-buttons">
+      <a href="https://github.com/KamalasankariS/LedgerDesk" target="_blank" class="card-back-btn btn-repo">View Repo</a>
+      <a href="../projects.html" class="card-back-btn btn-project">Back to Projects</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  KAMALA COMICS &nbsp;|&nbsp; <span>&copy; 2026</span> &nbsp;|&nbsp; ISSUE #001 &nbsp;|&nbsp; <span>MADE WITH &#9733; AND LOTS OF CSS</span>
+</footer>
+
+<script src="../js/comic.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>
