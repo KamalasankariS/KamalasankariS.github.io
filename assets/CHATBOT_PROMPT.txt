@@ -1,0 +1,50 @@
+BIO: Kamalasankari Subramaniakuppusamy (Kamala Sankari) is an AI Engineer at The George Washington University specializing in LLM-powered and agentic AI systems. She designs and ships end-to-end workflows for multi-step decision-making, tool-driven execution, and production AI applications. Her research focuses on LLM reasoning, explainable AI, agentic workflows, RAG, model evaluation, and AI for software security.
+
+EDUCATION:
+M.S. in Computer Science (Machine Intelligence & Cognition), The George Washington University, Washington D.C. Expected May 2026.
+B.E. in Electronics and Communication Engineering, St. Joseph's College of Engineering, Chennai, India. Graduated April 2024.
+
+EXPERIENCE:
+1. Graduate Assistant in Advanced Machine Learning — GWU (Sep–Dec 2025): Supported ML model implementation and evaluation, guided students on model behavior, performance trade-offs, and evaluation techniques. Contributed to assignment and project design emphasizing reproducibility and evaluation rigor.
+2. AI Engineer Intern — Lillup, New York (May–Nov 2025): Built and shipped AI Voice Tutoring, Research Assistant, and Notetaking systems using RAG-based pipelines. Engineered modular data pipelines and parsers for multi-format ingestion (JSON, XML, CSV, Parquet).
+
+ALL PROJECTS:
+1. FASS — XAI Stability Benchmark evaluating post-hoc attribution methods (Grad-CAM, IG, SHAP, LIME) across CIFAR-10, COCO, ImageNet. CVPR 2026.
+2. SecureFixAgent — Hybrid LLM agent for automated Python vulnerability repair using Bandit + multi-armed bandit optimization. -10.8% false positives, +13.51% accuracy. ICMLA 2025.
+3. MalCodeAI — Autonomous vulnerability detection and remediation across 14 languages via language-agnostic code reasoning. IEEE IRI 2025.
+4. MLCPD — 7M+ parsed source code records across 10 languages with universal AST schema. arXiv 2025, HuggingFace.
+5. VulnGraph — GNN + LLM fusion for Java vulnerability detection. 93.57% accuracy. Complex Networks 2025.
+6. HyperComplEx — Adaptive multi-space KG embeddings (Hyperbolic + Complex + Euclidean). 18% MRR gain. IEEE Big Data 2025.
+7. YOLO Roof — YOLOv8 aerial roof material detection. +32.5% mAP over YOLOv5. Best Paper Award IEEE ICCDS 2024.
+8. LedgerDesk — Agentic financial ops copilot with 5 agents, 13-stage pipeline, ~70% triage reduction. Next.js, FastAPI, PostgreSQL.
+9. ModelProbe — AI evaluation SDK with versioned runs, regression detection, 83% faster identification. Pip-installable Python SDK.
+10. GreenShoes — Full-stack sustainable footwear e-commerce. React, Node.js, Prisma, PostgreSQL.
+11. CareerScoutEuro — European job search scraper/dashboard for AI/ML/SWE roles. Flask.
+12. Lillup Scribe — Cloud file parser converting 20+ formats to JSON for iOS app.
+
+PUBLICATIONS (7):
+1. Feature Attribution Stability Suite: How Stable Are Post-Hoc Attributions? — CVPR 2026 (XAI4CV Workshop). Co-author: Jugal Gajjar.
+2. HyperComplEx: Adaptive Multi-Space Knowledge Graph Embeddings — IEEE Big Data 2025. Co-authors: Jugal Gajjar, Kaustik Ranaware, Vaibhav Gandhi.
+3. Bridging Semantics & Structure for Software Vulnerability Detection Using Hybrid Network Models — Complex Networks 2025. Co-authors: Jugal Gajjar, Kaustik Ranaware.
+4. SecureFixAgent: A Hybrid LLM Agent for Automated Python Static Vulnerability Repair — ICMLA 2025. Co-authors: Jugal Gajjar, Relsy Puthal, Kaustik Ranaware.
+5. MalCodeAI: Autonomous Vulnerability Detection and Remediation via Language Agnostic Code Reasoning — IEEE IRI 2025. Co-authors: Jugal Gajjar, Noha El Kachach.
+6. MLCPD: A Unified Multi-Language Code Parsing Dataset with Universal AST Schema — arXiv 2025. Co-author: Jugal Gajjar.
+7. YOLO: Roof Material Detection Using Aerial Imagery — IEEE ICCDS 2024. Best Paper Award.
+
+SKILLS:
+Programming: Python, SQL, TypeScript
+Backend & Distributed: Kafka, FastAPI, REST APIs, gRPC, Data Pipelines
+Cloud/Tools: AWS, Docker, Kubernetes, CI/CD, GCP, PyTorch, TensorFlow, NumPy, Pandas, LangChain, Scikit-learn
+Applied AI: LLMs, Agentic Workflows, RAG, Model Evaluation & Monitoring, Explainable AI
+
+PROFESSIONAL SERVICE:
+Peer Reviewer — ACL 2026 SURGeLLM Workshop
+
+PERSONAL:
+Trained Carnatic singer (10+ years). The discipline shaped her pattern recognition, precision, and patience.
+Mentors students on independent projects and early-stage research.
+Best Paper Awardee (IEEE ICCDS 2024).
+
+CONTACT:
+Email: kamalasankari@gwu.edu | GitHub: kamalasankaris | LinkedIn: kamalasankari-s | Medium: @kamalasankari
+Open to research collaborations, PhD opportunities, and roles in LLM reasoning, explainable AI, and agentic systems.
