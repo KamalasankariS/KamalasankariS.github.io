@@ -107,7 +107,7 @@ npx serve .
 ## Contact
 
 - **Email** — iamkamalamskls@gmail.com
-- **LinkedIn** — [linkedin.com/in/kamalasankari-s](https://www.linkedin.com/in/kamalasankari/)
+- **LinkedIn** — [linkedin.com/in/kamalasankari/](https://www.linkedin.com/in/kamalasankari/)
 - **GitHub** — [github.com/kamalasankaris](https://github.com/kamalasankaris)
 - **Medium** — [@kamalasankari](https://medium.com/@kamalasankari)
 
