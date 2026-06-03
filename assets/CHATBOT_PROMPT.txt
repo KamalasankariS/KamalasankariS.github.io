@@ -46,5 +46,5 @@ Mentors students on independent projects and early-stage research.
 Best Paper Awardee (IEEE ICCDS 2024).
 
 CONTACT:
-Email: kamalasankari@gwu.edu | GitHub: kamalasankaris | LinkedIn: kamalasankari-s | Medium: @kamalasankari
+Email: kamalasankari@gwu.edu | GitHub: kamalasankaris | LinkedIn: Kamalasankari | Medium: @kamalasankari
 Open to research collaborations, PhD opportunities, and roles in LLM reasoning, explainable AI, and agentic systems.

@@ -106,8 +106,8 @@ npx serve .
 
 ## Contact
 
-- **Email** — kamalasankari@gwu.edu
-- **LinkedIn** — [linkedin.com/in/kamalasankari-s](https://www.linkedin.com/in/kamalasankari-s)
+- **Email** — iamkamalamskls@gmail.com
+- **LinkedIn** — [linkedin.com/in/kamalasankari-s](https://www.linkedin.com/in/kamalasankari/)
 - **GitHub** — [github.com/kamalasankaris](https://github.com/kamalasankaris)
 - **Medium** — [@kamalasankari](https://medium.com/@kamalasankari)
 
