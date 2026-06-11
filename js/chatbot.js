@@ -39,7 +39,7 @@
   // ── Offline TF-IDF Fallback ──
   var CHUNKS = [
     // ── Identity & Bio ──
-    { id:'bio', text:'Kamalasankari Subramaniakuppusamy (Kamala Sankari) is an AI Engineer at The George Washington University specializing in LLM-powered and agentic AI systems. She designs and ships end-to-end workflows for multi-step decision-making, tool-driven execution, and production AI applications.', keywords:'who kamala about person bio introduction researcher engineer' },
+    { id:'bio', text:'Kamalasankari Subramaniakuppusamy (Kamalasankari) is an AI Engineer at The George Washington University specializing in LLM-powered and agentic AI systems. She designs and ships end-to-end workflows for multi-step decision-making, tool-driven execution, and production AI applications.', keywords:'who kamala about person bio introduction researcher engineer' },
     { id:'research_focus', text:'Kamala\'s research focuses on LLM reasoning, agentic workflows, explainable AI (XAI), model evaluation and monitoring, retrieval-augmented generation (RAG), and AI for software security. She builds systems that are reliable, interpretable, and grounded in real-world use cases.', keywords:'research interest focus area topic explainable trustworthy xai reasoning' },
     // ── Education ──
     { id:'ms', text:'Kamala is pursuing M.S. in Computer Science (Machine Intelligence and Cognition) at The George Washington University, Washington D.C. Expected graduation May 2026.', keywords:'masters graduate gwu george washington university education degree ms computer science' },
@@ -153,7 +153,13 @@
     </div>\
   </div>\
   <form id="chatbot-form">\
-    <input id="chatbot-input" type="text" placeholder="Type a question..." autocomplete="off" />\
+    <div id="chatbot-input-wrap">\
+      <input id="chatbot-input" type="text" placeholder="Type a question..." autocomplete="off" />\
+      <canvas id="chatbot-waveform"></canvas>\
+    </div>\
+    <button type="button" id="chatbot-mic" aria-label="Voice input" style="display:none;">\
+      <img id="chatbot-mic-icon" src="' + assetPrefix + 'assets/icons/mic.svg" alt="Mic" />\
+    </button>\
     <button type="submit" id="chatbot-send">GO</button>\
   </form>\
 </div>';
@@ -315,19 +321,38 @@
   display: flex;\
   border-top: 3px solid var(--ink);\
 }\
-#chatbot-input {\
+#chatbot-input-wrap {\
   flex: 1;\
+  position: relative;\
+  overflow: hidden;\
+}\
+#chatbot-input {\
+  width: 100%;\
   padding: 12px 14px;\
   border: none;\
   outline: none;\
   font-family: "Comic Neue", cursive;\
   font-size: 14px;\
   background: #fff;\
+  box-sizing: border-box;\
 }\
 #chatbot-input::placeholder {\
   color: #aaa;\
   font-style: italic;\
 }\
+#chatbot-waveform {\
+  position: absolute;\
+  top: 0;\
+  left: 0;\
+  width: 100%;\
+  height: 100%;\
+  display: none;\
+  background: #1a1a1a;\
+}\
+#chatbot-waveform.waveform-active {\
+  display: block;\
+}\
+\
 #chatbot-send {\
   padding: 12px 18px;\
   background: var(--yellow);\
@@ -343,6 +368,59 @@
 #chatbot-send:hover {\
   background: var(--pink);\
   color: #fff;\
+}\
+\
+/* Mic button */\
+#chatbot-mic {\
+  padding: 8px 10px;\
+  background: #fff;\
+  border: none;\
+  border-left: 3px solid var(--ink);\
+  cursor: pointer;\
+  display: flex;\
+  align-items: center;\
+  justify-content: center;\
+  transition: background 0.15s ease;\
+}\
+#chatbot-mic:hover {\
+  background: #f0f0f0;\
+}\
+#chatbot-mic img {\
+  width: 22px;\
+  height: 22px;\
+}\
+#chatbot-mic.mic-active {\
+  background: var(--pink);\
+  animation: micPulse 1s ease-in-out infinite;\
+}\
+@keyframes micPulse {\
+  0%, 100% { opacity: 1; }\
+  50% { opacity: 0.6; }\
+}\
+\
+/* Speaker icon on bot messages */\
+.chat-speak-btn {\
+  background: none;\
+  border: none;\
+  cursor: pointer;\
+  padding: 2px 4px;\
+  margin-left: 6px;\
+  vertical-align: middle;\
+  opacity: 0.5;\
+  transition: opacity 0.15s ease;\
+  display: inline-block;\
+}\
+.chat-speak-btn:hover {\
+  opacity: 1;\
+}\
+.chat-speak-btn.speaking {\
+  opacity: 1;\
+  color: var(--pink);\
+}\
+.chat-speak-btn svg {\
+  width: 16px;\
+  height: 16px;\
+  vertical-align: middle;\
 }\
 \
 /* Mobile */\
@@ -424,11 +502,283 @@
     var answer = await askBot(q);
     typing.remove();
     addMessage(answer, 'bot');
+
+    // If in voice mode, speak the answer then auto-listen again
+    if (voiceMode) {
+      speakText(answer, function () {
+        if (voiceMode) startListening();
+      });
+    }
   });
 
   // Prevent chatbot clicks from triggering comic.js burst effect
   chatContainer.addEventListener('click', function (e) {
     e.stopPropagation();
   });
+
+  // ── Voice Input (Speech-to-Text) ──
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var micBtn = document.getElementById('chatbot-mic');
+  var micIcon = document.getElementById('chatbot-mic-icon');
+  var recognition = null;
+  var isListening = false;
+  var voiceMode = false;  // true = user is in voice conversation mode
+
+  if (SpeechRecognition && micBtn) {
+    // Browser supports speech recognition — show the mic button
+    micBtn.style.display = 'flex';
+
+    recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = true;   // Show live transcript as user speaks
+    recognition.continuous = false;       // Stop after one utterance
+
+    recognition.onresult = function (event) {
+      var transcript = '';
+      for (var i = event.resultIndex; i < event.results.length; i++) {
+        transcript += event.results[i][0].transcript;
+      }
+      // Show live transcript in the input field
+      input.value = transcript;
+
+      // If this is a final result (user stopped speaking), auto-submit
+      if (event.results[event.results.length - 1].isFinal) {
+        stopListening();
+        if (transcript.trim()) {
+          form.dispatchEvent(new Event('submit', { cancelable: true }));
+        }
+      }
+    };
+
+    recognition.onerror = function (event) {
+      stopListening();
+      if (event.error === 'not-allowed') {
+        addMessage('Mic access was denied. Please allow microphone permission and try again.', 'bot');
+      }
+    };
+
+    recognition.onend = function () {
+      // Fires when recognition stops (timeout, user stopped, etc.)
+      stopListening();
+    };
+
+    micBtn.addEventListener('click', function () {
+      if (isListening || voiceMode) {
+        // Stop the entire voice conversation loop
+        voiceMode = false;
+        if (isListening) recognition.stop();
+        stopSpeaking();
+        stopWaveform();
+      } else {
+        voiceMode = true;
+        startListening();
+      }
+    });
+  }
+
+  // ── Waveform Visualizer ──
+  var waveCanvas = document.getElementById('chatbot-waveform');
+  var waveCtx = waveCanvas ? waveCanvas.getContext('2d') : null;
+  var audioContext = null;
+  var analyser = null;
+  var micStream = null;
+  var animFrameId = null;
+
+  function startWaveform() {
+    if (!waveCanvas || !waveCtx) return;
+    waveCanvas.classList.add('waveform-active');
+
+    // Size canvas to container
+    var rect = waveCanvas.parentElement.getBoundingClientRect();
+    waveCanvas.width = rect.width * 2;   // 2x for retina
+    waveCanvas.height = rect.height * 2;
+    waveCtx.scale(2, 2);
+
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      micStream = stream;
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      var source = audioContext.createMediaStreamSource(stream);
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 64;
+      source.connect(analyser);
+      drawWaveform();
+    }).catch(function () {
+      // Mic denied — waveform won't animate but voice still works
+    });
+  }
+
+  function drawWaveform() {
+    if (!analyser || !waveCanvas.classList.contains('waveform-active')) return;
+    animFrameId = requestAnimationFrame(drawWaveform);
+
+    var bufferLength = analyser.frequencyBinCount;
+    var dataArray = new Uint8Array(bufferLength);
+    analyser.getByteFrequencyData(dataArray);
+
+    var w = waveCanvas.width / 2;
+    var h = waveCanvas.height / 2;
+    waveCtx.clearRect(0, 0, w, h);
+
+    // Draw bars from center
+    var barCount = 24;
+    var barWidth = Math.max(2, (w / barCount) * 0.6);
+    var gap = (w - barCount * barWidth) / (barCount + 1);
+    var colors = ['#FF3CAC', '#5EF2C2', '#6EDCFF', '#FFD93D', '#B8FF3C', '#FF5DA2'];
+
+    for (var i = 0; i < barCount; i++) {
+      // Map bar index to frequency data
+      var dataIndex = Math.floor(i * bufferLength / barCount);
+      var value = dataArray[dataIndex] / 255;
+      var barHeight = Math.max(3, value * (h * 0.85));
+
+      var x = gap + i * (barWidth + gap);
+      var y = (h - barHeight) / 2;
+
+      waveCtx.fillStyle = colors[i % colors.length];
+      waveCtx.beginPath();
+      waveCtx.roundRect(x, y, barWidth, barHeight, 2);
+      waveCtx.fill();
+    }
+  }
+
+  function stopWaveform() {
+    if (waveCanvas) waveCanvas.classList.remove('waveform-active');
+    if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
+    if (micStream) {
+      micStream.getTracks().forEach(function (t) { t.stop(); });
+      micStream = null;
+    }
+    if (audioContext) {
+      audioContext.close();
+      audioContext = null;
+      analyser = null;
+    }
+  }
+
+  function startListening() {
+    isListening = true;
+    micBtn.classList.add('mic-active');
+    micIcon.src = assetPrefix + 'assets/icons/mic-active.svg';
+    input.placeholder = 'Listening...';
+    input.value = '';
+    startWaveform();
+    try {
+      recognition.start();
+    } catch (e) {
+      stopListening();
+    }
+  }
+
+  function stopListening() {
+    isListening = false;
+    if (micBtn && !voiceMode) {
+      micBtn.classList.remove('mic-active');
+      micIcon.src = assetPrefix + 'assets/icons/mic.svg';
+      input.placeholder = 'Type a question...';
+      stopWaveform();
+    } else if (micBtn && voiceMode) {
+      micBtn.classList.add('mic-active');
+      input.placeholder = 'Listening...';
+      // Keep waveform running between turns in voice mode
+    }
+  }
+
+  // ── Voice Output (Text-to-Speech via ElevenLabs) ──
+  var speechSynthSupported = 'speechSynthesis' in window;
+  var currentAudio = null;  // Track currently playing audio
+
+  // Fix pronunciation for ElevenLabs (it handles phonetics better, but we help with the name)
+  function fixPronunciation(text) {
+    return text
+      .replace(/Kamalasankari/gi, 'Kah-muh-luh-shun-curry')
+      .replace(/Kamala's/gi, "Kah-muh-lah's")
+      .replace(/Kamala/gi, 'Kah-muh-lah');
+  }
+
+  // Call ElevenLabs TTS via worker proxy, returns an Audio object or null
+  async function speakWithElevenLabs(text) {
+    try {
+      var response = await fetch(WORKER_URL + '/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: fixPronunciation(text) })
+      });
+      if (!response.ok) return null;
+      var blob = await response.blob();
+      var url = URL.createObjectURL(blob);
+      var audio = new Audio(url);
+      return audio;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Browser TTS fallback
+  function speakWithBrowser(text, onEnd) {
+    if (!speechSynthSupported) { if (onEnd) onEnd(); return; }
+    window.speechSynthesis.cancel();
+    var utterance = new SpeechSynthesisUtterance(fixPronunciation(text));
+    utterance.rate = 1.15;
+    utterance.pitch = 0.9;
+    utterance.onend = function () { if (onEnd) onEnd(); };
+    utterance.onerror = function () { if (onEnd) onEnd(); };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  // Main speak function — tries ElevenLabs first, falls back to browser
+  async function speakText(text, onEnd) {
+    stopSpeaking();
+    var audio = await speakWithElevenLabs(text);
+    if (audio) {
+      currentAudio = audio;
+      audio.onended = function () { currentAudio = null; if (onEnd) onEnd(); };
+      audio.onerror = function () { currentAudio = null; speakWithBrowser(text, onEnd); };
+      audio.play();
+    } else {
+      speakWithBrowser(text, onEnd);
+    }
+  }
+
+  // Stop any current speech (ElevenLabs audio or browser TTS)
+  function stopSpeaking() {
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio = null;
+    }
+    if (speechSynthSupported) window.speechSynthesis.cancel();
+  }
+
+  // Speaker icon SVG markup (inline so no extra file needed)
+  var speakerSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
+
+  // Override addMessage to attach speaker buttons to bot replies
+  var _originalAddMessage = addMessage;
+  addMessage = function (text, role) {
+    var div = _originalAddMessage(text, role);
+    if (role === 'bot') {
+      var btn = document.createElement('button');
+      btn.className = 'chat-speak-btn';
+      btn.setAttribute('aria-label', 'Read aloud');
+      btn.innerHTML = speakerSVG;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (btn.classList.contains('speaking')) {
+          stopSpeaking();
+          btn.classList.remove('speaking');
+          return;
+        }
+        // Stop any other speaking buttons
+        var allBtns = messagesEl.querySelectorAll('.chat-speak-btn.speaking');
+        for (var i = 0; i < allBtns.length; i++) allBtns[i].classList.remove('speaking');
+        stopSpeaking();
+
+        btn.classList.add('speaking');
+        speakText(text, function () { btn.classList.remove('speaking'); });
+      });
+      div.querySelector('.chat-bubble').appendChild(btn);
+    }
+    return div;
+  };
 
 })();
