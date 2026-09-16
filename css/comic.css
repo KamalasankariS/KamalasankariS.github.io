@@ -3014,17 +3014,77 @@ footer span {
   }
 }
 
-/* ── SMALLER SCREENS: keep same layout, just reduce spacing ── */
+/* ── SMALLER SCREENS: stack panels vertically so page scrolls ── */
 @media (max-width: 768px) {
   #cursor-dot { display: none; }
 
   body {
     cursor: auto;
+    overflow-y: auto;
+    height: auto;
   }
 
+  /* Hero: flow in document instead of fixed */
+  .mpanel-hero {
+    position: relative;
+    height: auto;
+    min-height: 28vh;
+    clip-path: none;
+  }
+
+  .mpanel-hero::after {
+    display: none;
+  }
+
+  /* Mosaic: flow in document, single-column stack */
   #mosaic {
-    left: 10px;
-    width: calc(100vw - 20px);
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  /* All panels: auto height, remove clip-paths & negative margins */
+  .mpanel {
+    clip-path: none !important;
+    margin: 0 !important;
+    filter: none;
+  }
+
+  .mpanel-inner {
+    height: auto;
+  }
+
+  /* Let panel body show all content — no internal scroll */
+  .mpanel-body {
+    overflow-y: visible;
+    overflow-x: visible;
+  }
+
+  /* Reset tab/notch padding overrides */
+  .mpanel-about .mpanel-body,
+  .mpanel-about .mpanel-header,
+  .mpanel-projects .mpanel-body,
+  .mpanel-projects .mpanel-header,
+  .mpanel-experience .mpanel-body,
+  .mpanel-experience .mpanel-header,
+  .mpanel-pubs .mpanel-body,
+  .mpanel-pubs .mpanel-header,
+  .mpanel-contact .mpanel-body,
+  .mpanel-contact .mpanel-header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Footer: flow at end of page */
+  .mosaic-footer {
+    position: relative;
   }
 
   .hero-bigname {

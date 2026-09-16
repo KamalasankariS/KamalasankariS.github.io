@@ -222,4 +222,8 @@ body.inner-page main {
   .page-section {
     padding: 10px 16px 30px;
   }
+
+  .mosaic-footer {
+    position: relative;
+  }
 }
