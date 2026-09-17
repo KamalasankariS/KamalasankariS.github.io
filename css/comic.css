@@ -3028,12 +3028,21 @@ footer span {
   .mpanel-hero {
     position: relative;
     height: auto;
-    min-height: 28vh;
+    min-height: 0;
     clip-path: none;
   }
 
   .mpanel-hero::after {
     display: none;
+  }
+
+  .hero-text-block {
+    height: auto;
+    padding: 24px 16px 8px;
+  }
+
+  .hero-meta-strip {
+    position: relative;
   }
 
   /* Mosaic: flow in document, single-column stack */
